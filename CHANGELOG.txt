@@ -1,0 +1,9 @@
+ 1.1b
+- Fixed web server "freeze" issue: Amule web server often "freeze" and not release entire web page an js script...this cause some problems in buttons, checkboxs and javascript releated stufs.
+
+ 1.0b
+- First release
+
+ KNOWN ISSUES:
+- "Page refresh interval" in Configuration not work
+- Search don't work
