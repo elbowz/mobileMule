@@ -27,8 +27,8 @@
 					<li>Upload / Limit<span id="speed_up" class="ui-li-aside">n / n</span></li>
 					<li id="server" data-role="list-divider">Server (init ...)</li>
 					<li class="server-child">Address <span id="server-address" class="ui-li-aside">x.x.x.x</span></li>
-					<li class="server-child">Name <span id="server-name" class="ui-li-aside">init</span></li>
-					<li class="server-child">Users <span id="server-users" class="ui-li-aside">n</span></li>
+					<!--  <li class="server-child">Name <span id="server-name" class="ui-li-aside">init</span></li>
+					<li class="server-child">Users <span id="server-users" class="ui-li-aside">n</span></li>-->
 					<li id="kad" data-role="list-divider">Kad (init ...)</li>
 					<li><p><strong>note:</strong> this info is refred each 3 seconds.</p></li>
 				</ul>
