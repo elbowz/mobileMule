@@ -67,6 +67,10 @@ $( document ).delegate("#status", "pageinit", function() {
 	}
 });
 
+$( document ).delegate("#first-page", "pageinit", function() {
+	$.mobile.changePage( "amuleweb-main-status.php", { transition: "none" } );	
+});
+
 function showMenu( ) {
 	console.log('showMenu');
 	$('.menu').trigger('expand');

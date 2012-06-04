@@ -73,7 +73,7 @@
 				<div class="menu" data-role="collapsible" data-collapsed="true" data-theme="b" data-content-theme="d">
 					<h3>Menu</h3>
 					<ul data-role="listview" data-theme="c" data-dividertheme="d" data-inset="true">
-						<li><a href="amuleweb-main-dload.php">Status</a></li>
+						<li><a href="amuleweb-main-status.php">Status</a></li>
 						<li><a href="amuleweb-main-dload-real.php">Downloads</a></li>
 						<li><a href="amuleweb-main-upload.php">Uploads</a></li>
 						<li><a href="amuleweb-main-search.php">Search</a></li>
@@ -96,9 +96,5 @@
 		<!-- /footer -->
 	</div>
 	<!-- /page -->
-
-	<script>
-            //App custom javascript
-    </script>
 </body>
 </html>
