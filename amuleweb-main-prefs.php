@@ -16,7 +16,7 @@
 			<div data-role="header" data-position="inline">
 				<a href="#" data-rel="back" data-icon="arrow-l">Back</a>
 				<h1>Config</h1>
-				<a href="#" id="btMenu" data-icon="home">Menu</a>
+				<a href="#" id="btMenu" class="hideOnDesktop" data-icon="home" onClick="showMenu();">Menu</a>
 			</div><!-- /header -->
 
 		<div data-role="content">
@@ -143,11 +143,11 @@
 			<!--/content-primary -->
 
 			<div class="content-secondary">
-				<div id="menu" data-role="collapsible" data-collapsed="true" data-theme="b" data-content-theme="d">
+				<div class="menu" data-role="collapsible" data-collapsed="true" data-theme="b" data-content-theme="d">
 					<h3>Menu</h3>
 					<ul data-role="listview" data-theme="c" data-dividertheme="d" data-inset="true">
-						<li><a href="amuleweb-main-status.php">Status</a></li>
-						<li><a href="amuleweb-main-dload.php">Downloads</a></li>
+						<li><a href="amuleweb-main-dload.php">Status</a></li>
+						<li><a href="amuleweb-main-dload-real.php">Downloads</a></li>
 						<li><a href="amuleweb-main-upload.php">Uploads</a></li>
 						<li><a href="amuleweb-main-search.php">Search</a></li>
 						<li data-theme="a"><a href="amuleweb-main-prefs.php">Configurations</a></li>
@@ -158,7 +158,7 @@
 						<li><a href="login.php">Logout</a></li>
 					</ul>
 				</div>
-				<a href="#" id="btScrollUp" class="visibleOnMobile" data-role="button" data-icon="arrow-u" data-iconpos="right">scroll up</a>
+				<a href="#" id="btScrollUp" class="hideOnDesktop" data-role="button" data-icon="arrow-u" data-iconpos="right" onClick="scrollUp();">scroll up</a>
 			</div>
 		</div>
 		<!-- /content -->

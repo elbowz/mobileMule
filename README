@@ -5,13 +5,14 @@ code.google.com/p/unuseful-code
 mobileMule is aMule web server template/skin for mobile and desktop. Based on jQuery mobile library.
 
 :COMPATIBILITY
-Tested on android (Default browser, Opera), Linux (Chrome, Firefox), Windows (Chrome, Firefox)
+Tested on android (Default browser, Opera, Boat browser, etc), Linux (Chrome, Firefox), Windows (Chrome, Firefox).
+Also work with GetEd2k (https://play.google.com/store/apps/details?id=org.anacletus.geted2k)
 
 :HOW TO INSTALL
 
-a. Move this entire direcotry in "/usr/share/amule/webserver/" (or /usr/local/share/amule/webserver, $HOME/.aMule/webserver/), default directory for amule seb skins
+a. Move this entire direcotry in "/usr/share/amule/webserver/" (or /usr/local/share/amule/webserver, $HOME/.aMule/webserver/), default directory for amule web skins
 a.1 Now you must have "/usr/share/amule/webserver/mobilemule"
-c. If you want this skin as default, rename 'mobilemule' dir in "default", else go to point d 
+c. If you want this skin as default, rename 'mobilemule' dir in "default", else continue 
 d. Edit row 'Template=' in "$HOME/.aMule/remote.conf" in 'Template=mobilemule'
 e. restart amule (or only amuleweb)
 

@@ -1,3 +1,10 @@
+ 1.2b
+- Minify css and js library
+- Fixed infinite (ajax) status update
+- Fixed 'Menu' and 'Scroll up' button
+- Hide 'Menu' button on desktop mode
+- Change default page after login to 'Status'
+
  1.1b
 - Fixed web server "freeze" issue: Amule web server often "freeze" and not release entire web page an js script...this cause some problems in buttons, checkboxs and javascript releated stufs.
 

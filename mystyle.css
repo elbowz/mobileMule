@@ -17,7 +17,11 @@
 		.content-secondary .ui-listview {
 			margin: 0;
 		}
-		#menu {
+		
+		.hideOnMobile {
+			display: none !important;
+		}
+		.menu {
 			margin-top: 20px;
 		}
 		
@@ -112,10 +116,10 @@
 				padding: 0;
 			}
 			
-			.visibleOnMobile {
-				display: none;
+			.hideOnDesktop {
+				display: none !important;
 			}
-			#menu {
+			.menu {
 				margin-top: 0px;
 			}
 			

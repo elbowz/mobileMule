@@ -1,7 +1,10 @@
+var timerStatusUpdate = 0;
+
 $( document ).delegate("#status", "pageinit", function() {
 	updateStatus();
-	var timer = setInterval(updateStatus, 3000);
-
+	timerStatusUpdate = setInterval(updateStatus, 3000);
+	console.log('start update status timer - id: ' + timerStatusUpdate);
+	
 	var counter = 0;
 
 	function updateStatus() {
@@ -64,23 +67,36 @@ $( document ).delegate("#status", "pageinit", function() {
 	}
 });
 
-//$( document ).delegate("#status, #dload, #uploads", "pageinit", function() {
-	$( document ).delegate("#btMenu", "click", function(e) {
-		$('#menu').trigger('expand');
-		goToByScroll('#menu');
-	});
+function showMenu( ) {
+	console.log('showMenu');
+	$('.menu').trigger('expand');
+	//goToByScroll('.menu');
+	$('html, body').animate({scrollTop: $(document).height()}, 'slow', function(){ $('body').clearQueue(); });
+}
 
-	$( document ).delegate("#btScrollUp", "click", function(e) {
-		goToByScroll('body');
-	});
+function scrollUp( ) {
+	console.log('scrollUp');
+	//goToByScroll('body');
+	$('body').animate({scrollTop : '0px'}, 'slow', function(){ $('body').clearQueue(); });
+}
 
-	function goToByScroll(id) {
-		$('body').animate({scrollTop : $(id).offset().top}, 'slow', function(){ $('body').clearQueue(); });
+$(document).bind('pagebeforecreate', function() {
+	console.log('pagebeforecreate');
+	if( timerStatusUpdate ) { 
+		clearInterval(timerStatusUpdate);
+		console.log('stop update status timer - id: ' + timerStatusUpdate);
+		timerStatusUpdate = 0;
 	}
+});
+
+$(document).bind('pageinit', function() {
+	console.log('pageinit');
+});
+
+//$( document ).delegate("#btScrollUp", "vclick", function(e) {
+//	goToByScroll('body');
 //});
-
-
-
-
-
-
+//$( document ).delegate("#btMenu", "click", function(e) {
+//	$('#menu').trigger('expand');
+//	goToByScroll('#menu');
+//});
