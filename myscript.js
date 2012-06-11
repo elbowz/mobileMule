@@ -39,7 +39,7 @@ $( document ).delegate("#status", "pageinit", function() {
 							connectionStatus += 'high ID';
 
 						$('#server-address').html(data.serv_addr);
-						//$('#server-name').html(data.serv_name);
+						$('#server-name').html(data.serv_name);
 						//$('#server-users').html(data.serv_users);
 
 					}

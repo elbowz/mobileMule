@@ -21,7 +21,7 @@
 
 		<div data-role="content">
 			<div class="content-primary">
-				<form action="amuleweb-main-dload.php" method="post" name="mainform">
+				<form action="amuleweb-main-dload-real.php" method="post" name="mainform">
 					<input type="hidden" name="command">
 					
 	        		<div data-role="navbar">
@@ -217,10 +217,14 @@
 									
 								echo StatusString($file), "&nbsp;-&nbsp;", PrioString($file), "</p>";
 								
-								$imgSrc = true;
-								$imgSrc = split('"',  $file->progress, 2);
-								echo '<p><div class="ui-li-desc" style="background-color: #CCCCCC; background-image:url(', $imgSrc[1], '); background-repeat:no-repeat; text-align: center; background-size:100% 100%; text-shadow: 0px 0px 2px black; color: #CCCCCC; padding: 2px 2px; font-weight: bold;">', CastToXBytes($file->size_done),"&nbsp;/&nbsp;", CastToXBytes($file->size), '</div></p>';
 								
+								// Heavy for amule webserver
+								//$imgSrc = true;
+								//$imgSrc = split('"',  $file->progress, 2);
+								//echo '<p><div class="ui-li-desc" style="background-color: #CCCCCC; background-image:url(', $imgSrc[1], '); background-repeat:no-repeat; text-align: center; background-size:100% 100%; text-shadow: 0px 0px 2px black; color: #CCCCCC; padding: 2px 2px; font-weight: bold;">', CastToXBytes($file->size_done),"&nbsp;/&nbsp;", CastToXBytes($file->size), '</div></p>';
+								$percentual_progress = ((float)$file->size_done*100)/((float)$file->size);
+			
+			
 								echo "<p>";
 								if ( $file->src_count_not_curr != 0 ) {
 									echo $file->src_count - $file->src_count_not_curr, " / ";
@@ -230,8 +234,8 @@
 									echo "+ ", $file->src_count_a4af;
 								}
 								echo "&nbsp;-&nbsp;", $file->last_seen_complete ? "" : "<i>never</i>&nbsp;", "seen completed</p>";
-								
-								echo '<span class="ui-li-count">',((float)$file->size_done*100)/((float)$file->size), '%</span>';
+													echo '<p><div class="ui-li-desc" style="text-align: center; background-color: #CCCCCC; width: ', $percentual_progress ,'%;">', CastToXBytes($file->size_done),"&nbsp;/&nbsp;", CastToXBytes($file->size), '</div></p>';
+								echo '<span class="ui-li-count">',$percentual_progress, '%</span>';
 				
 								echo "</a>";
 								

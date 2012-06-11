@@ -1,3 +1,7 @@
+ 1.3b
+- Fixed sort and filter on download page 
+- Remove img with progress from download page and add a progress bar for lighten
+
  1.2b
 - Minify css and js library
 - Fixed infinite (ajax) status update

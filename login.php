@@ -46,7 +46,7 @@
 			<h2>About</h2>
 		</div>
 		<div data-role="content">
-			<p><strong>mobileMule v1.2b</strong><br/>
+			<p><strong>mobileMule v1.3b</strong><br/>
 			coded by muttley<br/>
 			copyright 2012<br/>
 			<a href="http://code.google.com/p/unuseful-code/" title="mobileMule project page">code.google.com/p/unuseful-code</a><br/><br/>

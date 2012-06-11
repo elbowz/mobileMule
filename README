@@ -10,10 +10,10 @@ Also work with GetEd2k (https://play.google.com/store/apps/details?id=org.anacle
 
 :HOW TO INSTALL
 
-a. Move this entire direcotry in "/usr/share/amule/webserver/" (or /usr/local/share/amule/webserver, $HOME/.aMule/webserver/), default directory for amule web skins
-a.1 Now you must have "/usr/share/amule/webserver/mobilemule"
-c. If you want this skin as default, rename 'mobilemule' dir in "default", else continue 
-d. Edit row 'Template=' in "$HOME/.aMule/remote.conf" in 'Template=mobilemule'
+a. Extract and move the entire direcotry in "/usr/share/amule/webserver/" (or /usr/local/share/amule/webserver, $HOME/.aMule/webserver/), default directory for amule web skins
+a.1 Now you must have "/usr/share/amule/webserver/mobileMule"
+c. If you want this skin as default, rename 'mobileMule' dir in "default" (not good idea if you have automatic update with some like repository), else continue 
+d. Edit row 'Template=' in "$HOME/.aMule/amule.conf" (or if present "remote.conf") in 'Template=mobileMule'
 e. restart amule (or only amuleweb)
 
 :SUPPORT

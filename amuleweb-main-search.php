@@ -22,7 +22,6 @@
 		<div data-role="content">
 			<div class="content-primary">
 			
-			
 				<form name="mainform" action="amuleweb-main-search.php" method="post">
 					<input type="hidden" name="command" value=""> 
                     <input name="searchval" type="text" id="searchval4" size="60"> 
