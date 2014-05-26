@@ -15,29 +15,30 @@
 
 		<div data-role="header" data-position="inline">
 			<a href="#" data-rel="back" data-icon="arrow-l">Back</a>
-			<h1>Status</h1>
+			<h1>Donation pack</h1>
 			<a href="#" id="btMenu" class="hideOnDesktop" data-icon="home" onClick="showMenu();">Menu</a>
 		</div><!-- /header -->
 
 		<div data-role="content">
 			<div class="content-primary">
-				<ul data-role="listview" data-theme="c" data-divider-theme="d">
-					<li data-role="list-divider">Speed</li>
-					<li>Download / Limit<span id="speed_down" class="ui-li-aside">n / n</span></li>
-					<li>Upload / Limit<span id="speed_up" class="ui-li-aside">n / n</span></li>
-					<li id="server" data-role="list-divider">Server (init ...)</li>
-					<li class="server-child">Address <span id="server-address" class="ui-li-aside">x.x.x.x</span></li>
-					<li class="server-child">Name <span id="server-name" class="ui-li-aside">init</span></li>
-					<!-- <li class="server-child">Users <span id="server-users" class="ui-li-aside">n</span></li>-->
-					<li id="kad" data-role="list-divider">Kad (init ...)</li>
-					<li><p><strong>note:</strong> this info is refred each 3 seconds.</p></li>
-				</ul>
+				If you like mobileMule please consider to make a donation
+                <div style="text-align: center; margin-top: 15px;">
+                    <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=muttley%2ebd%40gmail%2ecom&lc=IT&item_name=mobileMule&item_number=aMule%20web%20mobile%20skin&currency_code=EUR&bn=PP%2dDonationsBF%3abtn_donate_LG%2egif%3aNonHosted" title="Donate"><img src="paypal.png" /></a></p>
+                </div>
+                You'll receive <strong>mobileMule Donation Pack</strong> with new panels:
+                <ul>
+                    <li>Search</li>
+                    <li>Configurations</li>
+                    <li>Add ed2k</li>
+                </ul>
+
+                ...and you can help and support the development of project.
 			</div>
 			<!--/content-primary -->
 
-            <div id="menu" class="content-secondary">
+			<div id="menu" class="content-secondary">
                 <!-- here is injected menù from pagebeforecreate event -->
-            </div>
+			</div>
 		</div>
 		<!-- /content -->
 

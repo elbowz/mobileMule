@@ -34,24 +34,9 @@
 			</div>
 			<!--/content-primary -->
 
-			<div class="content-secondary">
-				<div class="menu" data-role="collapsible" data-collapsed="true" data-theme="b" data-content-theme="d">
-					<h3>Menu</h3>
-					<ul data-role="listview" data-theme="c" data-dividertheme="d" data-inset="true">
-						<li><a href="amuleweb-main-status.php">Status</a></li>
-						<li><a href="amuleweb-main-dload-real.php">Downloads</a></li>
-						<li><a href="amuleweb-main-upload.php">Uploads</a></li>
-						<li><a href="amuleweb-main-search.php">Search</a></li>
-						<li><a href="amuleweb-main-prefs.php">Configurations</a></li>
-						<li><a href="amuleweb-main-stats.php">Statistics</a></li>
-						<li><a href="amuleweb-main-graph.php">Graphs</a></li>
-						<li data-theme="a"><a href="amuleweb-main-log.php">Log</a></li>
-						<li><a href="footer.php">Add ed2k</a></li>
-						<li><a href="login.php">Logout</a></li>
-					</ul>
-				</div>
-				<a href="#" id="btScrollUp" class="hideOnDesktop" data-role="button" data-icon="arrow-u" data-iconpos="right" onClick="scrollUp();">scroll up</a>
-			</div>
+            <div id="menu" class="content-secondary">
+                <!-- here is injected menù from pagebeforecreate event -->
+            </div>
 		</div>
 		<!-- /content -->
 

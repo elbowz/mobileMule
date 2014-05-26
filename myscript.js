@@ -91,10 +91,28 @@ $(document).bind('pagebeforecreate', function() {
 		console.log('stop update status timer - id: ' + timerStatusUpdate);
 		timerStatusUpdate = 0;
 	}
+
+    $('#menu').html('<div class="menu" data-role="collapsible" data-collapsed="true" data-theme="b" data-content-theme="d">\
+                        <h3>Menu</h3>\
+                        <ul data-role="listview" data-theme="c" data-dividertheme="d" data-inset="true">\
+                            <li data-theme="a"><a href="amuleweb-main-status.php">Status</a></li>\
+                            <li><a href="amuleweb-main-dload-real.php">Downloads</a></li>\
+                            <li><a href="amuleweb-main-upload.php">Uploads</a></li>\
+                            <li><a href="amuleweb-main-donate.php">Search</a></li>\
+                            <li><a href="amuleweb-main-donate.php">Configurations</a></li>\
+                            <li><a href="amuleweb-main-stats.php">Statistics</a></li>\
+                            <li><a href="amuleweb-main-graph.php">Graphs</a></li>\
+                            <li><a href="amuleweb-main-log.php">Log</a></li>\
+                            <li><a href="amuleweb-main-donate.php">Add ed2k</a></li>\
+                            <li><a href="login.php">Logout</a></li>\
+                        </ul>\
+                    </div>\
+                    <a href="#" id="btScrollUp" class="hideOnDesktop" data-role="button" data-icon="arrow-u" data-iconpos="right" onClick="scrollUp();">scroll up</a>');
 });
 
 $(document).bind('pageinit', function() {
 	console.log('pageinit');
+
 });
 
 // Disable send form through AJAX (default behavior)
