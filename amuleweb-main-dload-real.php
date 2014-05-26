@@ -4,11 +4,11 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<title>Downloads - mobileMule</title>
-	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.css" />
+	<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jquerymobile/1.4.2/jquery.mobile.min.css" />
 	<link rel="stylesheet" href="mystyle.css" />
-	<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
-	<script src="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.js"></script>
-	<script src="myscript.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="myscript.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquerymobile/1.4.2/jquery.mobile.min.js"></script>
 </head>
 <body>
 	<div data-role="page" id="dload" class="type-interior">
@@ -65,8 +65,8 @@
 							echo "<b>&nbsp;You logged in as guest - commands are disabled</b>";
 						}
 				 	?>
+                    <legend>Sort: </legend>
 				 	<div data-role="controlgroup">
-					 	<label for="sort" class="select">Sort:</label>
 						<select name="sort" id="sort" data-native-menu="false">
 						   <option value="name"<?php echo (('name' == $HTTP_GET_VARS["sort"]) ? ' selected' : ''); ?>>File name</option>
 						   <option value="size"<?php echo (('size' == $HTTP_GET_VARS["sort"]) ? ' selected' : ''); ?>>Size</option>
@@ -182,7 +182,7 @@
 						if ( $sort_order == "" ) {
 							$sort_order = $_SESSION["download_sort"];
 						} 
-						
+
 						//if not set download_sort_reverse
 						$_SESSION["download_sort_reverse"] = $HTTP_GET_VARS["download_sort_reverse"] ? 1 : 0; 
 						
@@ -272,37 +272,46 @@
 		<!-- /content -->
 
 		<div data-role="footer" data-theme="c">
-			<p>&nbsp;<a href="amuleweb-main-about.php" title="about" data-rel="dialog">mobileMule</a> &copy; 2011-12</p>
+			<p>&nbsp;<a href="amuleweb-main-about.php" title="about" data-rel="dialog" data-transition="pop">mobileMule</a> &copy; 2014</p>
 		</div>
 		<!-- /footer -->
 		<script>
-			$( document ).delegate(".file-check", "click", function() {
-			/*$(".file-check").click(function() {*/
-	  			var checkboxHashId = $(this).attr('data-hash');
-	  			$('<input>').attr({
-	  			    type: 'hidden',
-	  			    name: checkboxHashId,
-	  			    value: 'on'
-	  			}).appendTo('form[name="mainform"]');
-	
-	  			$('#'+checkboxHashId).toggleClass('ui-btn-active');
-			});
-	
-			$( 'select[name="status"], select[name="category"]' ).change( function() {
-				$('input[name="command"]').attr('value', 'filter');
-				$(this).closest('form').submit();
-			});
-	
-			$( 'select[name="sort"], #sort_reverse' ).bind('change click', function() {
-				var value = $('#sort_reverse').attr('data-value');
-				$('<input>').attr({
-	  			    type: 'hidden',
-	  			    name: 'download_sort_reverse',
-	  			    value: value
-	  			}).appendTo('form[name="mainform"]');
-	
-				$(this).closest('form').submit();
-			});
+            $(document).ready(function () {
+
+                $(document).on("click", ".file-check", function () {
+                    var checkboxHashId = $(this).attr('data-hash');
+                    $('<input>').attr({
+                        type: 'hidden',
+                        name: checkboxHashId,
+                        value: 'on'
+                    }).appendTo('form[name="mainform"]');
+
+                    $('#' + checkboxHashId).toggleClass('ui-btn-active');
+                });
+
+                $('select[name="status"], select[name="category"]').change(function () {
+                    $('input[name="command"]').attr('value', 'filter');
+                    $(this).closest('form').submit();
+                });
+
+                $('select[name="sort"]').change(function () {
+                    setTimeout(function(){$('form[name="mainform"]').submit();},500)
+
+                });
+
+                $('#sort_reverse').bind("click",function () {
+                    event.preventDefault();
+
+                    var value = $('#sort_reverse').attr('data-value');
+                    $('<input>').attr({
+                        type: 'hidden',
+                        name: 'download_sort_reverse',
+                        value: value
+                    }).appendTo('form[name="mainform"]');
+
+                    $(this).closest('form').submit();
+                });
+            });
 			
 			function formCommandSubmit( command )
 			{

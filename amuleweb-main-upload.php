@@ -4,11 +4,11 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<title>Uploads - mobileMule</title>
-	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.css" />
+	<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jquerymobile/1.4.2/jquery.mobile.min.css" />
 	<link rel="stylesheet" href="mystyle.css" />
-	<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
-	<script src="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.js"></script>
-	<script src="myscript.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="myscript.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquerymobile/1.4.2/jquery.mobile.min.js"></script>
 </head>
 <body>
 	<div data-role="page" id="uploads" class="type-interior">
@@ -75,7 +75,7 @@
 		<!-- /content -->
 
 		<div data-role="footer" data-theme="c">
-			<p>&nbsp;<a href="amuleweb-main-about.php" title="about" data-rel="dialog">mobileMule</a> &copy; 2011-12</p>
+			<p>&nbsp;<a href="amuleweb-main-about.php" title="about" data-rel="dialog" data-transition="pop">mobileMule</a> &copy; 2014</p>
 		</div>
 		<!-- /footer -->
 		<script>

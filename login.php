@@ -4,10 +4,10 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<title>Login - mobileMule</title>
-	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.css" />
-	<link rel="stylesheet" href="mystyle.css" />
-	<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
-	<script src="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.js"></script>
+    <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jquerymobile/1.4.2/jquery.mobile.min.css" />
+    <link rel="stylesheet" href="mystyle.css" />
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquerymobile/1.4.2/jquery.mobile.min.js"></script>
 </head>
 <body>
 	<div data-role="page" id="login">
@@ -29,7 +29,7 @@
 		</div><!-- /content -->
 		
 		<div data-role="footer" data-theme="c">
-			<p>&nbsp;<a href="#about" title="about" data-rel="dialog">mobileMule</a> &copy; 2011-12</p>
+			<p>&nbsp;<a href="#about" title="about" data-rel="dialog">mobileMule</a> &copy; 2014</p>
 		</div><!-- /footer -->
 		
 		<script>

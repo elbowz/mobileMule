@@ -1,6 +1,6 @@
 var timerStatusUpdate = 0;
 
-$( document ).delegate("#status", "pageinit", function() {
+$( document ).on("pageinit", "#status", function() {
 	updateStatus();
 	timerStatusUpdate = setInterval(updateStatus, 3000);
 	console.log('start update status timer - id: ' + timerStatusUpdate);
@@ -67,7 +67,7 @@ $( document ).delegate("#status", "pageinit", function() {
 	}
 });
 
-$( document ).delegate("#first-page", "pageinit", function() {
+$( document ).on("pageinit", "#first-page", function() {
 	$.mobile.changePage( "amuleweb-main-status.php", { transition: "none" } );	
 });
 
@@ -97,10 +97,9 @@ $(document).bind('pageinit', function() {
 	console.log('pageinit');
 });
 
-//$( document ).delegate("#btScrollUp", "vclick", function(e) {
-//	goToByScroll('body');
-//});
-//$( document ).delegate("#btMenu", "click", function(e) {
-//	$('#menu').trigger('expand');
-//	goToByScroll('#menu');
-//});
+// Disable send form through AJAX (default behavior)
+$(document).bind("mobileinit", function(){
+    $.extend(  $.mobile , {
+        ajaxEnabled: false
+    });
+});
