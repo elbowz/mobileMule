@@ -25,37 +25,39 @@
 				<form name="mainform" action="amuleweb-main-search.php" method="post">
 					<input type="hidden" name="command" value=""> 
                     <input name="searchval" type="text" id="searchval4" size="60"> 
-                    <input name="Search" type="submit" id="Search4" value="Search" onClick="javascript:formCommandSubmit('search');">
-                  Availability:
+                    <input name="Search" type="submit" id="Search4" value="Search" onClick="javascript:formCommandSubmit('search');" class="ui-btn-b">
+                    <legend>Availability:</legend>
                     <input name="avail" type="text" id="avail13" size="6">
-                  Min Size: 
+                    <legend>Min Size: </legend>
 					<input name="minsize" type="text" id="minsize2" size="5"> 
-                    <select name="minsizeu" id="select8">
-                      <option>Byte</option>
-                      <option>KByte</option>
-                      <option selected>MByte</option>
-                      <option>GByte</option>
+                    <select name="minsizeu" id="select8" data-native-menu="false">
+                      <option value="Byte">Byte</option>
+                      <option value="KByte">KByte</option>
+                      <option value="MByte" selected>MByte</option>
+                      <option value="GByte">GByte</option>
                     </select>
-                <a href="amuleweb-main-search.php?search_sort=<?php echo($HTTP_GET_VARS["sort"]);?>">Click here to update the search results</a>
-                  Search type:
-                    <select name="searchtype" id="select">
-                      <option selected>Local</option>
-                      <option>Global</option>
-                      <option>Kad</option>
+                    <legend>Max Size:</legend>
+                    <input name="maxsize" type="text" id="maxsize4" size="5">
+                    <select name="maxsizeu" id="select10" data-native-menu="false">
+                        <option value="Byte">Byte</option>
+                        <option value="KByte">KByte</option>
+                        <option value="MByte" selected>MByte</option>
+                        <option value="GByte">GByte</option>
                     </select>
-                  Max Size:
-				<input name="maxsize" type="text" id="maxsize4" size="5"> 
-                    <select name="maxsizeu" id="select10">
-                      <option>Byte</option>
-                      <option>KByte</option>
-                      <option selected>MByte</option>
-                      <option>GByte</option>
+                    <legend>Search type:</legend>
+                    <select name="searchtype" id="select" data-native-menu="false">
+                      <option value="Local" selected>Local</option>
+                      <option value="Global">Global</option>
+                      <option value="Kad">Kad</option>
                     </select>
-     
-            	 <a href="amuleweb-main-search.php?sort=name">File Name</a>
-                 <a href="amuleweb-main-search.php?sort=size">Size</a>
-                 <a href="amuleweb-main-search.php?sort=sources">Sources</a>
-   
+                    <div class="ui-grid-c" style=margin-top: 10px;">
+                        <div class="ui-block-a"><a href="#" class="ui-btn ui-btn-inline ui-mini ui-state-disabled">Order by</a></div>
+                        <div class="ui-block-b"><a href="amuleweb-main-search.php?sort=name" class="ui-btn ui-btn-inline ui-corner-all ui-mini">File Name</a></div>
+                        <div class="ui-block-c"><a href="amuleweb-main-search.php?sort=size" class="ui-btn ui-btn-inline ui-corner-all ui-mini">Size</a></div>
+                        <div class="ui-block-d"><a href="amuleweb-main-search.php?sort=sources" class="ui-btn ui-btn-inline ui-corner-all ui-mini">Sources</a></div>
+                    </div>
+                    <a href="amuleweb-main-search.php?search_sort=<?php echo($HTTP_GET_VARS["sort"]);?>" class="ui-btn ui-icon-refresh ui-btn-icon-right ui-shadow ui-corner-all ui-btn-b" style="padding-right: 10px; margin-top: 20px;">Update the search results</a>
+
     <?php
 		function CastToXBytes($size)
 		{
@@ -178,17 +180,15 @@
 			echo "</li>";
 		}
 		echo '</ul>';
-
 	  ?>
-
-        <input name="Download" type="submit" id="Download6" value="Download" onClick="javascript:formCommandSubmit('download');" >
-        <select name="targetcat" id="select32">
-          <?php
-                	$cats = amule_get_categories();
-                	foreach($cats as $c) {
-                		echo "<option>", $c, "</option>";
-                	}
-                ?>
+        <button id="Download6" onClick="javascript:formCommandSubmit('download');" class="ui-btn ui-corner-all ui-icon-plus ui-btn-icon-right" style="padding-right: 10px; margin-top: 30px;">Download</button>
+        <select name="targetcat" id="select32" data-native-menu="false">
+        <?php
+                $cats = amule_get_categories();
+                foreach($cats as $c) {
+                    echo "<option value=\"".$c."\">", $c, "</option>";
+                }
+        ?>
         </select>
 </form>
 			</div>
