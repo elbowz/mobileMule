@@ -18,7 +18,7 @@
 		</div>
 					
 		<div data-role="content">
-			<p><strong>mobileMule v1.4b</strong><br/>
+			<p><strong>mobileMule v1.5b</strong><br/>
 			coded by muttley<br/>
 			copyright 2014<br/>
 			<a href="https://github.com/elbowz/mobileMule" title="mobileMule project page">github.com/elbowz/mobileMule</a><br/><br/>
