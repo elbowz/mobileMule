@@ -29,12 +29,12 @@ $(document).on('pagebeforecreate', function() {
                             <li data-icon="home"><a href="amuleweb-main-status.php">Status</a></li>\
                             <li><a href="amuleweb-main-dload-real.php">Downloads</a></li>\
                             <li><a href="amuleweb-main-upload.php">Uploads</a></li>\
-                            <li><a href="amuleweb-main-donate.php">Search</a></li>\
-                            <li><a href="amuleweb-main-donate.php">Configurations</a></li>\
+                            <li><a href="amuleweb-main-search.php">Search</a></li>\
+                            <li><a href="amuleweb-main-prefs.php">Configurations</a></li>\
                             <li><a href="amuleweb-main-stats.php">Statistics</a></li>\
                             <li><a href="amuleweb-main-graph.php">Graphs</a></li>\
                             <li><a href="amuleweb-main-log.php">Log</a></li>\
-                            <li><a href="amuleweb-main-donate.php">Add ed2k</a></li>\
+                            <li><a href="footer.php">Add ed2k</a></li>\
                             <li data-icon="power"><a href="login.php">Logout</a></li>\
                            </ul>');
 });

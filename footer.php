@@ -13,14 +13,18 @@
 <body>
 	<div data-role="page" id="footer" class="type-interior">
 
-		<div data-role="header" data-position="inline">
-			<a href="#" data-rel="back" data-icon="arrow-l">Back</a>
-			<h1>Add ed2k</h1>
-			<a href="#" id="btMenu" class="hideOnDesktop" data-icon="home" onClick="showMenu();">Menu</a>
-		</div><!-- /header -->
+
+        <div data-role="panel" id="menu-panel" data-display="push">
+            <!-- here is injected menù from pagebeforecreate event -->
+        </div>
+
+        <div data-role="header" data-position="inline">
+            <a href="#menu-panel" data-rel="close" id="btMenu" data-icon="home">Menu</a>
+            <h1>Uploads</h1>
+            <a href="#" data-rel="back" data-icon="arrow-l">Back</a>
+        </div><!-- /header -->
 
 		<div data-role="content">
-			<div class="content-primary">
 	            <form action="footer.php" method="post" name="formlink" data-ajax="false">
 					
 					<label for="pass">Ed2k link:</label> <input name="ed2klink" type="text" id="ed2klink">
@@ -55,34 +59,14 @@
 				     <br/>
 					<input type="submit" name="Submit" value="Download link" />
 				</form>
-			</div>
-			<!--/content-primary -->
-
-			<div class="content-secondary">
-				<div class="menu" data-role="collapsible" data-collapsed="true" data-theme="b" data-content-theme="d">
-					<h3>Menu</h3>
-					<ul data-role="listview" data-theme="c" data-dividertheme="d" data-inset="true">
-						<li><a href="amuleweb-main-status.php">Status</a></li>
-						<li><a href="amuleweb-main-dload-real.php">Downloads</a></li>
-						<li><a href="amuleweb-main-upload.php">Uploads</a></li>
-						<li><a href="amuleweb-main-search.php">Search</a></li>
-						<li><a href="amuleweb-main-prefs.php">Configurations</a></li>
-						<li><a href="amuleweb-main-stats.php">Statistics</a></li>
-						<li><a href="amuleweb-main-graph.php">Graphs</a></li>
-						<li><a href="amuleweb-main-log.php">Log</a></li>
-						<li data-theme="a"><a href="footer.php">Add ed2k</a></li>
-						<li><a href="login.php">Logout</a></li>
-					</ul>
-				</div>
-				<a href="#" id="btScrollUp" class="hideOnDesktop" data-role="button" data-icon="arrow-u" data-iconpos="right" onClick="scrollUp();">scroll up</a>
-			</div>
 		</div>
 		<!-- /content -->
 
-		<div data-role="footer" data-theme="c">
-			<p>&nbsp;<a href="amuleweb-main-about.php" title="about" data-rel="dialog" data-transition="pop">mobileMule</a> &copy; 2014</p>
-		</div>
-		<!-- /footer -->
+        <div data-role="footer" role="contentinfo" class="ui-footer" data-theme="c">
+            <a href="#" id="btScrollUp" data-role="button" data-icon="arrow-u" data-iconpos="right">scroll up</a>
+            <p>&nbsp;<a href="amuleweb-main-about.php" title="about" data-rel="dialog" data-transition="pop">mobileMule</a> &copy; 2014</p>
+        </div>
+        <!-- /footer -->
 		<script>
 		</script>
 	</div>
