@@ -11,7 +11,7 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquerymobile/1.4.2/jquery.mobile.min.js"></script>
 </head>
 <body>
-	<!-- IMPORTANT: Update also login.php#about -->
+	<!-- IMPORTANT: Update also login.php#version -->
 	<div data-role="dialog" id="about">
 		<div data-role="header" data-position="inline">
 			<h2>About</h2>

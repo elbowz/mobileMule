@@ -1,8 +1,8 @@
-		.type-interior .content-secondary {
+/*		.type-interior .content-secondary {
 			border-right: 0;
 			border-left: 0;
 			margin: 10px -15px 0;
-			/*background: #fff;*/
+			*//*background: #fff;*//*
 			border-top: 1px solid #ccc;
 		}
 		
@@ -16,12 +16,9 @@
 		}
 		.content-secondary .ui-listview {
 			margin: 0;
-		}
-		
-		.hideOnMobile {
-			display: none !important;
-		}
-		.menu {
+		}*/
+
+		/*.menu {
 			margin-top: 20px;
 		}
 		
@@ -165,8 +162,86 @@
 				width: 60%;
 			}
 		}
+
+        @media ( min-width: 35em ) {
+
+            *//* wrap on wide viewports once open *//*
+
+            .ui-panel-page-content-open.ui-panel-page-content-position-left {
+                margin-right: 17em;
+            }
+            .ui-panel-page-content-open.ui-panel-page-content-position-right {
+                margin-left: 17em;
+            }
+            .ui-panel-page-content-open {
+                width: auto;
+            }
+
+            *//* disable "dismiss" on wide viewports *//*
+            .ui-panel-dismiss {
+                display: none;
+            }
+
+            *//* same as the above but for panels with display mode "push" only *//*
+
+            .ui-panel-page-content-open.ui-panel-page-content-position-left.ui-panel-page-content-display-push {
+                margin-right: 17em;
+            }
+            .ui-panel-page-content-open.ui-panel-page-content-position-right.ui-panel-page-content-display-push {
+                margin-left: 17em;
+            }
+            .ui-panel-page-content-open.ui-panel-page-content-display-push {
+                width: auto;
+            }
+
+            .ui-panel-dismiss-display-push {
+                display: none;
+            }
+        }
+
 		
-		table { width:100%; /*border-bottom:1px solid #ccc;*/ }
+		table { width:100%; *//*border-bottom:1px solid #ccc;*//* }
 		th { text-align:left; width: 170px; }
 		th, td { vertical-align:top; border-bottom:1px solid #ccc; padding: 6px 10px 4px 0; }
-		td { text-align:right; }
+		td { text-align:right; }*/
+
+#btScrollUp {
+    float: right;
+    margin-right: 10px;
+}
+
+@media ( min-width: 35em ) {
+
+    /* wrap on wide viewports once open */
+
+    .ui-panel-page-content-open.ui-panel-page-content-position-left {
+        margin-right: 17em;
+    }
+    .ui-panel-page-content-open.ui-panel-page-content-position-right {
+        margin-left: 17em;
+    }
+    .ui-panel-page-content-open {
+        width: auto;
+    }
+
+    /* disable "dismiss" on wide viewports */
+    .ui-panel-dismiss {
+        display: none;
+    }
+
+    /* same as the above but for panels with display mode "push" only */
+
+    .ui-panel-page-content-open.ui-panel-page-content-position-left.ui-panel-page-content-display-push {
+        margin-right: 17em;
+    }
+    .ui-panel-page-content-open.ui-panel-page-content-position-right.ui-panel-page-content-display-push {
+        margin-left: 17em;
+    }
+    .ui-panel-page-content-open.ui-panel-page-content-display-push {
+        width: auto;
+    }
+
+    .ui-panel-dismiss-display-push {
+        display: none;
+    }
+}
