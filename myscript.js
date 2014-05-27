@@ -84,13 +84,13 @@ function scrollUp( ) {
 	$('body').animate({scrollTop : '0px'}, 'slow', function(){ $('body').clearQueue(); });
 }
 
-$(document).bind('pagebeforecreate', function() {
-	console.log('pagebeforecreate');
-	if( timerStatusUpdate ) { 
-		clearInterval(timerStatusUpdate);
-		console.log('stop update status timer - id: ' + timerStatusUpdate);
-		timerStatusUpdate = 0;
-	}
+$(document).on('pagebeforecreate', function() {
+    console.log('pagebeforecreate');
+    if( timerStatusUpdate ) {
+        clearInterval(timerStatusUpdate);
+        console.log('stop update status timer - id: ' + timerStatusUpdate);
+        timerStatusUpdate = 0;
+    }
 
     $('#menu').html('<div class="menu" data-role="collapsible" data-collapsed="true" data-theme="b" data-content-theme="d">\
                         <h3>Menu</h3>\
@@ -112,7 +112,6 @@ $(document).bind('pagebeforecreate', function() {
 
 $(document).bind('pageinit', function() {
 	console.log('pageinit');
-
 });
 
 // Disable send form through AJAX (default behavior)

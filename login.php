@@ -5,7 +5,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<title>Login - mobileMule</title>
     <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jquerymobile/1.4.2/jquery.mobile.min.css" />
-    <link rel="stylesheet" href="mystyle.css" />
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquerymobile/1.4.2/jquery.mobile.min.js"></script>
 </head>
@@ -27,32 +26,31 @@
 				<input name="submit" type="submit" value="Submit" />
 			</form>
 		</div><!-- /content -->
-		
-		<div data-role="footer" data-theme="c">
-			<p>&nbsp;<a href="#about" title="about" data-rel="dialog">mobileMule</a> &copy; 2014</p>
-		</div><!-- /footer -->
-		
-		<script>
-			$( document ).delegate("#login", "pageinit", function() {
-				//$('#pass').focus();
-				// worckround...
-				setTimeout( function(){ $('#pass').focus(); },0 );
-			});
-		</script>
+
+        <div data-role="footer" data-theme="c">
+            <p>&nbsp;<a href="https://github.com/elbowz/mobileMule" title="about" data-rel="dialog" data-transition="pop">mobileMule</a> &copy; 2014</p>
+        </div>
 	</div>
-	<!-- IMPORTANT: Update also amuleweb-main-about.php -->
-	<div data-role="page" id="about">
-		<div data-theme="a" data-role="header">
-			<h2>About</h2>
-		</div>
-		<div data-role="content">
-			<p><strong>mobileMule v1.3b</strong><br/>
-			coded by muttley<br/>
-			copyright 2012<br/>
-			<a href="http://code.google.com/p/unuseful-code/" title="mobileMule project page">code.google.com/p/unuseful-code</a><br/><br/>
-			<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=muttley%2ebd%40gmail%2ecom&lc=IT&item_name=mobileMule&item_number=aMule%20web%20mobile%20skin&currency_code=EUR&bn=PP%2dDonationsBF%3abtn_donate_LG%2egif%3aNonHosted" title="Donate"><img src="https://www.paypalobjects.com/en_GB/i/btn/btn_donate_LG.gif" /></a></p>
-		</div>
-		<!-- /content -->
-	</div>
+    <script>
+        var currentVersion = '1.3b';
+
+        $(document).on('pagebeforecreate', "#login", function() {
+            $.ajax({
+                url: "https://rawgithub.com/elbowz/mobileMule/master/latestVersion.js",
+                dataType: 'script',
+                success: function( ) {
+                    if(latestVersion != currentVersion) {
+                        console.log('NEW VERSION AVVIABLE')
+                    }
+                }
+            });
+        });
+
+        $( document ).on("pageinit", "#login", function() {
+            //$('#pass').focus();
+            // worckround...
+            setTimeout( function(){ $('#pass').focus(); },0 );
+        });
+    </script>
 </body>
 </html>
