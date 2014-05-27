@@ -34,7 +34,7 @@
         </div>
 	</div>
     <script>
-        var currentVersion = '1.4b';
+        var currentVersion = '1.5b';
 
         $(document).on('pagebeforecreate', "#login", function() {
             $.ajax({
