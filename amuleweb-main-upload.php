@@ -13,14 +13,17 @@
 <body>
 	<div data-role="page" id="uploads" class="type-interior">
 
+        <div data-role="panel" id="menu-panel" data-display="push">
+            <!-- here is injected menù from pagebeforecreate event -->
+        </div>
+
 		<div data-role="header" data-position="inline">
-			<a href="#" data-rel="back" data-icon="arrow-l">Back</a>
-			<h1>Uploads</h1>
-			<a href="#" id="btMenu" class="hideOnDesktop" data-icon="home" onClick="showMenu();">Menu</a>
-		</div><!-- /header -->
+            <a href="#menu-panel" data-rel="close" id="btMenu" data-icon="home">Menu</a>
+            <h1>Uploads</h1>
+            <a href="#" data-rel="back" data-icon="arrow-l">Back</a>
+        </div><!-- /header -->
 
 		<div data-role="content">
-			<div class="content-primary">
                <?php
 					function CastToXBytes($size)
 					{
@@ -50,21 +53,15 @@
 					}
 					echo '</ul>';
 				?>
-			</div>
 			<!--/content-primary -->
-
-            <div id="menu" class="content-secondary">
-                <!-- here is injected menù from pagebeforecreate event -->
-            </div>
 		</div>
 		<!-- /content -->
 
-		<div data-role="footer" data-theme="c">
+		<div data-role="footer" role="contentinfo" class="ui-footer" data-theme="c">
+            <a href="#" id="btScrollUp" data-role="button" data-icon="arrow-u" data-iconpos="right">scroll up</a>
 			<p>&nbsp;<a href="amuleweb-main-about.php" title="about" data-rel="dialog" data-transition="pop">mobileMule</a> &copy; 2014</p>
 		</div>
 		<!-- /footer -->
-		<script>
-		</script>
 	</div>
 	<!-- /page -->
 </body>

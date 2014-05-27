@@ -1,5 +1,44 @@
 var timerStatusUpdate = 0;
 
+// Disable send form through AJAX (default behavior)
+$(document).on("mobileinit", function(){
+    $.extend(  $.mobile , {
+        ajaxEnabled: false
+    });
+});
+
+$(document).on('pageinit', function() {
+    console.log('pageinit');
+
+    var width = $(window).width();
+    if(width > 768){
+        $("#menu-panel").panel("open"); /* nav-panel is the id of the panel div*/
+    }
+});
+
+$(document).on('pagebeforecreate', function() {
+    console.log('pagebeforecreate');
+    if( timerStatusUpdate ) {
+        clearInterval(timerStatusUpdate);
+        console.log('stop update status timer - id: ' + timerStatusUpdate);
+        timerStatusUpdate = 0;
+    }
+
+    $('#menu-panel').html('<ul data-role="listview">\
+                            <li data-icon="delete"><a href="#" data-rel="close">Close</a></li>\
+                            <li data-icon="home"><a href="amuleweb-main-status.php">Status</a></li>\
+                            <li><a href="amuleweb-main-dload-real.php">Downloads</a></li>\
+                            <li><a href="amuleweb-main-upload.php">Uploads</a></li>\
+                            <li><a href="amuleweb-main-donate.php">Search</a></li>\
+                            <li><a href="amuleweb-main-donate.php">Configurations</a></li>\
+                            <li><a href="amuleweb-main-stats.php">Statistics</a></li>\
+                            <li><a href="amuleweb-main-graph.php">Graphs</a></li>\
+                            <li><a href="amuleweb-main-log.php">Log</a></li>\
+                            <li><a href="amuleweb-main-donate.php">Add ed2k</a></li>\
+                            <li data-icon="power"><a href="login.php">Logout</a></li>\
+                           </ul>');
+});
+
 $( document ).on("pageinit", "#status", function() {
 	updateStatus();
 	timerStatusUpdate = setInterval(updateStatus, 3000);
@@ -71,52 +110,7 @@ $( document ).on("pageinit", "#first-page", function() {
 	$.mobile.changePage( "amuleweb-main-status.php", { transition: "none" } );	
 });
 
-function showMenu( ) {
-	console.log('showMenu');
-	$('.menu').trigger('expand');
-	//goToByScroll('.menu');
-	$('html, body').animate({scrollTop: $(document).height()}, 'slow', function(){ $('body').clearQueue(); });
-}
-
-function scrollUp( ) {
-	console.log('scrollUp');
-	//goToByScroll('body');
-	$('body').animate({scrollTop : '0px'}, 'slow', function(){ $('body').clearQueue(); });
-}
-
-$(document).on('pagebeforecreate', function() {
-    console.log('pagebeforecreate');
-    if( timerStatusUpdate ) {
-        clearInterval(timerStatusUpdate);
-        console.log('stop update status timer - id: ' + timerStatusUpdate);
-        timerStatusUpdate = 0;
-    }
-
-    $('#menu').html('<div class="menu" data-role="collapsible" data-collapsed="true" data-theme="b" data-content-theme="d">\
-                        <h3>Menu</h3>\
-                        <ul data-role="listview" data-theme="c" data-dividertheme="d" data-inset="true">\
-                            <li data-theme="a"><a href="amuleweb-main-status.php">Status</a></li>\
-                            <li><a href="amuleweb-main-dload-real.php">Downloads</a></li>\
-                            <li><a href="amuleweb-main-upload.php">Uploads</a></li>\
-                            <li><a href="amuleweb-main-donate.php">Search</a></li>\
-                            <li><a href="amuleweb-main-donate.php">Configurations</a></li>\
-                            <li><a href="amuleweb-main-stats.php">Statistics</a></li>\
-                            <li><a href="amuleweb-main-graph.php">Graphs</a></li>\
-                            <li><a href="amuleweb-main-log.php">Log</a></li>\
-                            <li><a href="amuleweb-main-donate.php">Add ed2k</a></li>\
-                            <li><a href="login.php">Logout</a></li>\
-                        </ul>\
-                    </div>\
-                    <a href="#" id="btScrollUp" class="hideOnDesktop" data-role="button" data-icon="arrow-u" data-iconpos="right" onClick="scrollUp();">scroll up</a>');
-});
-
-$(document).bind('pageinit', function() {
-	console.log('pageinit');
-});
-
-// Disable send form through AJAX (default behavior)
-$(document).bind("mobileinit", function(){
-    $.extend(  $.mobile , {
-        ajaxEnabled: false
-    });
+$(document).on('click','#btScrollUp', function() {
+    console.log('scrollUp');
+    $('body').animate({scrollTop : '0px'}, 'slow', function(){ $('body').clearQueue(); });
 });

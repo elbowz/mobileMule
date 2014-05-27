@@ -16,6 +16,8 @@
 		</div>
 
 		<div data-role="content">
+            <a id="btNewVersion" href="https://github.com/elbowz/mobileMule" class="ui-btn ui-corner-all ui-btn-b" style="display: none;"></a>
+
 			<div style="text-align:center; padding: 0px 20px;">
 				<a href="#about" title="about" data-rel="dialog"><img src="amule_logo.png" width="100%" style="max-width:260px;" border="0" /></a>
 			</div>
@@ -32,7 +34,7 @@
         </div>
 	</div>
     <script>
-        var currentVersion = '1.3b';
+        var currentVersion = '1.4b';
 
         $(document).on('pagebeforecreate', "#login", function() {
             $.ajax({
@@ -41,6 +43,7 @@
                 success: function( ) {
                     if(latestVersion != currentVersion) {
                         console.log('NEW VERSION AVVIABLE')
+                        $('#btNewVersion').text(latestVersion + ' version is available!').show();
                     }
                 }
             });

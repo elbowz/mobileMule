@@ -14,14 +14,17 @@
 <body>
 	<div data-role="page" id="graphs" class="type-interior">
 
-		<div data-role="header" data-position="inline">
-			<a href="#" data-rel="back" data-icon="arrow-l">Back</a>
-			<h1>Graphs</h1>
-			<a href="#" id="btMenu" class="hideOnDesktop" data-icon="home" onClick="showMenu();">Menu</a>
-		</div><!-- /header -->
+        <div data-role="panel" id="menu-panel" data-display="push">
+            <!-- here is injected menù from pagebeforecreate event -->
+        </div>
+
+        <div data-role="header" data-position="inline">
+            <a href="#menu-panel" data-rel="close" id="btMenu" data-icon="home">Menu</a>
+            <h1>Graph</h1>
+            <a href="#" data-rel="back" data-icon="arrow-l">Back</a>
+        </div><!-- /header -->
 
 		<div data-role="content">
-			<div class="content-primary">
 				<div data-role="collapsible-set">
 					<div data-role="collapsible"  data-content-theme="c" data-collapsed="false">
 						<h3>Download-Speed</h3>
@@ -36,19 +39,12 @@
 			          	<img src="amule_stats_conncount.png" width="100%" border="0" />
 			        </div>
 		        </div>
-			</div>
-			<!--/content-primary -->
-
-            <div id="menu" class="content-secondary">
-                <!-- here is injected menù from pagebeforecreate event -->
-            </div>
 		</div>
 		<!-- /content -->
 
-		<div data-role="footer" data-theme="c">
-			<p>&nbsp;<a href="amuleweb-main-about.php" title="about" data-rel="dialog" data-transition="pop">mobileMule</a> &copy; 2014</p>
-		</div>
-		<!-- /footer -->
+        <div id="menu" class="content-secondary">
+            <!-- here is injected menù from pagebeforecreate event -->
+        </div>
 	</div>
 	<!-- /page -->
 

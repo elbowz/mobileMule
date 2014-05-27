@@ -13,14 +13,17 @@
 <body>
 	<div data-role="page" id="status" class="type-interior">
 
-		<div data-role="header" data-position="inline">
-			<a href="#" data-rel="back" data-icon="arrow-l">Back</a>
-			<h1>Donation pack</h1>
-			<a href="#" id="btMenu" class="hideOnDesktop" data-icon="home" onClick="showMenu();">Menu</a>
-		</div><!-- /header -->
+        <div data-role="panel" id="menu-panel" data-display="push">
+            <!-- here is injected menù from pagebeforecreate event -->
+        </div>
+
+        <div data-role="header" data-position="inline">
+            <a href="#menu-panel" data-rel="close" id="btMenu" data-icon="home">Menu</a>
+            <h1>Donate</h1>
+            <a href="#" data-rel="back" data-icon="arrow-l">Back</a>
+        </div><!-- /header -->
 
 		<div data-role="content">
-			<div class="content-primary">
 				If you like mobileMule please consider to make a donation
                 <div style="text-align: center; margin-top: 15px;">
                     <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=muttley%2ebd%40gmail%2ecom&lc=IT&item_name=mobileMule&item_number=aMule%20web%20mobile%20skin&currency_code=EUR&bn=PP%2dDonationsBF%3abtn_donate_LG%2egif%3aNonHosted" title="Donate"><img src="paypal.png" /></a></p>
@@ -33,18 +36,13 @@
                 </ul>
 
                 ...and you can help and support the development of project.
-			</div>
-			<!--/content-primary -->
-
-			<div id="menu" class="content-secondary">
-                <!-- here is injected menù from pagebeforecreate event -->
-			</div>
 		</div>
 		<!-- /content -->
 
-		<div data-role="footer" data-theme="c">
-			<p>&nbsp;<a href="amuleweb-main-about.php" title="about" data-rel="dialog" data-transition="pop">mobileMule</a> &copy; 2014</p>
-		</div>
+        <div data-role="footer" role="contentinfo" class="ui-footer" data-theme="c">
+            <a href="#" id="btScrollUp" data-role="button" data-icon="arrow-u" data-iconpos="right">scroll up</a>
+            <p>&nbsp;<a href="amuleweb-main-about.php" title="about" data-rel="dialog" data-transition="pop">mobileMule</a> &copy; 2014</p>
+        </div>
 		<!-- /footer -->
 	</div>
 	<!-- /page -->
