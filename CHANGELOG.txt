@@ -1,3 +1,7 @@
+ 1.5b
+- new panel menu
+- new version check
+
  1.4b
 - Upgrade jQuery and jQueryMobile
 - New UI
