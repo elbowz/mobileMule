@@ -1,3 +1,6 @@
+ 1.6b
+- swipe right/left for open/close menu panel
+
  1.5b
 - new panel menu
 - new version check

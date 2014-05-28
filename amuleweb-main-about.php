@@ -13,7 +13,7 @@
 <body>
 	<!-- IMPORTANT: Update also login.php#version -->
 	<div data-role="dialog" id="about">
-		<div data-role="header" data-position="inline">
+		<div data-role="header" data-position="fixed">
 			<h2>About</h2>
 		</div>
 					

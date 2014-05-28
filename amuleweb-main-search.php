@@ -13,19 +13,17 @@
 <body>
 	<div data-role="page" id="search" class="type-interior">
 
-        <div data-role="panel" id="menu-panel" data-display="push">
+        <div data-role="panel" id="menu-panel" data-display="push" data-position-fixed="true">
             <!-- here is injected menù from pagebeforecreate event -->
         </div>
 
-        <div data-role="header" data-position="inline">
-            <a href="#menu-panel" data-rel="close" id="btMenu" data-icon="home">Menu</a>
-            <h1>Uploads</h1>
-            <a href="#" data-rel="back" data-icon="arrow-l">Back</a>
+        <div data-role="header" data-position="fixed">
+            <a href="#menu-panel" data-rel="close" id="btMenu" data-icon="home" class="ui-btn-left">Menu</a>
+            <h1>Search</h1>
+            <a href="#" data-rel="back" data-icon="arrow-l" class="ui-btn-right">Back</a>
         </div><!-- /header -->
 
 		<div data-role="content">
-			<div class="content-primary">
-			
 				<form name="mainform" action="amuleweb-main-search.php" method="post">
 					<input type="hidden" name="command" value=""> 
                     <input name="searchval" type="text" id="searchval4" size="60"> 
@@ -195,17 +193,11 @@
         ?>
         </select>
 </form>
-			</div>
-			<!--/content-primary -->
-
-            <div id="menu" class="content-secondary">
-                <!-- here is injected menù from pagebeforecreate event -->
-            </div>
 		</div>
 		<!-- /content -->
 
         <div data-role="footer" role="contentinfo" class="ui-footer" data-theme="c">
-            <a href="#" id="btScrollUp" data-role="button" data-icon="arrow-u" data-iconpos="right">scroll up</a>
+            <a href="#" id="btScrollUp" data-role="button" data-icon="arrow-u" class="ui-btn-right">scroll up</a>
             <p>&nbsp;<a href="amuleweb-main-about.php" title="about" data-rel="dialog" data-transition="pop">mobileMule</a> &copy; 2014</p>
         </div>
         <!-- /footer -->

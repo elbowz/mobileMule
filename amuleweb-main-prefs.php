@@ -13,14 +13,14 @@
 <body>
 	<div data-role="page" id="prefs" class="type-interior">
 
-    <div data-role="panel" id="menu-panel" data-display="push">
+    <div data-role="panel" id="menu-panel" data-display="push" data-position-fixed="true">
         <!-- here is injected menù from pagebeforecreate event -->
     </div>
 
-    <div data-role="header" data-position="inline">
-        <a href="#menu-panel" data-rel="close" id="btMenu" data-icon="home">Menu</a>
-        <h1>Uploads</h1>
-        <a href="#" data-rel="back" data-icon="arrow-l">Back</a>
+    <div data-role="header" data-position="fixed">
+        <a href="#menu-panel" data-rel="close" id="btMenu" data-icon="home" class="ui-btn-left">Menu</a>
+        <h1>Configuration</h1>
+        <a href="#" data-rel="back" data-icon="arrow-l" class="ui-btn-right">Back</a>
     </div><!-- /header -->
 
 		<div data-role="content">
@@ -33,20 +33,20 @@
 			        	<input name="autorefresh_time" type="number" id="autorefresh_time7" />
 					</li>-->
 					<li data-role="fieldcontain">
-			        	<input name="use_gzip" type="checkbox" id="use_gzip5" class="custom" />
+			        	<input name="use_gzip" type="checkbox" id="use_gzip5" class="custom"/>
 						<label for="use_gzip5">Use gzip compression</label>
 					</li>
-					
-					<li data-role="list-divider">Line capacity (for statistics only)<span class="ui-li-count">2</span></li>	
+
+					<li data-role="list-divider">Line capacity (for statistics only)<span class="ui-li-count">2</span></li>
 					<li data-role="fieldcontain">
 			        	<label for="max_line_down_cap6">Max download rate:</label>
 			        	<input name="max_line_down_cap" type="number" id="max_line_down_cap6" />
-					</li>				
+					</li>
 					<li data-role="fieldcontain">
 			        	<label for="max_line_up_cap7">Max upload rate:</label>
 			        	<input name="max_line_up_cap" type="number" id="max_line_up_cap7" />
 					</li>
-					
+
 					<li data-role="list-divider">Bandwidth limits<span class="ui-li-count">3</span></li>
 					<li data-role="fieldcontain">
 			        	<label for="max_down_limit6">Max download rate:</label>
@@ -60,7 +60,7 @@
 			        	<label for="slot_alloc6">Slot allocation:</label>
 			        	<input name="slot_alloc" type="number" id="slot_alloc6" />
 					</li>
-					
+
 					<li data-role="list-divider">File settings<span class="ui-li-count">9</span></li>
 					<li data-role="fieldcontain">
 			        	<input name="check_free_space" type="checkbox" id="check_free_space5" class="custom" />
@@ -99,7 +99,7 @@
 			        	<input name="extract_metadata" type="checkbox" id="extract_metadata4" class="custom" />
 						<label for="extract_metadata4">Extract metadata tags</label>
 					</li>
-					
+
 					<li data-role="list-divider">Connection settings<span class="ui-li-count">4</span></li>
 					<li data-role="fieldcontain">
 			        	<label for="max_conn_total8">Max total connections (total):</label>
@@ -117,7 +117,7 @@
 			        	<input name="reconn_en" type="checkbox" id="reconn_en6" class="custom" />
 						<label for="reconn_en6">Reconnect when connection lost</label>
 					</li>
-					
+
 					<li data-role="list-divider">Network settings<span class="ui-li-count">4</span></li>
 					<li data-role="fieldcontain">
 			        	<label for="tcp_port6">TCP port:</label>
@@ -146,7 +146,7 @@
 		<!-- /content -->
 
         <div data-role="footer" role="contentinfo" class="ui-footer" data-theme="c">
-            <a href="#" id="btScrollUp" data-role="button" data-icon="arrow-u" data-iconpos="right">scroll up</a>
+            <a href="#" id="btScrollUp" data-role="button" data-icon="arrow-u" class="ui-btn-right">scroll up</a>
             <p>&nbsp;<a href="amuleweb-main-about.php" title="about" data-rel="dialog" data-transition="pop">mobileMule</a> &copy; 2014</p>
         </div>
         <!-- /footer -->
@@ -204,7 +204,7 @@
 					}
 				}
 			?>
-			$( document ).delegate("#prefs", "pageinit", function() {
+			$( document ).on("pageinit", "#prefs", function() {
 				// Assign php generated data to controls
 				var frm = document.forms.mainform
 
@@ -233,7 +233,7 @@
 				for(i = 0; i < check_param_names.length; i++) {
 					//frm[check_param_names[i]].checked = initvals[check_param_names[i]] == "1" ? true : false;
 					if (initvals[check_param_names[i]] == "1")
-						$("input[name='"+check_param_names[i]+"']").attr("checked", true).checkboxradio("refresh"); 
+						$("input[name='"+check_param_names[i]+"']").attr("checked", true).checkboxradio("refresh");
 				}
 			});
 		</script>
