@@ -14,14 +14,14 @@
 <body>
 	<div data-role="page" id="graphs" class="type-interior">
 
-        <div data-role="panel" id="menu-panel" data-display="push">
+        <div data-role="panel" id="menu-panel" data-display="reveal" data-position-fixed="true">
             <!-- here is injected menù from pagebeforecreate event -->
         </div>
 
-        <div data-role="header" data-position="inline">
-            <a href="#menu-panel" data-rel="close" id="btMenu" data-icon="home">Menu</a>
+        <div data-role="header" data-position="fixed">
+            <a href="#menu-panel" data-rel="close" id="btMenu" data-icon="home" class="ui-btn-left">Menu</a>
             <h1>Graph</h1>
-            <a href="#" data-rel="back" data-icon="arrow-l">Back</a>
+            <a href="#" data-rel="back" data-icon="arrow-l" class="ui-btn-right">Back</a>
         </div><!-- /header -->
 
 		<div data-role="content">

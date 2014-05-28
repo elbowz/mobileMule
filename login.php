@@ -34,7 +34,8 @@
         </div>
 	</div>
     <script>
-        var currentVersion = '1.5b';
+        // IMPORTANT: Update also login.php#version
+        var currentVersion = '1.6b';
 
         $(document).on('pagebeforecreate', "#login", function() {
             $.ajax({
@@ -51,7 +52,7 @@
 
         $( document ).on("pageinit", "#login", function() {
             //$('#pass').focus();
-            // worckround...
+            // workaround...
             setTimeout( function(){ $('#pass').focus(); },0 );
         });
     </script>

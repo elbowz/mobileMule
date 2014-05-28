@@ -1,3 +1,7 @@
+ 1.6b
+- swipe right/left for open/close menu panel
+- menu panel and header now is position fixed
+
  1.5b
 - new panel menu
 - new version check
