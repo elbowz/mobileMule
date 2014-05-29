@@ -13,7 +13,7 @@
 <body>
 	<div data-role="page" id="prefs" class="type-interior">
 
-    <div data-role="panel" id="menu-panel" data-display="push" data-position-fixed="true">
+    <div data-role="panel" id="menu-panel" data-display="reveal" data-position-fixed="true">
         <!-- here is injected menù from pagebeforecreate event -->
     </div>
 
