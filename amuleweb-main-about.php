@@ -11,14 +11,14 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquerymobile/1.4.2/jquery.mobile.min.js"></script>
 </head>
 <body>
-	<!-- IMPORTANT: Update also login.php#version -->
 	<div data-role="dialog" id="about">
 		<div data-role="header" data-position="fixed">
 			<h2>About</h2>
 		</div>
 					
 		<div data-role="content">
-			<p><strong>mobileMule v1.5b</strong><br/>
+            <!-- IMPORTANT: Update also login.php#version -->
+			<p><strong>mobileMule v1.6b</strong><br/>
 			coded by muttley<br/>
 			copyright 2014<br/>
 			<a href="https://github.com/elbowz/mobileMule" title="mobileMule project page">github.com/elbowz/mobileMule</a><br/><br/>
