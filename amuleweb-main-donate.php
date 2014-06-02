@@ -3,8 +3,9 @@
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<title>Status - mobileMule</title>
-	<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jquerymobile/1.4.2/jquery.mobile.min.css" />
+	<title>Donation Pack - mobileMule</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jquerymobile/1.4.2/jquery.mobile.min.css" />
 	<link rel="stylesheet" href="mystyle.css" />
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="myscript.js"></script>
@@ -19,7 +20,7 @@
 
         <div data-role="header" data-position="fixed">
             <a href="#menu-panel" data-rel="close" id="btMenu" data-icon="home" class="ui-btn-left">Menu</a>
-            <h1>Donate</h1>
+            <h1><i class="fa fa-thumbs-o-up fa-fw"></i> Donation Pack</h1>
             <a href="#" data-rel="back" data-icon="arrow-l" class="ui-btn-right">Back</a>
         </div><!-- /header -->
 

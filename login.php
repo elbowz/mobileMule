@@ -4,6 +4,7 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<title>Login - mobileMule</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" />
     <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jquerymobile/1.4.2/jquery.mobile.min.css" />
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquerymobile/1.4.2/jquery.mobile.min.js"></script>
@@ -16,7 +17,7 @@
 		</div>
 
 		<div data-role="content">
-            <a id="btNewVersion" href="https://github.com/elbowz/mobileMule" class="ui-btn ui-corner-all ui-btn-b" style="display: none;"></a>
+            <a id="btNewVersion" href="https://github.com/elbowz/mobileMule" class="ui-btn ui-corner-all ui-btn-b"><i class="fa fa-circle-o-notch fa-spin"></i> checking for new version available...</a>
 
 			<div style="text-align:center; padding: 0px 20px;">
 				<a href="#about" title="about" data-rel="dialog"><img src="amule_logo.png" width="100%" style="max-width:260px;" border="0" /></a>
@@ -34,7 +35,7 @@
         </div>
 	</div>
     <script>
-        // IMPORTANT: Update also login.php#version
+        // IMPORTANT: Update also login.php#version, latestVersion.js, amuleweb-main-about.php
         var currentVersion = '1.6b';
 
         $(document).on('pagebeforecreate', "#login", function() {
@@ -43,8 +44,10 @@
                 dataType: 'script',
                 success: function( ) {
                     if(latestVersion != currentVersion) {
-                        console.log('NEW VERSION AVVIABLE')
-                        $('#btNewVersion').text(latestVersion + ' version is available!').show();
+
+                        $('#btNewVersion').html('<i class="fa fa-cloud-download"></i> ' + latestVersion + ' version is available!');
+                    } else {
+                        $('#btNewVersion').html('<i class="fa fa-child"></i> you are updated!');
                     }
                 }
             });
