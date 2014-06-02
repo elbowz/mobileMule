@@ -120,10 +120,6 @@ $( document ).on("pageinit", "#status", function() {
 	}
 });
 
-$( document ).on("pageinit", "#first-page", function() {
-	$.mobile.changePage( "amuleweb-main-status.php", { transition: "none" } );	
-});
-
 $(document).on('click','#btScrollUp', function(event) {
     event.preventDefault();
 

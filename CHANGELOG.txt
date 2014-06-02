@@ -3,6 +3,7 @@
 - menu panel and header now is position fixed
 - added font awesome icons
 - improve version check
+- lightweight redirect on login
 
  1.5b
 - new panel menu
