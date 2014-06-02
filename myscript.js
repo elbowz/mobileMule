@@ -25,17 +25,17 @@ $(document).on('pagebeforecreate', function() {
     }
 
     $('#menu-panel').html('<ul data-role="listview">\
-                            <li data-icon="delete"><a href="#" data-rel="close">Close</a></li>\
-                            <li data-icon="home"><a href="amuleweb-main-status.php">Status</a></li>\
-                            <li><a href="amuleweb-main-dload-real.php">Downloads</a></li>\
-                            <li><a href="amuleweb-main-upload.php">Uploads</a></li>\
-                            <li><a href="amuleweb-main-search.php">Search</a></li>\
-                            <li><a href="amuleweb-main-prefs.php">Configurations</a></li>\
-                            <li><a href="amuleweb-main-stats.php">Statistics</a></li>\
-                            <li><a href="amuleweb-main-graph.php">Graphs</a></li>\
-                            <li><a href="amuleweb-main-log.php">Log</a></li>\
-                            <li><a href="footer.php">Add ed2k</a></li>\
-                            <li data-icon="power"><a href="login.php">Logout</a></li>\
+                            <li data-icon="false"><a href="#" data-rel="close">Close <i class="fa fa-times pull-right fa-fw"></i></a></li>\
+                            <li data-icon="false"><a href="amuleweb-main-status.php">Status <i class="fa fa-home pull-right fa-fw"></i></a> </li>\
+                            <li data-icon="false"><a href="amuleweb-main-dload-real.php">Downloads <i class="fa fa-download pull-right fa-fw"></i></a></li>\
+                            <li data-icon="false"><a href="amuleweb-main-upload.php">Uploads <i class="fa fa-upload pull-right fa-fw"></i></a></li>\
+                            <li data-icon="false"><a href="amuleweb-main-donate.php">Search <i class="fa fa-search pull-right fa-fw"></i></a></li>\
+                            <li data-icon="false"><a href="amuleweb-main-donate.php">Configurations <i class="fa fa-cogs pull-right fa-fw"></i></a></li>\
+                            <li data-icon="false"><a href="amuleweb-main-stats.php">Statistics <i class="fa fa-tachometer pull-right fa-fw"></i></a></li>\
+                            <li data-icon="false"><a href="amuleweb-main-graph.php">Graphs <i class="fa fa-bar-chart-o pull-right fa-fw"></i></a></li>\
+                            <li data-icon="false"><a href="amuleweb-main-log.php">Log <i class="fa fa-bars pull-right fa-fw"></i></a></li>\
+                            <li data-icon="false"><a href="amuleweb-main-donate.php">Add ed2k <i class="fa fa-plus pull-right fa-fw"></i></a></li>\
+                            <li data-icon="false"><a href="login.php">Logout <i class="fa fa-unlock-alt pull-right fa-fw"></i></a></li>\
                            </ul>');
 });
 
