@@ -4,6 +4,7 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<title>Add ed2k - mobileMule</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" />
 	<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jquerymobile/1.4.2/jquery.mobile.min.css" />
 	<link rel="stylesheet" href="mystyle.css" />
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -20,7 +21,7 @@
 
         <div data-role="header" data-position="fixed">
             <a href="#menu-panel" data-rel="close" id="btMenu" data-icon="home" class="ui-btn-left">Menu</a>
-            <h1>Add ed2k</h1>
+            <h1><i class="fa fa-plus fa-fw"></i> Add ed2k</h1>
             <a href="#" data-rel="back" data-icon="arrow-l" class="ui-btn-right">Back</a>
         </div><!-- /header -->
 
