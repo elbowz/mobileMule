@@ -1,10 +1,12 @@
  1.6b
 - swipe right/left for open/close menu panel
 - menu panel and header now is position fixed
+- added font awesome icons
+- improve version check
 
  1.5b
 - new panel menu
-- new version check
+- version check
 
  1.4b
 - Upgrade jQuery and jQueryMobile
