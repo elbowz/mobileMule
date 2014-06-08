@@ -1,11 +1,11 @@
 /* Swipe works with mouse as well but often causes text selection. */
-body > div * {
+/*body > div * {
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     -o-user-select: none;
     user-select: none;
-}
+}*/
 
 @media ( min-width: 35em ) {
 

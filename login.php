@@ -12,7 +12,7 @@
 <body>
 	<div data-role="page" id="login">
 	
-		<div data-theme="a" data-role="header">
+		<div data-role="header">
 			<h3>Login</h3>
 		</div>
 
@@ -36,7 +36,7 @@
 	</div>
     <script>
         // IMPORTANT: Update also login.php#version, latestVersion.js, amuleweb-main-about.php
-        var currentVersion = '1.6b';
+        var currentVersion = '1.7b';
 
         $(document).on('pagebeforecreate', "#login", function() {
             $.ajax({
