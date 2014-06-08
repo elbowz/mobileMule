@@ -19,7 +19,7 @@
 					
 		<div data-role="content">
             <!-- IMPORTANT: Update also login.php#version, latestVersion.js, amuleweb-main-about.php -->
-			<p><strong>mobileMule v1.6b</strong><br/>
+			<p><strong>mobileMule v1.7b</strong><br/>
 			coded by muttley &copy; copyright 2014<br/><br/>
             <a href="https://raw.githubusercontent.com/elbowz/mobileMule/master/CHANGELOG.txt" title="changelog">Changelog</a> &bull; <a href="https://github.com/elbowz/mobileMule" title="mobileMule project page">Project page</a> &bull; <a href="amuleweb-main-donate.php" title="Donation Pack">Donation Pack</a><br/><br/>
 			<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=muttley%2ebd%40gmail%2ecom&lc=IT&item_name=mobileMule&item_number=aMule%20web%20mobile%20skin&currency_code=EUR&bn=PP%2dDonationsBF%3abtn_donate_LG%2egif%3aNonHosted" title="Donate"><img src="https://www.paypalobjects.com/en_GB/i/btn/btn_donate_LG.gif" /></a></p>

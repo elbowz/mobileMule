@@ -1,3 +1,6 @@
+ 1.7b
+- Fixed input text on iOS (issues: https://github.com/elbowz/mobileMule/issues/1). Thanks to beck2929
+
  1.6b
 - swipe right/left for open/close menu panel
 - menu panel and header now is position fixed
