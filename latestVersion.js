@@ -1,2 +1,2 @@
 // IMPORTANT: Update also login.php#version, latestVersion.js, amuleweb-main-about.php
-var latestVersion = '1.7b';
+var latestVersion = '1.8b';

@@ -263,7 +263,10 @@
 		<script>
             $(document).ready(function () {
 
-                $(document).on("click", ".file-check", function () {
+                // TODO: trig event up to anchestor with context
+                $('.ui-listview').on("click", ".file-check", function (event) {
+                    event.stopPropagation();
+
                     var checkboxHashId = $(this).attr('data-hash');
                     $('<input>').attr({
                         type: 'hidden',
@@ -281,7 +284,6 @@
 
                 $('select[name="sort"]').change(function () {
                     setTimeout(function(){$('form[name="mainform"]').submit();},500)
-
                 });
 
                 $('#sort_reverse').bind("click",function () {

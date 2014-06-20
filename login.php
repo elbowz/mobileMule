@@ -36,7 +36,7 @@
 	</div>
     <script>
         // IMPORTANT: Update also login.php#version, latestVersion.js, amuleweb-main-about.php
-        var currentVersion = '1.7b';
+        var currentVersion = '1.8b';
 
         $(document).on('pagebeforecreate', "#login", function() {
             $.ajax({
