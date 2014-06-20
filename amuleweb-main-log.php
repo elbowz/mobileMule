@@ -25,14 +25,14 @@
         </div><!-- /header -->
 
 		<div data-role="content">
-				<div data-role="collapsible"  data-content-theme="c" data-collapsed="false">
+
+				<div data-role="collapsible" data-collapsed="false">
 					<h3>Log</h3>
-					<!--  <textarea style="height: 200px;" rows="8" name="log" id="log"><?php  echo amule_get_log( 0 ); ?></textarea>-->
-					<p style="white-space: normal;"><?php  echo amule_get_log( 0 ); ?></p>
+                    <p style="white-space: pre-line;"><?php echo amule_get_log( 0 ); ?></p>
 				</div>
-				<div data-role="collapsible"  data-content-theme="c">
+				<div data-role="collapsible">
 					<h3>Server info</h3>
-					<textarea style="height: 200px;" rows="8" name="serverinfo" id="serverinfo"><?php echo amule_get_serverinfo( 0 );?></textarea>
+                    <p style="white-space: pre-line;"><?php echo amule_get_serverinfo( 0 ); ?></p>
 				</div>
 		</div>
 		<!-- /content -->

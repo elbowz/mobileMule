@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<title>Donation Pack - mobileMule</title>
+	<title>Donation Package - mobileMule</title>
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" />
     <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jquerymobile/1.4.2/jquery.mobile.min.css" />
 	<link rel="stylesheet" href="mystyle.css" />
@@ -20,7 +20,7 @@
 
         <div data-role="header" data-position="fixed">
             <a href="#menu-panel" data-rel="close" id="btMenu" data-icon="home" class="ui-btn-left">Menu</a>
-            <h1><i class="fa fa-thumbs-o-up fa-fw"></i> Donation Pack</h1>
+            <h1><i class="fa fa-thumbs-o-up fa-fw"></i> Donation Package</h1>
             <a href="#" data-rel="back" data-icon="arrow-l" class="ui-btn-right">Back</a>
         </div><!-- /header -->
 
@@ -29,7 +29,7 @@
                 <div style="text-align: center; margin-top: 15px;">
                     <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=muttley%2ebd%40gmail%2ecom&lc=IT&item_name=mobileMule&item_number=aMule%20web%20mobile%20skin&currency_code=EUR&bn=PP%2dDonationsBF%3abtn_donate_LG%2egif%3aNonHosted" title="Donate"><img src="paypal.png" /></a></p>
                 </div>
-                You'll receive <strong>mobileMule Donation Pack</strong> with new panels:
+                You'll receive <strong>mobileMule Donation Package</strong> with new panels:
                 <ul>
                     <li>Search</li>
                     <li>Configurations</li>

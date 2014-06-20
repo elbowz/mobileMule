@@ -8,12 +8,13 @@ mobileMule is aMule web server template/skin for mobile and desktop. Based on jQ
 
 Download
 --------
-[GoogleDrive](https://drive.google.com/folderview?id=0BzaXzhTPJkC7WFFIM09uYm4zSk0&usp=sharing#list)
+ * [Standard Version on GoogleDrive](https://drive.google.com/folderview?id=0BzaXzhTPJkC7WFFIM09uYm4zSk0&usp=sharing#list)
+ * [Donation Package on GoogleDrive] (https://drive.google.com/folderview?id=0BzaXzhTPJkC7SnpOVG11OF9ITlE&usp=sharing) (* do a donation for get it)
 
 Compatibility
 -------------
-Tested on android (Default browser, Opera, Boat browser, etc), Linux (Chrome, Firefox), Windows (Chrome, Firefox).
-Also work with GetEd2k (https://play.google.com/store/apps/details?id=org.anacletus.geted2k)
+Tested on Android (Default browser, Opera, Boat browser, etc), Linux (Chrome, Firefox), Windows (Chrome, Firefox), iOS (Safari, Chrome).
+Also work with GetEd2k (Donation Package) (https://play.google.com/store/apps/details?id=org.anacletus.geted2k).
 
 How to install
 --------------
@@ -27,4 +28,8 @@ Support
 -------
 If you want help me, better support, more features, get speedy fix and so on, consider offer me a coffee or a beer with a [Donation with PayPal](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=muttley%2ebd%40gmail%2ecom&lc=IT&item_name=mobileMule&item_number=aMule%20web%20mobile%20skin&currency_code=EUR&bn=PP%2dDonationsBF%3abtn_donate_LG%2egif%3aNonHosted)
 
-thanks!
+With a free donation, you'll get the **Donation Package** that adds three panels:
+
+* Search
+* Configurations
+* Add ed2k
