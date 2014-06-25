@@ -1,3 +1,6 @@
+### 1.9b
+ * Now Chrome (mobile and desktop) ask user to save password
+
 ### 1.8b
  * Added Servers page
  * Log text more clear to read

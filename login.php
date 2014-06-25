@@ -24,7 +24,10 @@
 			</div>
 			<form action="" method="post" name="login" data-ajax="false">
 				<div data-role="fieldcontain">
-					<label for="pass">Password</label> <input name="pass" id="pass" value="" type="password" />
+                    <!-- force Chrome to save password for autocomplete -->
+                    <input type='text' name='username' style="display: none;">
+                    <label for="pass">Password</label>
+                    <input name="pass" id="pass" value="" type="password" />
 				</div>
 				<input name="submit" type="submit" value="Submit" />
 			</form>
