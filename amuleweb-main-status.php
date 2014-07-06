@@ -34,7 +34,7 @@
 					<li class="server-child">Name <span id="server-name" class="ui-li-aside">init</span></li>
 					<!-- <li class="server-child">Users <span id="server-users" class="ui-li-aside">n</span></li>-->
 					<li id="kad" data-role="list-divider">Kad (init ...)</li>
-					<li><p><strong>note:</strong> this info is refred each 3 seconds.</p></li>
+					<li><p><strong>note:</strong> this info is refreshed each 3 seconds.</p></li>
 				</ul>
 		</div>
 		<!-- /content -->
