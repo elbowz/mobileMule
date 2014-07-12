@@ -1,4 +1,5 @@
 ### 1.9b
+ * Hide address bar in Chrome and Safari (Android and iOS) when user install Web Apps to the home screen (like native app!)
  * Now Chrome (mobile and desktop) ask user to save password
 
 ### 1.8b
