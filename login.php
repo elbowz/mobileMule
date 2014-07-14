@@ -3,7 +3,9 @@
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<title>Login - mobileMule</title>
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+	<title>mobileMule</title>
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" />
     <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jquerymobile/1.4.2/jquery.mobile.min.css" />
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -24,7 +26,10 @@
 			</div>
 			<form action="" method="post" name="login" data-ajax="false">
 				<div data-role="fieldcontain">
-					<label for="pass">Password</label> <input name="pass" id="pass" value="" type="password" />
+                    <!-- force Chrome to save password for autocomplete -->
+                    <input type='text' name='username' style="display: none;">
+                    <label for="pass">Password</label>
+                    <input name="pass" id="pass" value="" type="password" />
 				</div>
 				<input name="submit" type="submit" value="Submit" />
 			</form>
@@ -36,7 +41,7 @@
 	</div>
     <script>
         // IMPORTANT: Update also login.php#version, latestVersion.js, amuleweb-main-about.php
-        var currentVersion = '1.8b';
+        var currentVersion = '1.9b';
 
         $(document).on('pagebeforecreate', "#login", function() {
             $.ajax({

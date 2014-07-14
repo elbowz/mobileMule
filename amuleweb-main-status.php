@@ -3,13 +3,16 @@
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<title>Status - mobileMule</title>
+	<title>mobileMule</title>
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" />
     <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jquerymobile/1.4.2/jquery.mobile.min.css" />
 	<link rel="stylesheet" href="mystyle.css" />
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="myscript.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquerymobile/1.4.2/jquery.mobile.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="addtohomescreen.css">
+    <script src="addtohomescreen.min.js"></script>
+    <script> addToHomescreen({ maxDisplayCount: 4 }); </script>
 </head>
 <body>
 	<div data-role="page" id="status" class="type-interior">
@@ -34,7 +37,7 @@
 					<li class="server-child">Name <span id="server-name" class="ui-li-aside">init</span></li>
 					<!-- <li class="server-child">Users <span id="server-users" class="ui-li-aside">n</span></li>-->
 					<li id="kad" data-role="list-divider">Kad (init ...)</li>
-					<li><p><strong>note:</strong> this info is refred each 3 seconds.</p></li>
+					<li><p><strong>note:</strong> this info is refreshed each 3 seconds.</p></li>
 				</ul>
 		</div>
 		<!-- /content -->
