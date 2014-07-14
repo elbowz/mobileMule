@@ -1,5 +1,9 @@
+CHANGELOG 
+=========
+
 ### 1.9b
  * Hide address bar in Chrome and Safari (Android and iOS) when user install Web Apps to the home screen (like native app!)
+ * Added lib http://cubiq.org/add-to-home-screen for notify to install app on home
  * Now Chrome (mobile and desktop) ask user to save password
 
 ### 1.8b
