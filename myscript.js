@@ -26,7 +26,7 @@ $(document).on('pagebeforecreate', function() {
 
     $('#menu-panel').html('<ul data-role="listview">\
                             <li data-icon="false"><a href="amuleweb-main-status.php">Status <i class="fa fa-home pull-right fa-fw"></i></a> </li>\
-                            <li data-icon="false"><a href="amuleweb-main-dload-real.php">Downloads <i class="fa fa-download pull-right fa-fw"></i></a></li>\
+                            <li data-icon="false"><a href="amuleweb-main-dload.php">Downloads <i class="fa fa-download pull-right fa-fw"></i></a></li>\
                             <li data-icon="false"><a href="amuleweb-main-upload.php">Uploads <i class="fa fa-upload pull-right fa-fw"></i></a></li>\
                             <li data-icon="false"><a href="amuleweb-main-donate.php">Search <i class="fa fa-search pull-right fa-fw"></i></a></li>\
                             <li data-icon="false"><a href="amuleweb-main-donate.php">Configurations <i class="fa fa-cogs pull-right fa-fw"></i></a></li>\
