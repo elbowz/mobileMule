@@ -8,7 +8,6 @@ $(document).on("mobileinit", function(){
 });
 
 $(document).on('pageinit', function() {
-    console.log('pageinit');
 
     var width = $(window).width();
     if(width > 768){
@@ -17,7 +16,6 @@ $(document).on('pageinit', function() {
 });
 
 $(document).on('pagebeforecreate', function() {
-    console.log('pagebeforecreate');
     if( timerStatusUpdate ) {
         clearInterval(timerStatusUpdate);
         console.log('stop update status timer - id: ' + timerStatusUpdate);
@@ -26,7 +24,7 @@ $(document).on('pagebeforecreate', function() {
 
     $('#menu-panel').html('<ul data-role="listview">\
                             <li data-icon="false"><a href="amuleweb-main-status.php">Status <i class="fa fa-home pull-right fa-fw"></i></a> </li>\
-                            <li data-icon="false"><a href="amuleweb-main-dload-real.php">Downloads <i class="fa fa-download pull-right fa-fw"></i></a></li>\
+                            <li data-icon="false"><a href="amuleweb-main-dload.php">Downloads <i class="fa fa-download pull-right fa-fw"></i></a></li>\
                             <li data-icon="false"><a href="amuleweb-main-upload.php">Uploads <i class="fa fa-upload pull-right fa-fw"></i></a></li>\
                             <li data-icon="false"><a href="amuleweb-main-search.php">Search <i class="fa fa-search pull-right fa-fw"></i></a></li>\
                             <li data-icon="false"><a href="amuleweb-main-prefs.php">Configurations <i class="fa fa-cogs pull-right fa-fw"></i></a></li>\
@@ -51,6 +49,22 @@ $( document ).on( "pagecreate", function() {
             }
         }
     });
+
+    // Preventing Links In Standalone iPhone Applications From Opening In Mobile Safari
+    if (("standalone" in window.navigator) && window.navigator.standalone) {
+        $('a').bind('click', function (event) {
+
+                event.preventDefault();
+
+                var newLocation =  $(event.currentTarget).attr("href");
+
+                if (newLocation != undefined && newLocation.substr(0, 1) != '#'){
+                    console.log('ciao')
+                    window.location = newLocation;
+                }
+            }
+        );
+    }
 });
 
 $( document ).on("pageinit", "#status", function() {
