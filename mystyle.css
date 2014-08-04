@@ -1,3 +1,36 @@
+.bar {
+    width: 100%;
+    background-color: lightgray;
+}
+
+.bar > .completed-bar {
+    text-align: center;
+    background-color: darkseagreen;
+    color: white;
+    text-shadow: none;
+}
+
+.bar > .completed-bar.downloading {
+    background-color: darkseagreen;
+}
+
+.bar > .completed-bar.waiting {
+    background-color: darkcyan;
+}
+
+.bar > .completed-bar.pause {
+    background-color: darkgrey;
+}
+
+.ui-navbar .fa {
+    display: block;
+}
+
+/* Overwrite jQuery Mobile */
+.ui-controlgroup {
+    margin: .5em .5em !important;
+}
+
 @media ( min-width: 35em ) {
 
     /* wrap on wide viewports once open */

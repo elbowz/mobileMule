@@ -6,23 +6,19 @@
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
 	<title>mobileMule</title>
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" />
     <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jquerymobile/1.4.2/jquery.mobile.min.css" />
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquerymobile/1.4.2/jquery.mobile.min.js"></script>
 </head>
 <body>
 	<div data-role="page" id="login">
-	
-		<div data-role="header">
-			<h3>Login</h3>
-		</div>
 
 		<div data-role="content">
             <a id="btNewVersion" href="https://github.com/elbowz/mobileMule" class="ui-btn ui-corner-all ui-btn-b"><i class="fa fa-circle-o-notch fa-spin"></i> checking for new version available...</a>
 
 			<div style="text-align:center; padding: 0px 20px;">
-				<a href="#about" title="about" data-rel="dialog"><img src="amule_logo.png" width="100%" style="max-width:260px;" border="0" /></a>
+				<a href="https://github.com/elbowz/mobileMule" title="about" data-rel="dialog"><img src="login-icon.png" width="100%" style="max-width:260px;" border="0" /></a>
 			</div>
 			<form action="" method="post" name="login" data-ajax="false">
 				<div data-role="fieldcontain">
@@ -45,7 +41,7 @@
 
         $(document).on('pagebeforecreate', "#login", function() {
             $.ajax({
-                url: "https://rawgithub.com/elbowz/mobileMule/master/latestVersion.js",
+                url: "https://cdn.rawgit.com/elbowz/mobileMule/master/latestVersion.js",
                 dataType: 'script',
                 success: function( ) {
                     if(latestVersion != currentVersion) {
@@ -61,7 +57,7 @@
         $( document ).on("pageinit", "#login", function() {
             //$('#pass').focus();
             // workaround...
-            setTimeout( function(){ $('#pass').focus(); },0 );
+            setTimeout( function(){ $('#pass').focus(); },100 );
         });
     </script>
 </body>
