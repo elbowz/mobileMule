@@ -27,7 +27,7 @@
     </div><!-- /header -->
 
 		<div data-role="content">
-				<form action="amuleweb-main-dload-real.php" method="post" name="mainform">
+				<form action="amuleweb-main-dload.php" method="post" name="mainform">
 					<input type="hidden" name="command">
 					
 	        		<div data-role="navbar">

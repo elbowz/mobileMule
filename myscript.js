@@ -8,7 +8,6 @@ $(document).on("mobileinit", function(){
 });
 
 $(document).on('pageinit', function() {
-    console.log('pageinit');
 
     var width = $(window).width();
     if(width > 768){
@@ -17,7 +16,6 @@ $(document).on('pageinit', function() {
 });
 
 $(document).on('pagebeforecreate', function() {
-    console.log('pagebeforecreate');
     if( timerStatusUpdate ) {
         clearInterval(timerStatusUpdate);
         console.log('stop update status timer - id: ' + timerStatusUpdate);
@@ -51,6 +49,22 @@ $( document ).on( "pagecreate", function() {
             }
         }
     });
+
+    // Preventing Links In Standalone iPhone Applications From Opening In Mobile Safari
+    if (("standalone" in window.navigator) && window.navigator.standalone) {
+        $('a').bind('click', function (event) {
+
+                event.preventDefault();
+
+                var newLocation =  $(event.currentTarget).attr("href");
+
+                if (newLocation != undefined && newLocation.substr(0, 1) != '#'){
+                    console.log('ciao')
+                    window.location = newLocation;
+                }
+            }
+        );
+    }
 });
 
 $( document ).on("pageinit", "#status", function() {
