@@ -54,12 +54,11 @@ $( document ).on( "pagecreate", function() {
     if (("standalone" in window.navigator) && window.navigator.standalone) {
         $('a').bind('click', function (event) {
 
-                event.preventDefault();
-
                 var newLocation =  $(event.currentTarget).attr("href");
 
                 if (newLocation != undefined && newLocation.substr(0, 1) != '#'){
-                    console.log('ciao')
+                    event.preventDefault();
+
                     window.location = newLocation;
                 }
             }
