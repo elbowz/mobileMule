@@ -51,8 +51,8 @@
                     </select>
                     <legend>Search type:</legend>
                     <select name="searchtype" id="select" data-native-menu="false">
-                      <option value="Local" selected>Local</option>
-                      <option value="Global">Global</option>
+                      <option value="Local">Local</option>
+                      <option value="Global" selected>Global</option>
                       <option value="Kad">Kad</option>
                     </select>
                     <div class="ui-grid-c" style=margin-top: 10px;">
