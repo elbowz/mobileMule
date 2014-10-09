@@ -32,11 +32,11 @@
 					
 	        		<div data-role="navbar">
 						<ul>
-							<li><a href="javascript:formCommandSubmit('pause');" data-icon="grid">Pause</a></li>
-							<li><a href="javascript:formCommandSubmit('resume');" data-icon="arrow-r">Resume</a></li>
-							<li><a href="javascript:formCommandSubmit('prioup');" data-icon="arrow-u">Prio. up</a></li>
-							<li><a href="javascript:formCommandSubmit('priodown');" data-icon="arrow-d">Prio. down</a></li>
-							<li><a href="javascript:formCommandSubmit('cancel');" data-icon="delete">Cancel</a></li>
+							<li><a href="javascript:formCommandSubmit('pause');"><i class="fa fa-pause"></i>Pause</a></li>
+							<li><a href="javascript:formCommandSubmit('resume');"><i class="fa fa-play"></i>Resume</a></li>
+							<li><a href="javascript:formCommandSubmit('prioup');"><i class="fa fa-chevron-up"></i>Prio. up</a></li>
+							<li><a href="javascript:formCommandSubmit('priodown');"><i class="fa fa-chevron-down"></i>Prio. down</a></li>
+							<li><a href="javascript:formCommandSubmit('cancel');"><i class="fa fa-trash"></i>Cancel</a></li>
 						</ul>
 					</div>
 					
@@ -65,6 +65,17 @@
 								return "Waiting";
 							}
 						}
+
+                        function StatusCompltedClass($file)
+                        {
+                            if ( $file->status == 7 ) {
+                                return "pause";
+                            } elseif ( $file->src_count_xfer > 0 ) {
+                                return "downloading";
+                            } else {
+                                return "waiting";
+                            }
+                        }
 				
 						function PrioString($file)
 						{
@@ -187,8 +198,10 @@
 									echo "+ ", $file->src_count_a4af;
 								}
 								echo "&nbsp;-&nbsp;", $file->last_seen_complete ? "" : "<i>never</i>&nbsp;", "seen completed</p>";
-													echo '<p><div class="ui-li-desc bar"><div class="ui-li-desc completed-bar" style="width: ', $percentual_progress ,'%;">', CastToXBytes($file->size_done),"&nbsp;/&nbsp;", CastToXBytes($file->size), '</div></div></p>';
-								echo '<span class="ui-li-count">',$percentual_progress, '%</span>';
+
+                                echo '<p><div class="ui-li-desc bar"><div class="ui-li-desc completed-bar ', StatusCompltedClass($file) ,'" style="width: ', $percentual_progress ,'%;">', CastToXBytes($file->size_done),"&nbsp;/&nbsp;", CastToXBytes($file->size), '</div></div></p>';
+
+                                echo '<span class="ui-li-count">',$percentual_progress, '%</span>';
 				
 								echo "</a>";
 								
@@ -279,9 +292,9 @@
                                 </select>
                                 <?php
                                 if ($HTTP_GET_VARS["download_sort_reverse"])
-                                    echo '<a id="sort_reverse" href="#" data-value="0" data-role="button" data-theme="d" data-icon="arrow-u" data-iconpos="right" style="padding-right: 10px;">Ascendent</a>';
+                                    echo '<a id="sort_reverse" href="#" data-value="0" data-role="button" data-theme="d" data-icon="arrow-u" data-iconpos="right" style="padding-right: 38px;">Ascendent</a>';
                                 else
-                                    echo '<a id="sort_reverse" href="#" data-value="1" data-role="button" data-theme="d" data-icon="arrow-d" data-iconpos="right" style="padding-right: 10px;">Descendent</a>';
+                                    echo '<a id="sort_reverse" href="#" data-value="1" data-role="button" data-theme="d" data-icon="arrow-d" data-iconpos="right" style="padding-right: 38px;">Descendent</a>';
                                 ?>
                             </fieldset>
                         </div>

@@ -2,7 +2,8 @@ CHANGELOG
 =========
 
 ### 1.9.1b
- * Some graphic improvment for download page
+ * Some graphic improvment for download page (colored progress bar, new icons and page reformat)
+ * Added icon for Apple devices
 
 ### 1.9b
  * Hide address bar in Chrome and Safari (Android and iOS) when user install Web Apps to the home screen (like native app!)

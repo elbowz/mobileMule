@@ -10,6 +10,22 @@
     text-shadow: none;
 }
 
+.bar > .completed-bar.downloading {
+    background-color: darkseagreen;
+}
+
+.bar > .completed-bar.waiting {
+    background-color: darkcyan;
+}
+
+.bar > .completed-bar.pause {
+    background-color: darkgrey;
+}
+
+.ui-navbar .fa {
+    display: block;
+}
+
 /* Overwrite jQuery Mobile */
 .ui-controlgroup {
     margin: .5em .5em !important;
