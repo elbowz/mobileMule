@@ -1,3 +1,20 @@
+.bar {
+    width: 100%;
+    background-color: lightgray;
+}
+
+.bar > .completed-bar {
+    text-align: center;
+    background-color: darkseagreen;
+    color: white;
+    text-shadow: none;
+}
+
+/* Overwrite jQuery Mobile */
+.ui-controlgroup {
+    margin: .5em .5em !important;
+}
+
 @media ( min-width: 35em ) {
 
     /* wrap on wide viewports once open */

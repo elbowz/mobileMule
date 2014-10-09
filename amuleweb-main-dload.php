@@ -40,59 +40,6 @@
 						</ul>
 					</div>
 					
-					<fieldset data-role="controlgroup">
-						<legend>Filter (status / category): </legend>
-	        			<?php
-				        	$all_status = array("all", "Waiting", "Paused", "Downloading");	
-				 			if ( $HTTP_GET_VARS["command"] == "filter") {
-				 				$_SESSION["filter_status"] = $HTTP_GET_VARS["status"];
-				 				$_SESSION["filter_cat"] = $HTTP_GET_VARS["category"];
-				 			}
-				        	if ( $_SESSION["filter_status"] == '') $_SESSION["filter_status"] = 'all';
-				        	if ( $_SESSION["filter_cat"] == '') $_SESSION["filter_cat"] = 'all';
-				
-				        	echo '<select name="status" id="status" data-native-menu="false"> ';
-				        	foreach ($all_status as $s) {
-				        		echo '<option value="' . $s . '"', (($s == $_SESSION["filter_status"]) ? ' selected>' : '>'), $s, '</option>';
-				        	}
-				        	echo '</select>';
-				        	//var_dump($_SESSION["filter_cat"]);
-				        	echo '<select name="category" id="category" data-native-menu="false">';
-							$cats = amule_get_categories();
-							foreach($cats as $c) {
-								echo '<option value="' . $s . '"', (($c == $_SESSION["filter_cat"]) ? ' selected>' : '>'), $c, '</option>';
-							}
-							echo '</select>';
-			        	?>
-			        	</fieldset>
-		                 
-		            <?php
-					 	if ($_SESSION["guest_login"] != 0) {
-							echo "<b>&nbsp;You logged in as guest - commands are disabled</b>";
-						}
-				 	?>
-                    <legend>Sort: </legend>
-				 	<div data-role="controlgroup">
-						<select name="sort" id="sort" data-native-menu="false">
-						   <option value="name"<?php echo (('name' == $HTTP_GET_VARS["sort"]) ? ' selected' : ''); ?>>File name</option>
-						   <option value="size"<?php echo (('size' == $HTTP_GET_VARS["sort"]) ? ' selected' : ''); ?>>Size</option>
-						   <option value="size_done"<?php echo (('size_done' == $HTTP_GET_VARS["sort"]) ? ' selected' : ''); ?>>Completed</option>
-						   <option value="speed"<?php echo (('speed' == $HTTP_GET_VARS["sort"]) ? ' selected' : ''); ?>>Download speed</option>
-						   <option value="progress"<?php echo (('progress' == $HTTP_GET_VARS["sort"]) ? ' selected' : ''); ?>>Progress</option>
-						   <option value="srccount"<?php echo (('srccount' == $HTTP_GET_VARS["sort"]) ? ' selected' : ''); ?>>Sources</option>
-						   <option value="status"<?php echo (('status' == $HTTP_GET_VARS["sort"]) ? ' selected' : ''); ?>>Status</option>
-						   <option value="prio"<?php echo (('prio' == $HTTP_GET_VARS["sort"]) ? ' selected' : ''); ?>>Priority</option>
-						   <option value="last_seen_complete"<?php echo (('last_seen_complete' == $HTTP_GET_VARS["sort"]) ? ' selected' : ''); ?>>Last seen completed</option>
-						</select>
-						<?php 
-						if( $HTTP_GET_VARS["download_sort_reverse"] ) 
-							echo '<a id="sort_reverse" href="#" data-value="0" data-role="button" data-theme="d" data-icon="arrow-u" data-iconpos="right" style="padding-right: 10px;">Ascendent</a>';
-						else 
-							echo '<a id="sort_reverse" href="#" data-value="1" data-role="button" data-theme="d" data-icon="arrow-d" data-iconpos="right" style="padding-right: 10px;">Descendent</a>';
-						?>
-					</div>
-				 	
-	                <br/>
 	                <?php
 						function CastToXBytes($size)
 						{
@@ -240,7 +187,7 @@
 									echo "+ ", $file->src_count_a4af;
 								}
 								echo "&nbsp;-&nbsp;", $file->last_seen_complete ? "" : "<i>never</i>&nbsp;", "seen completed</p>";
-													echo '<p><div class="ui-li-desc" style="text-align: center; background-color: #CCCCCC; width: ', $percentual_progress ,'%;">', CastToXBytes($file->size_done),"&nbsp;/&nbsp;", CastToXBytes($file->size), '</div></p>';
+													echo '<p><div class="ui-li-desc bar"><div class="ui-li-desc completed-bar" style="width: ', $percentual_progress ,'%;">', CastToXBytes($file->size_done),"&nbsp;/&nbsp;", CastToXBytes($file->size), '</div></div></p>';
 								echo '<span class="ui-li-count">',$percentual_progress, '%</span>';
 				
 								echo "</a>";
@@ -252,10 +199,96 @@
 						}
 						echo '</ul>';
 					?>
+
+                    <br/>
+
+                    <div class="ui-grid-a ui-responsive">
+                        <div class="ui-block-a">
+                            <fieldset data-role="controlgroup">
+                                <legend>Filter (status / category):</legend>
+                                <?php
+                                $all_status = array("all", "Waiting", "Paused", "Downloading");
+                                if ($HTTP_GET_VARS["command"] == "filter") {
+                                    $_SESSION["filter_status"] = $HTTP_GET_VARS["status"];
+                                    $_SESSION["filter_cat"] = $HTTP_GET_VARS["category"];
+                                }
+                                if ($_SESSION["filter_status"] == '') $_SESSION["filter_status"] = 'all';
+                                if ($_SESSION["filter_cat"] == '') $_SESSION["filter_cat"] = 'all';
+
+                                echo '<select name="status" id="status" data-native-menu="false"> ';
+                                foreach ($all_status as $s) {
+                                    echo '<option value="' . $s . '"', (($s == $_SESSION["filter_status"]) ? ' selected>' : '>'), $s, '</option>';
+                                }
+                                echo '</select>';
+                                //var_dump($_SESSION["filter_cat"]);
+                                echo '<select name="category" id="category" data-native-menu="false">';
+                                $cats = amule_get_categories();
+                                foreach ($cats as $c) {
+                                    echo '<option value="' . $s . '"', (($c == $_SESSION["filter_cat"]) ? ' selected>' : '>'), $c, '</option>';
+                                }
+                                echo '</select>';
+                                ?>
+                            </fieldset>
+
+                            <?php
+                            if ($_SESSION["guest_login"] != 0) {
+                                echo "<b>&nbsp;You logged in as guest - commands are disabled</b>";
+                            }
+                            ?>
+                        </div>
+                        <div class="ui-block-b">
+                            <fieldset data-role="controlgroup">
+                            <legend>Sort:</legend>
+                                <select name="sort" id="sort" data-native-menu="false">
+                                    <option
+                                        value="name"<?php echo(('name' == $HTTP_GET_VARS["sort"]) ? ' selected' : ''); ?>>
+                                        File name
+                                    </option>
+                                    <option
+                                        value="size"<?php echo(('size' == $HTTP_GET_VARS["sort"]) ? ' selected' : ''); ?>>
+                                        Size
+                                    </option>
+                                    <option
+                                        value="size_done"<?php echo(('size_done' == $HTTP_GET_VARS["sort"]) ? ' selected' : ''); ?>>
+                                        Completed
+                                    </option>
+                                    <option
+                                        value="speed"<?php echo(('speed' == $HTTP_GET_VARS["sort"]) ? ' selected' : ''); ?>>
+                                        Download speed
+                                    </option>
+                                    <option
+                                        value="progress"<?php echo(('progress' == $HTTP_GET_VARS["sort"]) ? ' selected' : ''); ?>>
+                                        Progress
+                                    </option>
+                                    <option
+                                        value="srccount"<?php echo(('srccount' == $HTTP_GET_VARS["sort"]) ? ' selected' : ''); ?>>
+                                        Sources
+                                    </option>
+                                    <option
+                                        value="status"<?php echo(('status' == $HTTP_GET_VARS["sort"]) ? ' selected' : ''); ?>>
+                                        Status
+                                    </option>
+                                    <option
+                                        value="prio"<?php echo(('prio' == $HTTP_GET_VARS["sort"]) ? ' selected' : ''); ?>>
+                                        Priority
+                                    </option>
+                                    <option
+                                        value="last_seen_complete"<?php echo(('last_seen_complete' == $HTTP_GET_VARS["sort"]) ? ' selected' : ''); ?>>
+                                        Last seen completed
+                                    </option>
+                                </select>
+                                <?php
+                                if ($HTTP_GET_VARS["download_sort_reverse"])
+                                    echo '<a id="sort_reverse" href="#" data-value="0" data-role="button" data-theme="d" data-icon="arrow-u" data-iconpos="right" style="padding-right: 10px;">Ascendent</a>';
+                                else
+                                    echo '<a id="sort_reverse" href="#" data-value="1" data-role="button" data-theme="d" data-icon="arrow-d" data-iconpos="right" style="padding-right: 10px;">Descendent</a>';
+                                ?>
+                            </fieldset>
+                        </div>
+                    </div>
 				</form>
 		</div>
 		<!-- /content -->
-
 
         <div data-role="footer" role="contentinfo" class="ui-footer" data-theme="c">
             <a href="#" id="btScrollUp" data-role="button" data-icon="arrow-u" class="ui-btn-right">scroll up</a>
