@@ -18,7 +18,6 @@ $(document).on('pageinit', function() {
 $(document).on('pagebeforecreate', function() {
     if( timerStatusUpdate ) {
         clearInterval(timerStatusUpdate);
-        console.log('stop update status timer - id: ' + timerStatusUpdate);
         timerStatusUpdate = 0;
     }
 
@@ -69,8 +68,7 @@ $( document ).on( "pagecreate", function() {
 $( document ).on("pageinit", "#status", function() {
 	updateStatus();
 	timerStatusUpdate = setInterval(updateStatus, 3000);
-	console.log('start update status timer - id: ' + timerStatusUpdate);
-	
+
 	var counter = 0;
 
 	function updateStatus() {

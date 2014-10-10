@@ -6,7 +6,7 @@
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
 	<title>Search - mobileMule</title>
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" />
 	<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jquerymobile/1.4.2/jquery.mobile.min.css" />
 	<link rel="stylesheet" href="mystyle.css" />
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -22,46 +22,81 @@
 
         <div data-role="header" data-position="fixed">
             <a href="#menu-panel" data-rel="close" id="btMenu" data-icon="home" class="ui-btn-left">Menu</a>
+
             <h1><i class="fa fa-search fa-fw"></i> Search</h1>
             <a href="#" data-rel="back" data-icon="arrow-l" class="ui-btn-right">Back</a>
-        </div><!-- /header -->
+        </div>
+        <!-- /header -->
 
-		<div data-role="content">
-				<form name="mainform" action="amuleweb-main-search.php" method="post">
-					<input type="hidden" name="command" value=""> 
-                    <input name="searchval" type="text" id="searchval4" size="60"> 
-                    <input name="Search" type="submit" id="Search4" value="Search" onClick="javascript:formCommandSubmit('search');" class="ui-btn-b">
-                    <legend>Availability:</legend>
-                    <input name="avail" type="text" id="avail13" size="6">
-                    <legend>Min Size: </legend>
-					<input name="minsize" type="text" id="minsize2" size="5"> 
-                    <select name="minsizeu" id="select8" data-native-menu="false">
-                      <option value="Byte">Byte</option>
-                      <option value="KByte">KByte</option>
-                      <option value="MByte" selected>MByte</option>
-                      <option value="GByte">GByte</option>
-                    </select>
-                    <legend>Max Size:</legend>
-                    <input name="maxsize" type="text" id="maxsize4" size="5">
-                    <select name="maxsizeu" id="select10" data-native-menu="false">
-                        <option value="Byte">Byte</option>
-                        <option value="KByte">KByte</option>
-                        <option value="MByte" selected>MByte</option>
-                        <option value="GByte">GByte</option>
-                    </select>
-                    <legend>Search type:</legend>
-                    <select name="searchtype" id="select" data-native-menu="false">
-                      <option value="Local">Local</option>
-                      <option value="Global" selected>Global</option>
-                      <option value="Kad">Kad</option>
-                    </select>
-                    <div class="ui-grid-c" style=margin-top: 10px;">
-                        <div class="ui-block-a"><a href="#" class="ui-btn ui-btn-inline ui-mini ui-state-disabled">Order by</a></div>
-                        <div class="ui-block-b"><a href="amuleweb-main-search.php?sort=name" class="ui-btn ui-btn-inline ui-corner-all ui-mini">File Name</a></div>
-                        <div class="ui-block-c"><a href="amuleweb-main-search.php?sort=size" class="ui-btn ui-btn-inline ui-corner-all ui-mini">Size</a></div>
-                        <div class="ui-block-d"><a href="amuleweb-main-search.php?sort=sources" class="ui-btn ui-btn-inline ui-corner-all ui-mini">Sources</a></div>
+        <div data-role="content">
+            <form name="mainform" action="amuleweb-main-search.php" method="post">
+                <input type="hidden" name="command" value="">
+
+                <legend>Filename:</legend>
+                <input name="searchval" type="text" id="searchval4" size="60">
+                <input name="Search" type="submit" id="Search4" value="Search"
+                       onClick="javascript:formCommandSubmit('search');" class="ui-btn-b">
+
+                <div data-role="collapsible">
+                    <h4>Advanced search</h4>
+
+                    <div class="ui-grid-c ui-responsive">
+                        <div class="ui-block-a">
+                            <div class="ui-body">
+                                <legend>Availability:</legend>
+                                <input name="avail" type="text" id="avail13" size="6">
+                            </div>
+                        </div>
+                        <div class="ui-block-b">
+                            <div class="ui-body">
+                                <legend>Min Size:</legend>
+                                <input name="minsize" type="text" id="minsize2" size="5">
+                                <select name="minsizeu" id="select8" data-native-menu="false">
+                                    <option value="Byte">Byte</option>
+                                    <option value="KByte">KByte</option>
+                                    <option value="MByte" selected>MByte</option>
+                                    <option value="GByte">GByte</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="ui-block-c">
+                            <div class="ui-body">
+                                <legend>Max Size:</legend>
+                                <input name="maxsize" type="text" id="maxsize4" size="5">
+                                <select name="maxsizeu" id="select10" data-native-menu="false">
+                                    <option value="Byte">Byte</option>
+                                    <option value="KByte">KByte</option>
+                                    <option value="MByte" selected>MByte</option>
+                                    <option value="GByte">GByte</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="ui-block-d">
+                            <div class="ui-body">
+                                <legend>Search type:</legend>
+                                <select name="searchtype" id="select" data-native-menu="false">
+                                    <option value="Local">Local</option>
+                                    <option value="Global" selected>Global</option>
+                                    <option value="Kad">Kad</option>
+                                </select>
+                            </div>
+                        </div>
                     </div>
-                    <a href="amuleweb-main-search.php?search_sort=<?php echo($HTTP_GET_VARS["sort"]);?>" class="ui-btn ui-icon-refresh ui-btn-icon-right ui-shadow ui-corner-all ui-btn-b" style="padding-right: 10px; margin-top: 20px;">Update the search results</a>
+                </div>
+                <div class="ui-grid-c" style=margin-top:
+                10px;">
+                <div class="ui-block-a"><a href="#" class="ui-btn ui-btn-inline ui-mini ui-state-disabled">Order by</a>
+                </div>
+                <div class="ui-block-b"><a href="amuleweb-main-search.php?sort=name"
+                                           class="ui-btn ui-btn-inline ui-corner-all ui-mini">File Name</a></div>
+                <div class="ui-block-c"><a href="amuleweb-main-search.php?sort=size"
+                                           class="ui-btn ui-btn-inline ui-corner-all ui-mini">Size</a></div>
+                <div class="ui-block-d"><a href="amuleweb-main-search.php?sort=sources"
+                                           class="ui-btn ui-btn-inline ui-corner-all ui-mini">Sources</a></div>
+        </div>
+        <a href="amuleweb-main-search.php?search_sort=<?php echo($HTTP_GET_VARS["sort"]); ?>"
+           class="ui-btn ui-icon-refresh ui-btn-icon-right ui-shadow ui-corner-all ui-btn-b"
+           style="padding-right: 10px; margin-top: 20px;">Update the search results</a>
 
     <?php
 		function CastToXBytes($size)
