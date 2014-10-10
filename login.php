@@ -13,10 +13,6 @@
 </head>
 <body>
 	<div data-role="page" id="login">
-	
-		<div data-role="header">
-			<h3>Login</h3>
-		</div>
 
 		<div data-role="content">
             <a id="btNewVersion" href="https://github.com/elbowz/mobileMule" class="ui-btn ui-corner-all ui-btn-b"><i class="fa fa-circle-o-notch fa-spin"></i> checking for new version available...</a>
@@ -61,7 +57,7 @@
         $( document ).on("pageinit", "#login", function() {
             //$('#pass').focus();
             // workaround...
-            setTimeout( function(){ $('#pass').focus(); },0 );
+            setTimeout( function(){ $('#pass').focus(); },100 );
         });
     </script>
 </body>

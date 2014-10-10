@@ -35,17 +35,28 @@
         </div><!-- /header -->
 
 		<div data-role="content">
-				<ul data-role="listview" data-theme="c" data-divider-theme="d">
-					<li data-role="list-divider">Speed</li>
-					<li>Download / Limit<span id="speed_down" class="ui-li-aside">n / n</span></li>
-					<li>Upload / Limit<span id="speed_up" class="ui-li-aside">n / n</span></li>
-					<li id="server" data-role="list-divider">Server (init ...)</li>
-					<li class="server-child">Address <span id="server-address" class="ui-li-aside">x.x.x.x</span></li>
-					<li class="server-child">Name <span id="server-name" class="ui-li-aside">init</span></li>
-					<!-- <li class="server-child">Users <span id="server-users" class="ui-li-aside">n</span></li>-->
-					<li id="kad" data-role="list-divider">Kad (init ...)</li>
-					<li><p><strong>note:</strong> this info is refreshed each 3 seconds.</p></li>
-				</ul>
+            <ul data-role="listview" data-inset="true">
+                <li data-role="list-divider">Speed</li>
+                <li>
+                    <h2 id="speed_down">n / n</h2>
+                    <p class="ui-li-aside"><strong>Download / Limit</strong></p>
+                </li>
+                <li>
+                    <h2 id="speed_up">n / n</h2>
+                    <p class="ui-li-aside"><strong>Upload / Limit</strong></p>
+                </li>
+                <li id="server" data-role="list-divider">Server (init ...)</li>
+                <li>
+                    <h2 id="server-address">x.x.x.x</h2>
+                    <p><strong>Address</strong></p>
+                </li>
+                <li>
+                    <h2 id="server-name">init</h2>
+                    <p><strong>Name</strong></p>
+                </li>
+                <li id="kad" data-role="list-divider">Kad (init ...)</li>
+                <li><p><strong>note:</strong> this info is refreshed each 3 seconds.</p></li>
+            </ul>
 		</div>
 		<!-- /content -->
 
