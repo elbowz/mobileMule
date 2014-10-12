@@ -1,3 +1,17 @@
+table {
+    width: 100%;
+    margin: 10px 2px;
+}
+
+table td, table th {
+    border-bottom: 1px solid #e6e6e6;
+    padding: 0px;
+}
+
+table.last-column-right td:last-child, table.last-column-right th:last-child {
+    text-align: right;
+}
+
 .bar {
     width: 100%;
     background-color: lightgray;
@@ -24,6 +38,10 @@
 
 .ui-navbar .fa {
     display: block;
+}
+
+.bg-green {
+    background-color: lightgreen !important;
 }
 
 /* Overwrite jQuery Mobile */

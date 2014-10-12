@@ -1,9 +1,13 @@
 CHANGELOG 
 =========
 
-### 1.9.1b
- * Some graphic improvment for download page (colored progress bar, new icons and page reformat)
- * Added icon for Apple devices
+### 2.0.0b
+ * Drastically increased speed and performance!
+ * Whole project refactoring
+ * Graphic improvements for status, downloads, search and servers pages (colored bar, responsive grid, collapsible object, etc...)
+ * Servers page now highlight the server connected 
+ * Added icons for Android and Apple devices
+ * And more I don't remember
 
 ### 1.9b
  * Hide address bar in Chrome and Safari (Android and iOS) when user install Web Apps to the home screen (like native app!)
