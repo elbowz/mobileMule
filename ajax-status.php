@@ -5,6 +5,6 @@
 	{
 		echo '"'.$key.'": "'.$value.'",';
 	}
-	echo '"forclose": "null"';
+	echo '"lastitem": "null"';
 	echo "}";
 ?>
