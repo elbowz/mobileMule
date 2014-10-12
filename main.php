@@ -58,6 +58,8 @@
         <div role="main" class="ui-content">
             <!-- IMPORTANT: Update also login.php#version, latestVersion.js, main.php -->
             <p><strong>mobileMule v2.0.0b</strong><br/>
+                <br/><i>Donation Package</i><br/>
+                Thanks for your Donation!<br/><br/>
                 coded by muttley &copy; copyright 2014<br/><br/>
                 <a href="https://raw.githubusercontent.com/elbowz/mobileMule/master/CHANGELOG.md" title="changelog">Changelog</a> &bull;
                 <a href="https://github.com/elbowz/mobileMule" title="mobileMule project page">Project page</a> &bull;
@@ -75,13 +77,13 @@
         <li data-icon="false"><a href="#page-status" class="hash-link">Status <i class="fa fa-home pull-right fa-fw"></i></a></li>
         <li data-icon="false"><a href="#page-downloads" class="hash-link">Downloads <i class="fa fa-download pull-right fa-fw"></i></a></li>
         <li data-icon="false"><a href="#page-uploads" class="hash-link">Uploads <i class="fa fa-upload pull-right fa-fw"></i></a></li>
-        <li data-icon="false"><a href="#page-donate" class="hash-link">Search <i class="fa fa-search pull-right fa-fw"></i></a></li>
-        <li data-icon="false"><a href="#page-donate" class="hash-link">Configurations <i class="fa fa-cogs pull-right fa-fw"></i></a></li>
+        <li data-icon="false"><a href="#page-search" class="hash-link">Search <i class="fa fa-search pull-right fa-fw"></i></a></li>
+        <li data-icon="false"><a href="#page-config" class="hash-link">Configurations <i class="fa fa-cogs pull-right fa-fw"></i></a></li>
         <li data-icon="false"><a href="#page-servers" class="hash-link">Servers <i class="fa fa-database pull-right fa-fw"></i></a></li>
         <li data-icon="false"><a href="#page-listed-stats" class="hash-link">Statistics <i class="fa fa-tachometer pull-right fa-fw"></i></a></li>
         <li data-icon="false"><a href="#page-graph" class="hash-link">Graphs <i class="fa fa-bar-chart-o pull-right fa-fw"></i></a></li>
         <li data-icon="false"><a href="#page-log" class="hash-link">Log <i class="fa fa-bars pull-right fa-fw"></i></a></li>
-        <li data-icon="false"><a href="#page-donate" class="hash-link">Add ed2k <i class="fa fa-plus pull-right fa-fw"></i></a></li>
+        <li data-icon="false"><a href="#page-footer" class="hash-link">Add ed2k <i class="fa fa-plus pull-right fa-fw"></i></a></li>
         <li data-icon="false"><a href="login.php">Logout <i class="fa fa-unlock-alt pull-right fa-fw"></i></a></li>
     </ul>
 </div>

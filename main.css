@@ -49,16 +49,29 @@ table.last-column-right td:last-child, table.last-column-right th:last-child {
     margin: .5em .5em !important;
 }
 
+.ui-field-contain > label {
+    width: 40%;
+}
+
+.ui-field-contain > label~[class*=ui-] {
+    width: 48%;
+}
+
+.ui-field-contain .ui-flipswitch.ui-flipswitch-active {
+    width: 1.875em !important;
+}
+
 @media ( min-width: 35em ) {
 
     /* wrap on wide viewports once open */
-
     .ui-panel-page-content-open.ui-panel-page-content-position-left {
         margin-right: 17em;
     }
+
     .ui-panel-page-content-open.ui-panel-page-content-position-right {
         margin-left: 17em;
     }
+
     .ui-panel-page-content-open {
         width: auto;
     }
@@ -69,13 +82,14 @@ table.last-column-right td:last-child, table.last-column-right th:last-child {
     }
 
     /* same as the above but for panels with display mode "push" only */
-
     .ui-panel-page-content-open.ui-panel-page-content-position-left.ui-panel-page-content-display-push {
         margin-right: 17em;
     }
+
     .ui-panel-page-content-open.ui-panel-page-content-position-right.ui-panel-page-content-display-push {
         margin-left: 17em;
     }
+
     .ui-panel-page-content-open.ui-panel-page-content-display-push {
         width: auto;
     }
