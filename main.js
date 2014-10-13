@@ -57,13 +57,22 @@ $(document).on('pagecreate', function () {
     // Force JQuery mobile to set hash in the url (ancor)
     $('a.hash-link').on('vclick', function () {
         location.hash = $(this).attr('href');
+
+        if (!isDesktop()) {
+            $panel.panel('close');
+        }
     });
 
     // Update page (not menu) with link.href through ajax
     $('a.ajax-link').on('vclick', function (event) {
         event.preventDefault();
 
-        var options = { loaderText: $(this).data('text'), loaderTextVisible: true };
+        var loaderText = $(this).data('text');
+
+        var options = {};
+        if (loaderText) {
+            options = { loaderText: loaderText, loaderTextVisible: true };
+        }
 
         $(this).jQMobileAjaxLink(options);
     });
@@ -106,16 +115,30 @@ $(document).on('pageshow', function () {
     // Call the first hashchange
     $(window).hashchange();
 
-    $panel = $("#menu-panel");
+    $panel = $('#menu-panel');
 
     $panel.panel().enhanceWithin();
 
-    var width = $(window).width();
-    if (width > 768) {
-        $panel.panel("open");
+    if (isDesktop()) {
+        $panel.panel('open');
     }
 });
 
+bytesToSize = function (bytes) {
+    if (bytes == 0) return '0 Byte';
+    var k = 1024;
+    var sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
+    var i = Math.floor(Math.log(bytes) / Math.log(k));
+    return (bytes / Math.pow(k, i)).toPrecision(3) + ' ' + sizes[i];
+}
+
+isDesktop = function () {
+    var width = $(window).width();
+    if (width > 768) {
+        return true;
+    }
+    return false;
+}
 
 // Update page (not menu) with form submit through ajax
 $.fn.jQMobileAjaxSubmit = function (options) {

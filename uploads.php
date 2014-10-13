@@ -14,7 +14,8 @@ function CastToXBytes($size)
 }
 
 $uploads = amule_load_vars("uploads");
-echo '<ul data-role="listview" data-filter="true" data-filter-placeholder="Search file...">';
+
+echo '<br/><ul data-role="listview">';
 echo '<li data-role="list-divider">Uploads<span class="ui-li-count">' . count($uploads) . '</span></li>';
 foreach ($uploads as $file) {
     echo '<li data-filtertext="', $file->short_name, '">';

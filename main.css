@@ -12,6 +12,18 @@ table.last-column-right td:last-child, table.last-column-right th:last-child {
     text-align: right;
 }
 
+small {
+    color: gray;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
 .bar {
     width: 100%;
     background-color: lightgray;
@@ -29,11 +41,11 @@ table.last-column-right td:last-child, table.last-column-right th:last-child {
 }
 
 .bar > .completed-bar.waiting {
-    background-color: darkcyan;
+    background-color: #F4C430;
 }
 
 .bar > .completed-bar.pause {
-    background-color: darkgrey;
+    background-color: #E52B50;
 }
 
 .ui-navbar .fa {
@@ -50,28 +62,27 @@ table.last-column-right td:last-child, table.last-column-right th:last-child {
 }
 
 .ui-field-contain > label {
-    width: 40%;
+    width: 60%;
 }
 
 .ui-field-contain > label~[class*=ui-] {
-    width: 48%;
+    width: 38%;
 }
 
 .ui-field-contain .ui-flipswitch.ui-flipswitch-active {
-    width: 1.875em !important;
+    width: 1.875em;
 }
 
 @media ( min-width: 35em ) {
 
     /* wrap on wide viewports once open */
+
     .ui-panel-page-content-open.ui-panel-page-content-position-left {
         margin-right: 17em;
     }
-
     .ui-panel-page-content-open.ui-panel-page-content-position-right {
         margin-left: 17em;
     }
-
     .ui-panel-page-content-open {
         width: auto;
     }
@@ -82,14 +93,13 @@ table.last-column-right td:last-child, table.last-column-right th:last-child {
     }
 
     /* same as the above but for panels with display mode "push" only */
+
     .ui-panel-page-content-open.ui-panel-page-content-position-left.ui-panel-page-content-display-push {
         margin-right: 17em;
     }
-
     .ui-panel-page-content-open.ui-panel-page-content-position-right.ui-panel-page-content-display-push {
         margin-left: 17em;
     }
-
     .ui-panel-page-content-open.ui-panel-page-content-display-push {
         width: auto;
     }

@@ -6,7 +6,7 @@
         // must be re-inizialized because $node IS NOT local variabile?!!?! a sort of static or global
         $node = true;
         $node = split(': ', $it, 3);
-        echo '<li>' . $node[0] . '<p class="ui-li-aside"><strong>' . $node[1] . $node[2] . '</strong></p></li>';
+        echo '<li><div class="ui-grid-a ui-responsive"><div class="ui-block-a">' . $node[0] . '</div><div class="ui-block-b"><strong>' . $node[1] . $node[2] . '</strong></div></div></li>';
     }
 
     function print_folder($key, &$arr, $ident)

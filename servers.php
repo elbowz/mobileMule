@@ -65,7 +65,7 @@ do {
     usort($servers, "my_cmp");
 } while ($status['serv_name'] == '' && $status['id'] != '0');
 
-echo '<ul data-role="listview" data-split-icon="delete" data-filter="true" data-filter-placeholder="Search file...">';
+echo '<ul data-role="listview" data-split-icon="delete" data-filter="true" data-filter-placeholder="Search server...">';
 echo '<li data-role="list-divider">Servers<span class="ui-li-count">' . count($servers) . '</span></li>';
 foreach ($servers as $srv) {
     /* if ($_SESSION["guest_login"] != 0) {
@@ -93,8 +93,8 @@ foreach ($servers as $srv) {
     echo '<h3>', $srv->name, $srvNameAppend, '</h3>';
     echo '<p><strong>', $srv->desc, '</strong></p>';
     echo '<p>', $srv->addr, ' - ';
-    echo '<i>users: ', $srv->users, '</i></p>';
-    echo '<span class="ui-li-count">', $srv->files, ' files</span>';
+    echo '<i>files: ', $srv->files, '</i></p>';
+    echo '<span class="ui-li-count"><i class="fa fa-users fa-fw"></i> ', $srv->users, '</span>';
     if ($_SESSION["guest_login"] == 0)
         echo '<a href="servers.php?cmd=remove&ip=', $srv->ip, '&port=', $srv->port, '" class="ajax-link">Remove Server</a>';
 

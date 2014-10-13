@@ -6,7 +6,9 @@ coded by muttley © 2014 - https://github.com/elbowz/mobileMule
 
 What it is
 ----------
-mobileMule is aMule web server template/skin for mobile and desktop. Based on jQuery mobile library.
+mobileMule is aMule web server template/skin for mobile and desktop. Based on jQuery mobile library.  
+The focus is on the speed and the lightweight for reduce the footprint and increase the speed perfromance.  
+It use a modern graphic with a template responsive design.
 
 Download
 --------
@@ -16,7 +18,8 @@ Download
 Compatibility
 -------------
 Tested on Android (Default browser, Chrome, Firefox, Opera, Boat browser, etc), Linux (Chrome, Firefox), Windows (Chrome, Firefox), iOS (Safari, Chrome).
-Also work with GetEd2k (Donation Package) (https://play.google.com/store/apps/details?id=org.anacletus.geted2k).
+You can also add it on home (Android, iOS) and run as a *webapp* like a *native app*.
+Support for GetEd2k (Donation Package) (https://play.google.com/store/apps/details?id=org.anacletus.geted2k).
 
 How to install
 --------------

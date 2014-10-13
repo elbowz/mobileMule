@@ -4,8 +4,10 @@ CHANGELOG
 ### 2.0.0b
  * Drastically increased speed and performance!
  * Whole project refactoring
- * Graphic improvements for status, downloads, search and servers pages (colored bar, responsive grid, collapsible object, etc...)
- * Servers page now highlight the server connected 
+ * Graphic improvements for status, downloads, search config and servers pages (colored bar, responsive grid, collapsible object, etc...)
+ * Real-time Speed Chart on status page
+ * Servers page now highlight the server connected
+ * Add ed2k link now support multi-links
  * Added icons for Android and Apple devices
  * And more I don't remember
 

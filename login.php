@@ -25,12 +25,12 @@
                 <img src="login-icon.png" width="100%" style="max-width:260px;" border="0"/>
             </a>
         </div>
-        <form action="" method="post" name="login" data-ajax="false">
+        <form action="" method="post" name="reg" data-ajax="false">
             <div data-role="fieldcontain">
                 <!-- force Chrome to save password for autocomplete -->
-                <input type='text' name='username' style="display: none;">
+                <input type="text" name="username" style="display: none;">
                 <label for="pass">Password</label>
-                <input name="pass" id="pass" value="" type="password"/>
+                <input name="pass" id="password" value="" type="password"/>
             </div>
             <input name="submit" type="submit" value="Submit"/>
         </form>
