@@ -55,7 +55,9 @@ $(document).on('pagecreate', function () {
     }
 
     // Force JQuery mobile to set hash in the url (ancor)
-    $('a.hash-link').on('vclick', function () {
+    $('a.hash-link').on('vclick', function (event) {
+        event.preventDefault();
+
         location.hash = $(this).attr('href');
 
         if (!isDesktop()) {
@@ -75,6 +77,13 @@ $(document).on('pagecreate', function () {
         }
 
         $(this).jQMobileAjaxLink(options);
+    });
+
+    $('#pnMenuLogout').on('vclick', function(event) {
+        event.preventDefault();
+
+        eraseCookie('auth');
+        window.location = $(event.currentTarget).attr('href');
     });
 
     $('#btScrollUp').on('vclick', function (event) {
@@ -194,3 +203,30 @@ $.fn.jQMobileAjaxLink = function (options) {
 
     return this;
 };
+
+/* Cookie lib
+ src:http://www.quirksmode.org/js/cookies.htm */
+function createCookie(name, value, days) {
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        var expires = "; expires=" + date.toGMTString();
+    }
+    else var expires = "";
+    document.cookie = name + "=" + value + expires + "; path=/";
+}
+
+function readCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for (var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+    }
+    return null;
+}
+
+function eraseCookie(name) {
+    createCookie(name, "", -1);
+}

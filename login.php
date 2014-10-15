@@ -18,21 +18,27 @@
 <div data-role="page" id="login">
 
     <div data-role="content">
-        <a id="btNewVersion" href="https://github.com/elbowz/mobileMule" class="ui-btn ui-corner-all ui-btn-b">checking for new version available...</a>
+        <a id="btNewVersion" href="https://github.com/elbowz/mobileMule" class="ui-btn ui-corner-all ui-btn-b">checking for new version
+            available...</a>
 
         <div style="text-align:center; padding: 0px 20px;">
             <a href="https://github.com/elbowz/mobileMule" title="about" data-rel="dialog">
-                <img src="login-icon.png" width="100%" style="max-width:260px;" border="0"/>
+                <img src="login-icon.png" width="100%" style="max-width:256px;" border="0"/>
             </a>
         </div>
-        <form action="" method="post" name="reg" data-ajax="false">
+        <form action="main.php" method="post" name="reg" data-ajax="false">
+            <!-- force Chrome to save password for autocomplete -->
+            <input type="text" name="username" style="display: none;">
+
             <div data-role="fieldcontain">
-                <!-- force Chrome to save password for autocomplete -->
-                <input type="text" name="username" style="display: none;">
                 <label for="pass">Password</label>
                 <input name="pass" id="password" value="" type="password"/>
             </div>
-            <input name="submit" type="submit" value="Submit"/>
+            <div class="ui-field-contain">
+                <label for="remember-me">Remember me:</label>
+                <input type="checkbox" data-role="flipswitch" name="remember-me" id="remember-me">
+            </div>
+            <input id="btLogin" name="submit" type="submit" value="Submit"/>
         </form>
     </div>
     <!-- /content -->
@@ -42,12 +48,23 @@
     </div>
 </div>
 <script>
+    $password = $('#password');
+    $rememberme = $("#remember-me");
+
+    // Autologin...
+    if (authCookie = readCookie('auth')) {
+
+        $rememberme.attr('checked', true).flipswitch().flipswitch('refresh');
+        $password.val(authCookie)
+        $('#btLogin').trigger('click');
+    }
+
     // IMPORTANT: Update also login.php#version, latestVersion.js, main.php
-    var currentVersion = 'v2.0.0b';
+    var currentVersion = '2.0.0b';
 
     $(document).on('pagecreate', "#login", function () {
         $.ajax({
-            url: "https://cdn.rawgit.com/elbowz/mobileMule/master/latestVersion.js",
+            url: "https://rawgit.com/elbowz/mobileMule/master/latestVersion.js",
             dataType: 'script',
             beforeSend: function () {
                 $.mobile.loading('show');
@@ -66,10 +83,46 @@
             }
         });
 
-        $('#pass').focus()
+        $('form[name="reg"]').on('submit', function () {
+
+            if ($rememberme.is(':checked')) {
+                createCookie('auth', $password.val(), 365);
+            } else {
+                eraseCookie('auth');
+            }
+        });
+
+        $password.focus()
             .trigger('tap')
             .trigger('click');
     });
+
+    /* Cookie lib
+     src:http://www.quirksmode.org/js/cookies.htm */
+    function createCookie(name, value, days) {
+        if (days) {
+            var date = new Date();
+            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+            var expires = "; expires=" + date.toGMTString();
+        }
+        else var expires = "";
+        document.cookie = name + "=" + value + expires + "; path=/";
+    }
+
+    function readCookie(name) {
+        var nameEQ = name + "=";
+        var ca = document.cookie.split(';');
+        for (var i = 0; i < ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+            if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+        }
+        return null;
+    }
+
+    function eraseCookie(name) {
+        createCookie(name, "", -1);
+    }
 </script>
 </body>
 </html>

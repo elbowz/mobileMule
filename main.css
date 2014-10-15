@@ -24,6 +24,10 @@ small {
     text-align: right;
 }
 
+#menu-panel i.fa {
+    margin-top: 3px;
+}
+
 .bar {
     width: 100%;
     background-color: lightgray;
