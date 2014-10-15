@@ -87,7 +87,7 @@
         <li data-icon="false"><a href="#page-graph" class="hash-link">Graphs <i class="fa fa-bar-chart-o pull-right fa-fw"></i></a></li>
         <li data-icon="false"><a href="#page-log" class="hash-link">Log <i class="fa fa-bars pull-right fa-fw"></i></a></li>
         <li data-icon="false"><a href="#page-donate" class="hash-link">Add ed2k <i class="fa fa-plus pull-right fa-fw"></i></a></li>
-        <li data-icon="false"><a href="login.php">Logout <i class="fa fa-unlock-alt pull-right fa-fw"></i></a></li>
+        <li data-icon="false"><a href="login.php" id="pnMenuLogout">Logout <i class="fa fa-unlock-alt pull-right fa-fw"></i></a></li>
     </ul>
 </div>
 

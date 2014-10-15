@@ -59,11 +59,14 @@ if ($sort_order != "") {
 }
 
 // Wait the server is connected or disconnect ( $status['id'] == '0')
+$status;
+$nTryToConnect = 0;
 do {
+    $nTryToConnect++;
     $status = amule_get_stats();
     // there is not a sleep()...sorry
     usort($servers, "my_cmp");
-} while ($status['serv_name'] == '' && $status['id'] != '0');
+} while ($status['serv_name'] == '' && $status['id'] != '0' && $nTryToConnect < 10000);
 
 echo '<ul data-role="listview" data-split-icon="delete" data-filter="true" data-filter-placeholder="Search server...">';
 echo '<li data-role="list-divider">Servers<span class="ui-li-count">' . count($servers) . '</span></li>';
