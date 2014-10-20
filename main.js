@@ -1,11 +1,15 @@
 var mainHash = '#page-status'
 
-// Disable send form through AJAX (default behavior)
+$(document).ready(function () {
+    $panel = $('#menu-panel');
+});
+
+
 $(document).on('mobileinit', function () {
+    // Disable send form through AJAX (default behavior)
     $.extend($.mobile, {
         ajaxEnabled: false
     });
-
 });
 
 var oldHash;
@@ -20,11 +24,11 @@ $(window).on('hashchange', function () {
         $.mobile.loading('show');
 
         if (hash == '#page-donate') {
-            $('#header > h1').html('Donation Package <i class="fa fa-thumbs-o-up fa-fw"></i> ');
+            $('#header > h1').html('Donation Pack. <i class="fa fa-thumbs-o-up fa-fw"></i> ');
 
         } else {
             // Manipulate menu link text
-            var head = $('#menu-panel').find('a[href="' + hash + '"]').clone();
+            var head = $panel.find('a[href="' + hash + '"]').clone();
 
             if (head.length) {
                 head.find('i').removeClass('pull-right');
@@ -79,7 +83,7 @@ $(document).on('pagecreate', function () {
         $(this).jQMobileAjaxLink(options);
     });
 
-    $('#pnMenuLogout').on('vclick', function(event) {
+    $('#pnMenuLogout').on('vclick', function (event) {
         event.preventDefault();
 
         eraseCookie('auth');
@@ -97,9 +101,9 @@ $(document).on('pagecreate', function () {
         // We check if there is no open panel on the page because otherwise
         // a swipe to close the left panel would also open the right panel (and v.v.).
         // We do this by checking the data that the framework stores on the page element (panel: open).
-        if ($(".ui-page-active").jqmData("panel") !== "open") {
-            if (event.type === "swiperight") {
-                $("#menu-panel").panel("open");
+        if ($('.ui-page-active').jqmData('panel') !== 'open') {
+            if (event.type === 'swiperight') {
+                $panel.panel('open');
             }
         }
     });
@@ -124,14 +128,13 @@ $(document).on('pageshow', function () {
     // Call the first hashchange
     $(window).hashchange();
 
-    $panel = $('#menu-panel');
-
     $panel.panel().enhanceWithin();
 
     if (isDesktop()) {
         $panel.panel('open');
     }
 });
+
 
 bytesToSize = function (bytes) {
     if (bytes == 0) return '0 Byte';

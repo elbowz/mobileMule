@@ -61,23 +61,34 @@ small {
 }
 
 /* Overwrite jQuery Mobile */
+.ui-navbar span {
+    font-size: 10px;
+}
+
 .ui-controlgroup {
     margin: .5em .5em !important;
 }
 
-.ui-field-contain > label {
-    width: 60%;
-}
-
-.ui-field-contain > label~[class*=ui-] {
-    width: 38%;
-}
-
-.ui-field-contain .ui-flipswitch.ui-flipswitch-active {
-    width: 1.875em;
-}
+/* Desktop mode */
 
 @media ( min-width: 35em ) {
+    /* navbar bigger fonts */
+    .ui-navbar span {
+        font-size: 17px;
+    }
+
+    /* form in a list */
+    .ui-field-contain > label {
+        width: 60%;
+    }
+
+    .ui-field-contain > label~[class*=ui-] {
+        width: 38%;
+    }
+
+    .ui-field-contain .ui-flipswitch.ui-flipswitch-active {
+        width: 1.875em;
+    }
 
     /* wrap on wide viewports once open */
 

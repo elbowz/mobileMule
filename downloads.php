@@ -3,11 +3,11 @@
 
 <div data-role="navbar">
     <ul>
-        <li><a href="javascript:formCommandSubmit('pause');"><i class="fa fa-pause"></i>Pause</a></li>
-        <li><a href="javascript:formCommandSubmit('resume');"><i class="fa fa-play"></i>Resume</a></li>
-        <li><a href="javascript:formCommandSubmit('prioup');"><i class="fa fa-chevron-up"></i>Prio. up</a></li>
-        <li><a href="javascript:formCommandSubmit('priodown');"><i class="fa fa-chevron-down"></i>Prio. down</a></li>
-        <li><a href="javascript:formCommandSubmit('cancel');"><i class="fa fa-trash"></i>Cancel</a></li>
+        <li><a href="javascript:formCommandSubmit('pause');"><i class="fa fa-pause"></i><span>Pause</span></a></li>
+        <li><a href="javascript:formCommandSubmit('resume');"><i class="fa fa-play"></i><span>Resume</span></a></li>
+        <li><a href="javascript:formCommandSubmit('prioup');"><i class="fa fa-chevron-up"></i><span>Prio. up</span></a></li>
+        <li><a href="javascript:formCommandSubmit('priodown');"><i class="fa fa-chevron-down"></i><span>Prio. down</span></a></li>
+        <li><a href="javascript:formCommandSubmit('cancel');"><i class="fa fa-trash"></i><span>Cancel</span></a></li>
     </ul>
 </div>
 

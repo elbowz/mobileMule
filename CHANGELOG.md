@@ -1,6 +1,10 @@
 CHANGELOG 
 =========
 
+### 2.1.0b
+ * Added support for themes (Donation Package)
+ * Fixed little bugs
+
 ### 2.0.0b
  * Drastically increased speed and performance!
  * Whole project refactoring

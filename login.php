@@ -60,7 +60,7 @@
     }
 
     // IMPORTANT: Update also login.php#version, latestVersion.js, main.php
-    var currentVersion = '2.0.0b';
+    var currentVersion = '2.1.0b';
 
     $(document).on('pagecreate', "#login", function () {
         $.ajax({
