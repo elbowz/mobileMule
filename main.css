@@ -38,6 +38,7 @@ small {
     background-color: darkseagreen;
     color: white;
     text-shadow: none;
+    white-space: nowrap;
 }
 
 .bar > .completed-bar.downloading {

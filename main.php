@@ -19,8 +19,9 @@
     <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jquerymobile/1.4.3/jquery.mobile.min.css"/>
 
     <link rel="stylesheet" type="text/css" href="addtohomescreen.css">
-    <link rel="stylesheet" href="main.css"/>
+    <link rel="stylesheet" type="text/css" href="main.css"/>
 
+    <script src="underscore-min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="main.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquerymobile/1.4.3/jquery.mobile.min.js"></script>
@@ -46,7 +47,6 @@
 
     <div id="footer" data-role="footer">
         <a id="btScrollUp" href="#" data-icon="arrow-u" class="ui-btn-right">scroll up</a>
-
         <p>&nbsp;<a href="#about" data-rel="popup" data-position-to="window" data-transition="pop">mobileMule</a> &copy; 2014</p>
     </div>
     <!-- /footer -->

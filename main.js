@@ -207,6 +207,101 @@ $.fn.jQMobileAjaxLink = function (options) {
     return this;
 };
 
+/* Notify Class
+   Build on jQuery Mobile Popup*/
+var notify = {
+
+    initPopup: function (attrs) {
+
+        if (!this.$el) {
+
+            attrs = attrs || {};
+
+            _.defaults(attrs, {
+                'class': 'notify ui-content',
+                'data-role': 'popup'
+            });
+
+            this.$el = $('<div/>', attrs).appendTo('body');
+
+            this.$el.popup({
+                afteropen: _.bind(function () {
+
+                    this.opened = true;
+                }, this),
+                afterclose: _.bind(function () {
+
+                    this.opened = false;
+                    if(this.closedPrevPopup) this.closedPrevPopup.call();
+                }, this)
+            });
+        }
+
+        return this.$el;
+    },
+
+    createPopup: function (html, options, attrs) {
+
+        options = options || {};
+
+        this.initPopup();
+
+        _.defaults(options, {
+            transition: 'slidedown',
+            positionTo: '#header',
+            corners: false,
+            theme: $('div#main').attr('data-theme') || 'a'
+        });
+
+        this.$el.html(html);
+
+        this.$el.popup('option', options);
+
+        this.closedPrevPopup = null;
+
+        return this.$el;
+    },
+
+    open: function(html, options) {
+
+        options = options || {};
+
+        var open = _.bind(function() {
+
+            if(options.delay) {
+
+                setTimeout(_.bind(function () {
+
+                    this.$el.popup('close');
+                }, this), options.delay);
+            }
+
+            _.omit(options, 'delay');
+
+            this.createPopup(html, options).popup('open');
+        }, this);
+
+        if(this.opened) {
+
+            this.closedPrevPopup = _.bind(function() {
+
+               open();
+            }, this);
+
+            this.$el.popup('close');
+        } else {
+
+            open();
+        }
+    },
+    message: function (html, options) {
+
+        this.open(html, options);
+    },
+    success: function (options) {
+    }
+}
+
 /* Cookie lib
  src:http://www.quirksmode.org/js/cookies.htm */
 function createCookie(name, value, days) {
