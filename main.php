@@ -24,6 +24,7 @@
     <script src="underscore-min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquerymobile/1.4.3/jquery.mobile.min.js"></script>
+    <script src="handlebars.min.js"></script>
     <script src="chart.min.js"></script>
     <script src="addtohomescreen.min.js"></script>
 

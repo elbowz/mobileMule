@@ -15,6 +15,32 @@ var isDesktop = function () {
 }
 
 // Update page (not menu) with form submit through ajax
+$.fn.ajaxForm = function (options, callback) {
+
+    callback = typeof options === 'function' ? options : callback;
+
+    var settings = $.extend({
+        // These are the defaults.
+        method: this.attr('method'),
+        action: this.attr('action'),
+        dataType: 'json'
+    }, options);
+
+    $.ajax({
+        type: settings.method,
+        url: settings.action,
+        data: this.serialize(),
+        success: function (data) {
+
+            if(settings.dataType === 'json') data = JSON.parse(data);
+            callback.call(this, data);
+        }
+    });
+
+    return this;
+};
+
+// Update page (not menu) with form submit through ajax
 $.fn.jQMobileAjaxSubmit = function (options) {
     var settings = $.extend({
         // These are the defaults.

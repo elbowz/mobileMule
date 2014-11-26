@@ -61,6 +61,10 @@ small {
     background-color: lightgreen !important;
 }
 
+.handlebars-template {
+    display: none !important;
+}
+
 /* Overwrite jQuery Mobile */
 .ui-navbar span {
     font-size: 10px;
