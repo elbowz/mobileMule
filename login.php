@@ -18,9 +18,6 @@
 <div data-role="page" id="login">
 
     <div data-role="content">
-        <a id="btNewVersion" href="https://github.com/elbowz/mobileMule" class="ui-btn ui-corner-all ui-btn-b">checking for new version
-            available...</a>
-
         <div style="text-align:center; padding: 0px 20px;">
             <a href="https://github.com/elbowz/mobileMule" title="about" data-rel="dialog">
                 <img src="login-icon.png" width="100%" style="max-width:256px;" border="0"/>
@@ -59,29 +56,7 @@
         $('#btLogin').trigger('click');
     }
 
-    // IMPORTANT: Update also login.php#version, latestVersion.js, main.php
-    var currentVersion = '2.1.0b';
-
     $(document).on('pagecreate', "#login", function () {
-        $.ajax({
-            url: "https://rawgit.com/elbowz/mobileMule/master/latestVersion.js",
-            dataType: 'script',
-            beforeSend: function () {
-                $.mobile.loading('show');
-            },
-            success: function () {
-                $.mobile.loading('hide');
-                if (latestVersion != currentVersion) {
-                    $('#btNewVersion').html(latestVersion + ' version is available!');
-                } else {
-                    $('#btNewVersion').html('you are updated!');
-                }
-            },
-            error: function () {
-                $.mobile.loading('hide');
-                $('#btNewVersion').html('Something go wrong during the new version check');
-            }
-        });
 
         $('form[name="reg"]').on('submit', function () {
 

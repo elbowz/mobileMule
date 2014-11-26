@@ -23,10 +23,12 @@
 
     <script src="underscore-min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script src="main.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquerymobile/1.4.3/jquery.mobile.min.js"></script>
     <script src="chart.min.js"></script>
     <script src="addtohomescreen.min.js"></script>
+
+    <script src="utils.js"></script>
+    <script src="main.js"></script>
 </head>
 
 <body>
@@ -77,8 +79,8 @@
             <h2>About</h2>
         </div>
         <div role="main" class="ui-content">
-            <!-- IMPORTANT: Update also login.php#version, latestVersion.js, main.php -->
-            <p><strong>mobileMule v2.1.0b</strong><br/>
+            <!-- IMPORTANT: Update also main.js#version check, latestVersion.js, main.php -->
+            <p><strong>mobileMule v2.s.0b</strong><br/>
 
                 coded by muttley &copy; copyright 2014<br/><br/>
                 <a href="https://raw.githubusercontent.com/elbowz/mobileMule/master/CHANGELOG.md" title="changelog">Changelog</a> &bull;
@@ -93,7 +95,7 @@
 <!-- /page -->
 
 <script>
-    addToHomescreen({ maxDisplayCount: 4 });
+
 </script>
 </body>
 </html>
