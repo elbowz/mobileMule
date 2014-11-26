@@ -188,11 +188,11 @@ var notify = {
     },
     message: function (html, options) {
 
-        this.open(html, options, {class: 'notify message ui-content'});
+        this.open(html, options, {class: 'notify notify-message ui-content'});
     },
     error: function (html, options) {
 
-        this.open('<i class="fa fa-exclamation-triangle"></i> ' + html, options, {class: 'notify error ui-content'});
+        this.open('<i class="fa fa-exclamation-triangle"></i> ' + html, options, {class: 'notify notify-error ui-content'});
     }
 }
 

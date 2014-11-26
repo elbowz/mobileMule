@@ -118,7 +118,7 @@ $(document).one('pageshow', function () {
         success: function () {
             $.mobile.loading('hide');
             if (latestVersion != currentVersion) {
-                notify.message(latestVersion + ' version is available!');
+                notify.message('New version (v' + latestVersion + ') is available! <a href="https://github.com/elbowz/mobileMule" class="ui-btn ui-btn-inline ui-mini"><i class="fa fa-download"></i></a>');
             }
         },
         error: function () {

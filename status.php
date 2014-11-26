@@ -41,7 +41,8 @@
 
     count = 0;
     updateStatus = function () {
-        $.getJSON('ajax-status.php', function (data) {
+        $.getJSON('status-ajax.php', function (data) {
+
             // Add data to Graph
             var now = new Date();
             speedChart.addData([(data['speed_up'] / 1024).toFixed(2), (data['speed_down'] / 1024).toFixed(2)], count);
