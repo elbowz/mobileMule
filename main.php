@@ -59,14 +59,14 @@
             <li data-icon="false"><a href="#page-status" class="hash-link">Status <i class="fa fa-home pull-right fa-fw"></i></a></li>
             <li data-icon="false"><a href="#page-downloads" class="hash-link">Downloads <i class="fa fa-download pull-right fa-fw"></i></a></li>
             <li data-icon="false"><a href="#page-uploads" class="hash-link">Uploads <i class="fa fa-upload pull-right fa-fw"></i></a></li>
-            <li data-icon="false"><a href="#page-donate" class="hash-link">Search <i class="fa fa-search pull-right fa-fw"></i></a></li>
-            <li data-icon="false"><a href="#page-donate" class="hash-link">Settings <i class="fa fa-cogs pull-right fa-fw"></i></a></li>
-            <li data-icon="false"><a href="#page-donate" class="hash-link">MobileMule <i class="fa fa-cog pull-right fa-fw"></i></a></li>
+            <li data-icon="false"><a href="#page-search" class="hash-link">Search <i class="fa fa-search pull-right fa-fw"></i></a></li>
+            <li data-icon="false"><a href="#page-config" class="hash-link">Settings <i class="fa fa-cogs pull-right fa-fw"></i></a></li>
+            <li data-icon="false"><a href="#page-mobilemule" class="hash-link">MobileMule <i class="fa fa-cog pull-right fa-fw"></i></a></li>
             <li data-icon="false"><a href="#page-servers" class="hash-link">Servers <i class="fa fa-database pull-right fa-fw"></i></a></li>
             <li data-icon="false"><a href="#page-listed-stats" class="hash-link">Statistics <i class="fa fa-tachometer pull-right fa-fw"></i></a></li>
             <li data-icon="false"><a href="#page-graph" class="hash-link">Graphs <i class="fa fa-bar-chart-o pull-right fa-fw"></i></a></li>
             <li data-icon="false"><a href="#page-log" class="hash-link">Log <i class="fa fa-bars pull-right fa-fw"></i></a></li>
-            <li data-icon="false"><a href="#page-donate" class="hash-link">Add ed2k <i class="fa fa-plus pull-right fa-fw"></i></a></li>
+            <li data-icon="false"><a href="#page-footer" class="hash-link">Add ed2k <i class="fa fa-plus pull-right fa-fw"></i></a></li>
             <li data-icon="false"><a href="login.php" id="pnMenuLogout">Logout <i class="fa fa-unlock-alt pull-right fa-fw"></i></a></li>
         </ul>
     </div>

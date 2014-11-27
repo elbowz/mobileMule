@@ -159,6 +159,13 @@ $(window).on('hashchange', function () {
 
         $.mobile.loading('show');
 
+        if (!mm.donate) {
+            if (_.contains(['#page-search', '#page-config', '#page-mobilemule', '#page-footer'], hash)) {
+                hash = '#page-donate';
+                file = hash.substr(6) + '.php'
+            }
+        }
+
         if (hash == '#page-donate') {
             $('#header > h1').html('Donation Pack. <i class="fa fa-thumbs-o-up fa-fw"></i> ');
 
