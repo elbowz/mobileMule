@@ -29,12 +29,16 @@ $(document).one('mobileinit', function () {
 
 var globalTimer = 0;
 
-$(document).one('pagecreate', function () {
+$(document).on('pagecreate', function () {
+
     // Stop timer (es. status page)
     if (globalTimer) {
         clearInterval(globalTimer);
         globalTimer = 0;
     }
+});
+
+$(document).one('pagecreate', function () {
 
     // Force JQuery mobile to set hash in the url (ancor)
     $(document).on('vclick', 'a.hash-link', function (event) {
