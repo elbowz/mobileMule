@@ -97,6 +97,7 @@
         <a id="{{hash}}" data-hash="{{hash}}" class="file-check {{fileCheckClass}}">Select file</a>
     </li>
     {{/each}}
+    <li><p><strong>note:</strong> this info is refreshed each {{refreshList}} milliseconds</p></li>
 </ul>
 </div>
 
@@ -106,12 +107,13 @@
         $mainForm = $('form[name="mainform"]');
 
         // AUTO REFRESH DOWNLOADS LIST
+
         submitFormAndUpdate();
 
         globalTimer = setInterval(function () {
 
             submitFormAndUpdate();
-        }, 3000);
+        }, mm.settings.page.downloads.refreshList);
 
         // EVENT HANDLING
 
@@ -162,6 +164,8 @@
         });
     });
 
+    // UTIL FUNCTIONS
+
     var formCommandSubmit = function (command) {
         if (command == "cancel") {
             var res = confirm("Delete selected files ?")
@@ -190,7 +194,7 @@
 
         $($mainForm).ajaxForm(_.bind(function (data) {
 
-            this.listDowndloadHb(data.downloads)
+            this.listDowndloadHb(_.extend(data.downloads, mm.settings.page.downloads))
             $('#list-downloads').html(this.listDowndloadHb(data.downloads));
         }, this));
     }

@@ -12,7 +12,7 @@ It use a modern graphic with a responsive design template.
 
 See [Changelog](CHANGELOG.md) for the features
 
-Download - Latest v2.1.0b (21.10.2014)
+Download - Latest v2.2.0b (27.11.2014)
 --------------------------------------
  * [Standard Version on GoogleDrive](https://drive.google.com/folderview?id=0BzaXzhTPJkC7WFFIM09uYm4zSk0&usp=sharing#list)
  * [Donation Package on GoogleDrive](https://drive.google.com/folderview?id=0BzaXzhTPJkC7SnpOVG11OF9ITlE&usp=sharing) (* do a donation for get it)
@@ -47,8 +47,6 @@ You can repeat point 1 of the above list (*install*) or you can use the internal
 TODOs
 -----
  * Tap and hold for download a file (search page)
- * LocalStorage for change status page settings (like refresh and chart)
- * Download page *auto-refresh*
  * Add notification pop-up on some actions (download, pause, delete, etc...)
 
 Support me
@@ -60,6 +58,7 @@ With a free donation, you'll get the **Donation Package** that adds three panels
 * Search
 * Configurations
 * Add ed2k
+* MobileMule (allow to change themes, refresh and other stuff)
 
 Thanks
 ------

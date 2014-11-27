@@ -1,6 +1,10 @@
 CHANGELOG 
 =========
 
+### 2.2.0b
+ * New notification system
+ * Download page auto-refresh downloads list
+
 ### 2.1.0b
  * Added support for themes (Donation Package)
  * Fixed little bugs

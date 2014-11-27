@@ -1,9 +1,22 @@
+/* GLOBAL CONFIGURATION */
+
+var mm = mm || {};
+
 // IMPORTANT: Update also main.js#version check, latestVersion.js, main.php
-var currentVersion = '2.2.0b';
+mm.version = '2.2.0b';
 
-// Default page to view
-var mainHash = '#page-status'
+mm.settings = mm.settings || {};
 
+// Default page to view (see also index.html)
+mm.settings.mainHash = '#page-status'
+
+mm.settings.page = mm.settings.page || {};
+
+mm.settings.page.downloads = mm.settings.page.downloads || {};
+mm.settings.page.downloads.refreshList = mm.settings.page.downloads.refreshList || 3000;
+
+
+/* JQUERY MOBILE EVENTS */
 
 $(document).one('mobileinit', function () {
 
@@ -117,7 +130,7 @@ $(document).one('pageshow', function () {
         },
         success: function () {
             $.mobile.loading('hide');
-            if (latestVersion != currentVersion) {
+            if (latestVersion != mm.version) {
                 notify.message('New version (v' + latestVersion + ') is available! <a href="https://github.com/elbowz/mobileMule" class="ui-btn ui-btn-inline ui-mini"><i class="fa fa-download"></i></a>');
             }
         },
@@ -135,7 +148,7 @@ var oldHash;
 
 $(window).on('hashchange', function () {
 
-    location.hash = location.hash || mainHash
+    location.hash = location.hash || mm.settings.mainHash
     var hash = location.hash;
 
     if (oldHash && hash.search(oldHash) == 0) return;
