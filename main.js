@@ -13,7 +13,7 @@ mm.settings.mainHash = '#page-status'
 mm.settings.page = mm.settings.page || {};
 
 mm.settings.page.downloads = mm.settings.page.downloads || {};
-mm.settings.page.downloads.refreshList = mm.settings.page.downloads.refreshList || 3000;
+mm.settings.page.downloads.refreshList = _.isUndefined(mm.settings.page.downloads.refreshList) ? 3000 : mm.settings.page.downloads.refreshList;
 
 
 /* JQUERY MOBILE EVENTS */
@@ -37,7 +37,7 @@ $(document).one('pagecreate', function () {
     }
 
     // Force JQuery mobile to set hash in the url (ancor)
-    $('a.hash-link').on('vclick', function (event) {
+    $(document).on('vclick', 'a.hash-link', function (event) {
         event.preventDefault();
 
         location.hash = $(this).attr('href');
@@ -48,7 +48,7 @@ $(document).one('pagecreate', function () {
     });
 
     // Update page (not menu) with link.href through ajax
-    $('a.ajax-link').on('vclick', function (event) {
+    $(document).on('vclick', 'a.ajax-link', function (event) {
         event.preventDefault();
 
         var loaderText = $(this).data('text');
@@ -131,7 +131,7 @@ $(document).one('pageshow', function () {
         success: function () {
             $.mobile.loading('hide');
             if (latestVersion != mm.version) {
-                notify.message('New version (v' + latestVersion + ') is available! <a href="https://github.com/elbowz/mobileMule" class="ui-btn ui-btn-inline ui-mini"><i class="fa fa-download"></i></a>');
+                notify.message('<a href="https://github.com/elbowz/mobileMule">New version (v' + latestVersion + ') is available!</a>');
             }
         },
         error: function () {
@@ -176,7 +176,7 @@ $(window).on('hashchange', function () {
 
         // Set page content
         $('#container').load(file, function () {
-            $(this).enhanceWithin().trigger('pagecreate');
+            $('#main').trigger('pagebeforecreate').enhanceWithin().trigger('pagecreate');
             $.mobile.loading('hide');
         });
     }

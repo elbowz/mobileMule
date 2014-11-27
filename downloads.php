@@ -97,7 +97,7 @@
         <a id="{{hash}}" data-hash="{{hash}}" class="file-check {{fileCheckClass}}">Select file</a>
     </li>
     {{/each}}
-    <li><p><strong>note:</strong> this info is refreshed each {{refreshList}} milliseconds</p></li>
+    <li><p><strong>note:</strong> this info is refreshed each {{refreshList}} milliseconds (<a href="#page-mobilemule" class="hash-link">change it</a>)</p></li>
 </ul>
 </div>
 
@@ -110,10 +110,13 @@
 
         submitFormAndUpdate();
 
-        globalTimer = setInterval(function () {
+        if(!!mm.settings.page.downloads.refreshList) {
 
-            submitFormAndUpdate();
-        }, mm.settings.page.downloads.refreshList);
+            globalTimer = setInterval(function () {
+
+                submitFormAndUpdate();
+            }, mm.settings.page.downloads.refreshList);
+        }
 
         // EVENT HANDLING
 
