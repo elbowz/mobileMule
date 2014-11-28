@@ -26,10 +26,14 @@ $(document).one('mobileinit', function () {
     });
 });
 
+$(document).one('pagebeforecreate', function () {
+
+    $panel = $('#menu-panel');
+});
 
 var globalTimer = 0;
 
-$(document).on('pagecreate', function () {
+$(document).on('pagebeforecreate', function () {
 
     // Stop timer (es. status page)
     if (globalTimer) {
@@ -104,16 +108,6 @@ $(document).one('pagecreate', function () {
             }
         );
     }*/
-});
-
-
-$(document).one('pagebeforeshow', function () {
-
-    $panel = $('#menu-panel');
-});
-
-
-$(document).one('pageshow', function () {
 
     // Call the first hashchange
     $(window).hashchange();
@@ -126,23 +120,21 @@ $(document).one('pageshow', function () {
 
     // VERSION CHECK
 
-    $.ajax({
-        url: "https://rawgit.com/elbowz/mobileMule/master/latestVersion.js",
-        dataType: 'script',
-        beforeSend: function () {
-            $.mobile.loading('show');
-        },
-        success: function () {
-            $.mobile.loading('hide');
-            if (latestVersion != mm.version) {
-                notify.message('<a href="https://github.com/elbowz/mobileMule">New version (v' + latestVersion + ') is available!</a>');
+    setTimeout(function () {
+
+        $.ajax({
+            url: "https://rawgit.com/elbowz/mobileMule/master/latestVersion.js",
+            dataType: 'script',
+            success: function () {
+                if (latestVersion != mm.version) {
+                    notify.message('<a href="https://github.com/elbowz/mobileMule"> ' + latestVersion + ' release is available!</a>');
+                }
+            },
+            error: function () {
+                notify.error('Something go wrong during the new version check');
             }
-        },
-        error: function () {
-            $.mobile.loading('hide');
-            notify.error('Something go wrong during the new version check');
-        }
-    });
+        });
+    }, 1000);
 
     addToHomescreen({ maxDisplayCount: 4 });
 });
