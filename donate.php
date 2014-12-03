@@ -8,6 +8,7 @@ You'll receive <strong>mobileMule Donation Package</strong> with new panels:
     <li>Search</li>
     <li>Configurations</li>
     <li>Add ed2k</li>
+    <li>MobileMule (allow to change themes, refresh and other stuff)</li>
 </ul>
 
 ...and you can help and support the development of project.
