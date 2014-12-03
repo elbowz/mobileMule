@@ -158,6 +158,10 @@ var notify = {
 
         options = options || {};
 
+        _.defaults(options, {
+           delay: mm.settings.notifyDelay
+        });
+
         var open = _.bind(function () {
 
             if (options.delay) {

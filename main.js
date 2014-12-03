@@ -10,6 +10,8 @@ mm.settings = mm.settings || {};
 // Default page to view (see also index.html)
 mm.settings.mainHash = '#page-status'
 
+mm.settings.notifyDelay = _.isUndefined(mm.settings.notifyDelay) ? 6000 : mm.settings.notifyDelay;
+
 mm.settings.page = mm.settings.page || {};
 
 mm.settings.page.downloads = mm.settings.page.downloads || {};
