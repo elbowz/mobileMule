@@ -3,17 +3,19 @@
 var mm = mm || {};
 
 // IMPORTANT: Update also main.js#version check, latestVersion.js, main.php
-mm.version = '2.2.0b';
+mm.version = '2.4.0b';
 
 mm.settings = mm.settings || {};
 
-// Default page to view (see also index.html)
-mm.settings.mainHash = '#page-status'
+// Default page to view
+mm.settings.mainHash = mm.settings.mainHash || '#page-status';
 
 mm.settings.notifyDelay = _.isUndefined(mm.settings.notifyDelay) ? 6000 : mm.settings.notifyDelay;
 
 mm.settings.page = mm.settings.page || {};
 
+mm.settings.page.status = mm.settings.page.status || {};
+mm.settings.page.status.refresh = _.isUndefined(mm.settings.page.status.refresh) ? 3000 : mm.settings.page.status.refresh;
 mm.settings.page.downloads = mm.settings.page.downloads || {};
 mm.settings.page.downloads.refreshList = _.isUndefined(mm.settings.page.downloads.refreshList) ? 3000 : mm.settings.page.downloads.refreshList;
 

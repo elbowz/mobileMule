@@ -1,6 +1,11 @@
 CHANGELOG 
 =========
 
+### 2.4.0b
+ * Fixed infinite execution of commands in page Downloads
+ * Able to choose default page to display after the login (Donation Package)
+ * Able to choose gap time info refresh for page status (Donation Package)
+
 ### 2.2.0b
  * New notification system
  * Download page auto-refresh downloads list

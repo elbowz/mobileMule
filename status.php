@@ -25,7 +25,7 @@
     <li>
         <canvas id="speed-chart" height="150" width="300"></canvas>
     </li>
-    <li><p><strong>note:</strong> this info is refreshed each 3 seconds...wait the chart plotting.</p></li>
+    <li><p id="refresh">this info is refreshed each <strong>xxx</strong> milliseconds (<a href="#page-mobilemule" class="hash-link">change it</a>)</p></li>
 </ul>
 
 <script>
@@ -33,10 +33,12 @@
 
     var speedChart;
     $(document).one('pagecreate', function () {
+
+        $('#refresh > strong').text(mm.settings.page.status.refresh);
         speedChart = initSpeedChart('speed-chart', chartMaxXtick);
 
         updateStatus();
-        globalTimer = setInterval(updateStatus, 3000);
+        globalTimer = setInterval(updateStatus, mm.settings.page.status.refresh);
     });
 
     count = 0;
@@ -102,7 +104,7 @@
 
             count++;
         });
-    }
+    };
 
     initSpeedChart = function (idCanvasChart, nInitValue) {
         var lineChartData = {
@@ -130,7 +132,7 @@
                 }
             ]
 
-        }
+        };
 
         var ctx = document.getElementById(idCanvasChart).getContext("2d");
         speedChart =  new Chart(ctx).Line(lineChartData, {
@@ -140,7 +142,7 @@
         while (nInitValue) {
             speedChart.addData([0,0], "0");
             nInitValue--;
-        }
+        };
 
         return speedChart
     }
