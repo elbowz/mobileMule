@@ -47,7 +47,6 @@ You can repeat point 1 of the above list (*install*) or you can use the internal
 TODOs
 -----
  * Tap and hold for download a file (search page)
- * Add notification pop-up on some actions (download, pause, delete, etc...)
 
 Support me
 ----------

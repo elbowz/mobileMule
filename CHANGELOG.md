@@ -5,6 +5,7 @@ CHANGELOG
  * Fixed infinite execution of commands in page Downloads
  * Able to choose default page to display after the login (Donation Package)
  * Able to choose gap time info refresh for page status (Donation Package)
+ * Added notification on command (pause, resume, prio.up, etc...) on download page
 
 ### 2.2.0b
  * New notification system

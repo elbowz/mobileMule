@@ -2,13 +2,13 @@
 <input type="hidden" name="command">
 <input type="hidden" name="download_sort_reverse" value=0>
 
-<div data-role="navbar">
+<div class="command" data-role="navbar">
     <ul>
-        <li><a href="javascript:formCommandSubmit('pause');"><i class="fa fa-pause"></i><span>Pause</span></a></li>
-        <li><a href="javascript:formCommandSubmit('resume');"><i class="fa fa-play"></i><span>Resume</span></a></li>
-        <li><a href="javascript:formCommandSubmit('prioup');"><i class="fa fa-chevron-up"></i><span>Prio. up</span></a></li>
-        <li><a href="javascript:formCommandSubmit('priodown');"><i class="fa fa-chevron-down"></i><span>Prio. down</span></a></li>
-        <li><a href="javascript:formCommandSubmit('cancel');"><i class="fa fa-trash"></i><span>Cancel</span></a></li>
+        <li><a data-command="pause" data-notify="Paused"><i class="fa fa-pause"></i><span>Pause</span></a></li>
+        <li><a data-command="resume" data-notify="Resumed"><i class="fa fa-play"></i><span>Resume</span></a></li>
+        <li><a data-command="prioup" data-notify="Priority Up"><i class="fa fa-chevron-up"></i><span>Prio. up</span></a></li>
+        <li><a data-command="priodown" data-notify="Priority Down"><i class="fa fa-chevron-down"></i><span>Prio. down</span></a></li>
+        <li><a data-command="cancel" data-notify="File deleted"><i class="fa fa-trash"></i><span>Cancel</span></a></li>
     </ul>
 </div>
 
@@ -120,6 +120,18 @@
 
         // EVENT HANDLING
 
+        $('.command a').on('vclick', function(){
+
+            event.stopPropagation();
+
+            var notifyMsg = $(this).data('notify');
+            var command = $(this).data('command');
+
+            if(formCommandSubmit(command)) {
+                notify.message(notifyMsg);
+            }
+        });
+
         $('#list-downloads').on('vclick', '.file-check', function (event) {
             event.stopPropagation();
 
@@ -134,7 +146,6 @@
                     value: 'on'
                 }).appendTo($mainForm);
             } else {
-
                 $inputHidden.remove();
             }
 
@@ -170,10 +181,11 @@
     // UTIL FUNCTIONS
 
     var formCommandSubmit = function (command) {
+
         if (command == "cancel") {
             var res = confirm("Delete selected files ?")
             if (res == false) {
-                return;
+                return false;
             }
         }
         if (command != "filter") {
@@ -190,6 +202,8 @@
         submitFormAndUpdate();
 
         $('input[name="command"]').removeAttr('value');
+
+        return true;
     };
 
     var submitFormAndUpdate = function () {
