@@ -41,7 +41,7 @@
     <!-- /content -->
 
     <div data-role="footer">
-        <p>&nbsp;<a href="https://github.com/elbowz/mobileMule" title="about" data-rel="dialog" data-transition="pop">mobileMule</a> &copy; 2014</p>
+        <p>&nbsp;<a href="https://github.com/elbowz/mobileMule" title="about" data-rel="dialog" data-transition="pop">mobileMule</a> &copy; 2015</p>
     </div>
 </div>
 <script>
