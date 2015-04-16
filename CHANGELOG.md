@@ -1,6 +1,9 @@
 CHANGELOG 
 =========
 
+### 2.5.0b
+ * Added Google Analytics (IP Anonymization)
+
 ### 2.4.0b
  * Fixed infinite execution of commands in page Downloads
  * Able to choose default page to display after the login (Donation Package)

@@ -189,4 +189,8 @@ $(window).on('hashchange', function () {
     }
 
     oldHash = hash;
+
+    // Google Analytics
+    ga('send', 'pageview', { 'page': location.pathname + location.search  + location.hash });
+
 });
