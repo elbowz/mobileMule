@@ -46,6 +46,8 @@ You can repeat point 1 of the above list (*install*) or you can use the internal
 
 TODOs
 -----
+ * Add support for AppCache (http://docs.webplatform.org/wiki/apis/appcache/ApplicationCache) ...now, amule [support *.manifest files](http://forum.amule.org/index.php?topic=20703.msg107371)
+ * Better support for android web app (https://developer.chrome.com/multidevice/android/installtohomescreen) 
  * Tap and hold for download a file (search page)
 
 Support me
