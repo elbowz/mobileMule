@@ -95,7 +95,7 @@
             <p><strong>mobileMule v2.6.0b</strong><br/>
 
                 coded by muttley &copy; copyright 2015<br/><br/>
-                <a href="https://raw.githubusercontent.com/elbowz/mobileMule/master/CHANGELOG.md" title="changelog">Changelog</a> &bull;
+                <a href="https://github.com/elbowz/mobileMule/blob/master/CHANGELOG.md" title="changelog">Changelog</a> &bull;
                 <a href="https://github.com/elbowz/mobileMule" title="mobileMule project page">Project page</a> &bull;
                 <a href="#page-donate" class="hash-link" title="Donation Package">Donation Package</a><br/><br/>
                 <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=muttley%2ebd%40gmail%2ecom&lc=IT&item_name=mobileMule&item_number=aMule%20web%20mobile%20skin&currency_code=EUR&bn=PP%2dDonationsBF%3abtn_donate_LG%2egif%3aNonHosted"
