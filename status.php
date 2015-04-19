@@ -31,12 +31,12 @@
 <script>
     $(document).one('pagecreate', function() {
 
-        var count = 1;
+        var count = 6;
         var speedChart;
         var chartMaxXtick = mm.settings.page.status.tickChart;
 
         $('#refresh > strong').text(mm.settings.page.status.refresh);
-        speedChart = initSpeedChart('speed-chart', 6);
+        speedChart = initSpeedChart('speed-chart', count);
 
         updateStatus();
         globalTimer = setInterval(updateStatus, mm.settings.page.status.refresh);
