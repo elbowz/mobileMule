@@ -1,8 +1,12 @@
 CHANGELOG 
 =========
 
-### 2.5.0b
+### 2.6.0b
+ * Search result auto-refresh (Donation Package)
+ * Setting: chart tick on status page (Donation Package)
+ * Setting: changed range step (Donation Package)
  * Added Google Analytics (IP Anonymization)
+ * Minor bug fix
 
 ### 2.4.0b
  * Fixed infinite execution of commands in page Downloads

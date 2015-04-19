@@ -44,7 +44,7 @@
 </head>
 
 <body>
-<div id="main" data-role="page">
+<div id="main" data-role="page" data-title="mobileMule">
 
     <div id="header" data-role="header" data-position="fixed">
         <a href="#menu-panel" class="ui-btn-left"><i class="fa fa-bars fa-fw"></i><span> Menu</span></a>
@@ -92,7 +92,7 @@
         </div>
         <div role="main" class="ui-content">
             <!-- IMPORTANT: Update also main.js#version check, latestVersion.js, main.php -->
-            <p><strong>mobileMule v2.5.0b</strong><br/>
+            <p><strong>mobileMule v2.6.0b</strong><br/>
 
                 coded by muttley &copy; copyright 2015<br/><br/>
                 <a href="https://raw.githubusercontent.com/elbowz/mobileMule/master/CHANGELOG.md" title="changelog">Changelog</a> &bull;

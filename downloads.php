@@ -14,7 +14,7 @@
 
 <br/>
 
-<div id="list-downloads" class="ui-content">
+<div id="list-downloads">
     <!-- downloads placeholder -->
 </div>
 
@@ -102,49 +102,48 @@
 </div>
 
 <script>
-    $(document).one('pagecreate', function () {
+    $(document).one('pagecreate', function() {
 
-        $mainForm = $('form[name="mainform"]');
-
-        // AUTO REFRESH DOWNLOADS LIST
+        var $mainForm = $('form[name="mainform"]');
+        var $inputCommand = $('input[name="command"]');
+        var $listDownloads = $('#list-downloads');        // AUTO REFRESH DOWNLOADS LIST
 
         submitFormAndUpdate();
 
-        if(!!mm.settings.page.downloads.refreshList) {
+        if (!!mm.settings.page.downloads.refreshList) {
 
-            globalTimer = setInterval(function () {
-
-                submitFormAndUpdate();
-            }, mm.settings.page.downloads.refreshList);
+            globalTimer = setInterval(submitFormAndUpdate, mm.settings.page.downloads.refreshList);
         }
 
         // EVENT HANDLING
 
-        $('.command a').on('vclick', function(){
+        $('.command a').on('vclick', function() {
 
             event.stopPropagation();
 
             var notifyMsg = $(this).data('notify');
             var command = $(this).data('command');
 
-            if(formCommandSubmit(command)) {
+            if (formCommandSubmit(command)) {
                 notify.message(notifyMsg);
             }
         });
 
-        $('#list-downloads').on('vclick', '.file-check', function (event) {
+        $listDownloads.on('vclick', '.file-check', function(event) {
+
             event.stopPropagation();
 
             var checkboxHashId = $(this).attr('data-hash');
-            var $inputHidden = $('input[name="'+ checkboxHashId +'"]', $mainForm);
+            var $inputHidden = $('input[name="' + checkboxHashId + '"]', $mainForm);
 
-            if(!$inputHidden.length) {
+            if (!$inputHidden.length) {
 
                 $('<input>').attr({
                     type: 'hidden',
                     name: checkboxHashId,
                     value: 'on'
                 }).appendTo($mainForm);
+
             } else {
                 $inputHidden.remove();
             }
@@ -152,18 +151,18 @@
             $('#' + checkboxHashId).toggleClass('ui-btn-active');
         });
 
-        $('select[name="status"], select[name="category"]').change(function () {
+        $('select[name="status"], select[name="category"]').change(function() {
 
             $('input[name="command"]').attr('value', 'filter');
             submitFormAndUpdate();
         });
 
-        $('select[name="sort"]').change(function () {
+        $('select[name="sort"]').change(function() {
 
             submitFormAndUpdate();
         });
 
-        $('#sort_reverse').on('vclick', function () {
+        $('#sort_reverse').on('vclick', function() {
             event.preventDefault();
 
             var $inputSortRevrse = $('input[name="download_sort_reverse"]');
@@ -172,54 +171,52 @@
 
             submitFormAndUpdate();
 
-            $('#sort_reverse').attr({'data-icon': value == '1' ? 'arrow-u' : 'arrow-d'})
+            $('#sort_reverse').attr({ 'data-icon': value == '1' ? 'arrow-u' : 'arrow-d' })
                 .toggleClass('ui-icon-arrow-d ui-icon-arrow-u')
                 .text(value == '1' ? 'Descendent' : 'Ascendent');
         });
-    });
 
-    // UTIL FUNCTIONS
+        // UTILS FUNCTIONS
 
-    var formCommandSubmit = function (command) {
+        function formCommandSubmit(command) {
 
-        if (command == "cancel") {
-            var res = confirm("Delete selected files ?")
-            if (res == false) {
-                return false;
-            }
-        }
-        if (command != "filter") {
-            <?php
-                if ($_SESSION["guest_login"] != 0) {
-                        echo 'alert("You logged in as guest - commands are disabled");';
-                        echo "return;";
+            if (command == "cancel") {
+                var res = confirm("Delete selected files ?")
+                if (res == false) {
+                    return false;
                 }
-            ?>
-        }
+            }
+            if (command != "filter") {
+                <?php
+                    if ($_SESSION["guest_login"] != 0) {
+                            echo 'alert("You logged in as guest - commands are disabled");';
+                            echo "return;";
+                    }
+                ?>
+            }
 
-        $('input[name="command"]').attr('value', command);
+            $inputCommand.attr('value', command);
+            submitFormAndUpdate();
+            $inputCommand.removeAttr('value');
 
-        submitFormAndUpdate();
+            return true;
+        };
 
-        $('input[name="command"]').removeAttr('value');
+        function submitFormAndUpdate() {
 
-        return true;
-    };
+            this.listDowndload = this.listDowndload || $("#list-downloads-tpl").html();
+            this.listDownloadHb = this.listDownloadHb || Handlebars.compile(this.listDowndload);
 
-    var submitFormAndUpdate = function () {
+            $mainForm.ajaxForm(_.bind(function(data) {
 
-        this.listDowndload = this.listDowndload || $("#list-downloads-tpl").html();
-        this.listDowndloadHb = this.listDowndloadHb || Handlebars.compile(listDowndload);
+                var htmlListGenerated = this.listDownloadHb(_.extend(data.downloads, mm.settings.page.downloads));
+                $listDownloads.html(htmlListGenerated);
+            }, this));
+        };
 
-        $($mainForm).ajaxForm(_.bind(function (data) {
-
-            this.listDowndloadHb(_.extend(data.downloads, mm.settings.page.downloads))
-            $('#list-downloads').html(this.listDowndloadHb(data.downloads));
-        }, this));
-    };
-
-    Handlebars.registerHelper('fileCheckClass', function() {
-        return $('input[name="'+ this.hash +'"]', $mainForm).length ? ' ui-btn-active' : '';
+        Handlebars.registerHelper('fileCheckClass', function() {
+            return $('input[name="' + this.hash + '"]', $mainForm).length ? ' ui-btn-active' : '';
+        });
     });
 </script>
 

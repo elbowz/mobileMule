@@ -181,11 +181,7 @@ foreach ($downloads as $file) {
 
         echo ', "size_done": "' . CastToXBytes($file->size_done) . '", "size": "' . CastToXBytes($file->size) . '"';
 
-        if($i == $countDownloads - 1) {
-            echo '}';
-        } else {
-            echo '}, ';
-        }
+        if($i == $countDownloads - 1) { echo '}'; } else { echo '}, '; }
     }
 
     $i++;

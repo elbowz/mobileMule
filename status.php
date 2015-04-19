@@ -29,121 +29,125 @@
 </ul>
 
 <script>
-    chartMaxXtick = 10;
+    $(document).one('pagecreate', function() {
 
-    var speedChart;
-    $(document).one('pagecreate', function () {
+        var count = 1;
+        var speedChart;
+        var chartMaxXtick = mm.settings.page.status.tickChart;
 
         $('#refresh > strong').text(mm.settings.page.status.refresh);
-        speedChart = initSpeedChart('speed-chart', chartMaxXtick);
+        speedChart = initSpeedChart('speed-chart', 6);
 
         updateStatus();
         globalTimer = setInterval(updateStatus, mm.settings.page.status.refresh);
-    });
 
-    count = 0;
-    updateStatus = function () {
-        $.getJSON('status-ajax.php', function (data) {
+        function updateStatus() {
 
-            // Add data to Graph
-            var now = new Date();
-            speedChart.addData([(data['speed_up'] / 1024).toFixed(2), (data['speed_down'] / 1024).toFixed(2)], count);
-            /*if (count > chartMaxXtick)*/ speedChart.removeData();
+            $.getJSON('status-ajax.php', function(data) {
 
-            for (var key in data) {
-                switch (key) {
-                    case 'speed_down':
-                        $('#' + key).html(
+                var now = new Date().toTimeString().replace(/.*(\d{2}:\d{2}:\d{2}).*/, "$1");
+
+                // Add data to Graph
+                speedChart.addData([(data['speed_up'] / 1024).toFixed(2), (data['speed_down'] / 1024).toFixed(2)], now);
+
+                if (count > chartMaxXtick) speedChart.removeData();
+
+                for (var key in data) {
+                    switch(key) {
+                        case 'speed_down':
+                            $('#' + key).html(
                                 bytesToSize(data[key]) + '/s' +
                                 '<small> / ' + bytesToSize(data['speed_limit_down']) + '/s</small>');
-                        break;
-                    case 'speed_up':
-                        $('#' + key).html(
+                            break;
+                        case 'speed_up':
+                            $('#' + key).html(
                                 bytesToSize(data[key]) + '/s' +
                                 '<small> / ' + bytesToSize(data['speed_limit_up']) + '/s</small>');
-                        break;
-                    case 'id':
-                        var connectionStatus = null;
-                        if (data.id == 0) {
-                            connectionStatus = 'Not connected <i class="fa fa-plug fa-fw"></i>';
-                            $('.server-child').hide();
-                        } else if (data.id == Number('0xffffffff')) {
-                            connectionStatus = 'Connecting ...';
-                            $('.server-child').hide();
-                        } else {
-                            connectionStatus = 'Connected with ';
-                            if (data.id < 16777216)
-                                connectionStatus += 'low ID <i class="fa fa-thumbs-o-down fa-fw"></i>';
-                            else
-                                connectionStatus += 'high ID <i class="fa fa-thumbs-o-up fa-fw"></i>';
-
-                            $('#server-address').html(data.serv_addr.substring(1, data.serv_addr.length - 1));
-                            $('#server-name').html(data.serv_name);
-                            $('#server-users').html(data.serv_users);
-
-                        }
-                        $('#server').html('Server (' + connectionStatus + ')');
-                        break;
-                    case 'kad_connected':
-                        var connectionStatus = null;
-                        if (data.kad_connected == 1) {
-                            connectionStatus = 'Connected ';
-                            if (data.kad_firewalled == 1) {
-                                connectionStatus += 'but Firewalled <i class="fa fa-thumbs-o-down fa-fw"></i>';
+                            break;
+                        case 'id':
+                            var connectionStatus = null;
+                            if (data.id == 0) {
+                                connectionStatus = 'Not connected <i class="fa fa-plug fa-fw"></i>';
+                                $('.server-child').hide();
+                            } else if (data.id == Number('0xffffffff')) {
+                                connectionStatus = 'Connecting ...';
+                                $('.server-child').hide();
                             } else {
+                                connectionStatus = 'Connected with ';
+                                if (data.id < 16777216)
+                                    connectionStatus += 'low ID <i class="fa fa-thumbs-o-down fa-fw"></i>';
+                                else
+                                    connectionStatus += 'high ID <i class="fa fa-thumbs-o-up fa-fw"></i>';
 
-                                connectionStatus += 'OK <i class="fa fa-thumbs-o-up fa-fw"></i>';
+                                $('#server-address').html(data.serv_addr.substring(1, data.serv_addr.length - 1));
+                                $('#server-name').html(data.serv_name);
+                                $('#server-users').html(data.serv_users);
+
                             }
-                        } else {
-                            connectionStatus = 'Not connected <i class="fa fa-plug fa-fw"></i>';
-                        }
-                        $('#kad').html('Kad (' + connectionStatus + ')');
-                        break;
+                            $('#server').html('Server (' + connectionStatus + ')');
+                            break;
+                        case 'kad_connected':
+                            var connectionStatus = null;
+                            if (data.kad_connected == 1) {
+                                connectionStatus = 'Connected ';
+                                if (data.kad_firewalled == 1) {
+                                    connectionStatus += 'but Firewalled <i class="fa fa-thumbs-o-down fa-fw"></i>';
+                                } else {
+
+                                    connectionStatus += 'OK <i class="fa fa-thumbs-o-up fa-fw"></i>';
+                                }
+                            } else {
+                                connectionStatus = 'Not connected <i class="fa fa-plug fa-fw"></i>';
+                            }
+                            $('#kad').html('Kad (' + connectionStatus + ')');
+                            break;
+                    }
                 }
-            }
 
-            count++;
-        });
-    };
-
-    initSpeedChart = function (idCanvasChart, nInitValue) {
-        var lineChartData = {
-            labels: [],
-            datasets: [
-                {
-                    label: "My First dataset",
-                    fillColor: "rgba(220,220,220,0.2)",
-                    strokeColor: "rgba(220,220,220,1)",
-                    pointColor: "rgba(220,220,220,1)",
-                    pointStrokeColor: "#fff",
-                    pointHighlightFill: "#fff",
-                    pointHighlightStroke: "rgba(220,220,220,1)",
-                    data: []
-                },
-                {
-                    label: "My Second dataset",
-                    fillColor: "rgba(151,187,205,0.2)",
-                    strokeColor: "rgba(151,187,205,1)",
-                    pointColor: "rgba(151,187,205,1)",
-                    pointStrokeColor: "#fff",
-                    pointHighlightFill: "#fff",
-                    pointHighlightStroke: "rgba(151,187,205,1)",
-                    data: []
-                }
-            ]
-
+                count++;
+            });
         };
 
-        var ctx = document.getElementById(idCanvasChart).getContext("2d");
-        speedChart =  new Chart(ctx).Line(lineChartData, {
-            responsive: true
-        });
+        function initSpeedChart(idCanvasChart, nInitValue) {
+            var lineChartData = {
+                labels: [],
+                datasets: [
+                    {
+                        label: "Speed Upload",
+                        fillColor: "rgba(220,220,220,0.2)",
+                        strokeColor: "rgba(220,220,220,1)",
+                        pointColor: "rgba(220,220,220,1)",
+                        pointStrokeColor: "#fff",
+                        pointHighlightFill: "#fff",
+                        pointHighlightStroke: "rgba(220,220,220,1)",
+                        data: []
+                    },
+                    {
+                        label: "Speed Download",
+                        fillColor: "rgba(151,187,205,0.2)",
+                        strokeColor: "rgba(151,187,205,1)",
+                        pointColor: "rgba(151,187,205,1)",
+                        pointStrokeColor: "#fff",
+                        pointHighlightFill: "#fff",
+                        pointHighlightStroke: "rgba(151,187,205,1)",
+                        data: []
+                    }
+                ]
 
-        while (nInitValue) {
-            speedChart.addData([0,0], "0");
-            nInitValue--;
+            };
+
+            var ctx = document.getElementById(idCanvasChart).getContext("2d");
+            speedChart = new Chart(ctx).Line(lineChartData, {
+                responsive: true
+            });
+
+
+            while (nInitValue) {
+                speedChart.addData([0, 0], 0);
+                nInitValue--;
+            };
+
+            return speedChart;
         };
-
-        return speedChart
-    }
+    });
 </script>

@@ -3,7 +3,7 @@
 var mm = mm || {};
 
 // IMPORTANT: Update also main.js#version check, latestVersion.js, main.php
-mm.version = '2.5.0b';
+mm.version = '2.6.0b';
 
 mm.settings = mm.settings || {};
 
@@ -16,6 +16,7 @@ mm.settings.page = mm.settings.page || {};
 
 mm.settings.page.status = mm.settings.page.status || {};
 mm.settings.page.status.refresh = _.isUndefined(mm.settings.page.status.refresh) ? 3000 : mm.settings.page.status.refresh;
+mm.settings.page.status.tickChart = _.isUndefined(mm.settings.page.status.tickChart) ? 10 : mm.settings.page.status.tickChart;
 mm.settings.page.downloads = mm.settings.page.downloads || {};
 mm.settings.page.downloads.refreshList = _.isUndefined(mm.settings.page.downloads.refreshList) ? 3000 : mm.settings.page.downloads.refreshList;
 

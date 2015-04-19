@@ -4,7 +4,7 @@ var bytesToSize = function (bytes) {
     var sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
     var i = Math.floor(Math.log(bytes) / Math.log(k));
     return (bytes / Math.pow(k, i)).toPrecision(3) + ' ' + sizes[i];
-}
+};
 
 var isDesktop = function () {
     var width = $(window).width();
@@ -12,9 +12,9 @@ var isDesktop = function () {
         return true;
     }
     return false;
-}
+};
 
-// Update page (not menu) with form submit through ajax
+// Form submit through ajax
 $.fn.ajaxForm = function (options, callback) {
 
     callback = typeof options === 'function' ? options : callback;
@@ -33,7 +33,7 @@ $.fn.ajaxForm = function (options, callback) {
         success: function (data) {
 
             if(settings.dataType === 'json') data = JSON.parse(data);
-            callback.call(this, data);
+            _.isFunction(callback) && callback.call(this, data);
         }
     });
 
