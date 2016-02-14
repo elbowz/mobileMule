@@ -1,6 +1,11 @@
 CHANGELOG 
 =========
 
+
+### 2.8.0b
+ * Support to Application Cache, increase application speed and fallback when offline (need aMule >= svn-r10852)
+ * Update copyright year
+
 ### 2.6.0b
  * Search result auto-refresh (Donation Package)
  * Setting: chart tick on status page (Donation Package)

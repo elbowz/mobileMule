@@ -3,7 +3,7 @@
 var mm = mm || {};
 
 // IMPORTANT: Update also main.js#version check, latestVersion.js, main.php
-mm.version = '2.6.0b';
+mm.version = '2.8.0b';
 
 mm.settings = mm.settings || {};
 

@@ -1,0 +1,37 @@
+CACHE MANIFEST
+# v2.8.0b
+
+# Explicitly cached entries
+http://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.3/jquery.mobile.min.css
+http://netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css
+http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js
+http://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.3/jquery.mobile.min.js
+addtohomescreen.css
+addtohomescreen.min.js
+apple-touch-icon-120x120.png
+apple-touch-icon-152x152.png
+apple-touch-icon-76x76.png
+apple-touch-icon.png
+CHANGELOG.md
+chart.min.js
+fallback.html
+fallback-icon.png
+favicon.ico
+handlebars.min.js
+icon-192x192.png
+index.html
+latestVersion.js
+login-icon.png
+main.css
+main.js
+paypal.png
+underscore-min.js
+utils.js
+
+# Use from network if available
+NETWORK:
+*
+
+# Fallback content
+FALLBACK:
+/ fallback.html

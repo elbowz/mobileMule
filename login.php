@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html manifest="mobilemule.appcache">
 <head>
     <title>mobileMule</title>
 
@@ -52,7 +52,7 @@
     <!-- /content -->
 
     <div data-role="footer">
-        <p>&nbsp;<a href="https://github.com/elbowz/mobileMule" title="about" data-rel="dialog" data-transition="pop">mobileMule</a> &copy; 2015</p>
+        <p>&nbsp;<a href="https://github.com/elbowz/mobileMule" title="about" data-rel="dialog" data-transition="pop">mobileMule</a> &copy; 2016</p>
     </div>
 </div>
 <script>
