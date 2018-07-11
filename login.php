@@ -52,7 +52,7 @@
     <!-- /content -->
 
     <div data-role="footer">
-        <p>&nbsp;<a href="https://github.com/elbowz/mobileMule" title="about" data-rel="dialog" data-transition="pop">mobileMule</a> &copy; 2016</p>
+        <p>&nbsp;<a href="https://github.com/elbowz/mobileMule" title="about" data-rel="dialog" data-transition="pop">mobileMule</a> &copy; 2018</p>
     </div>
 </div>
 <script>

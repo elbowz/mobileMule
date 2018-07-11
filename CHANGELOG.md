@@ -1,6 +1,8 @@
 CHANGELOG 
 =========
 
+### 2.8.1b
+ * Fixed graph
 
 ### 2.8.0b
  * Support to Application Cache, increase application speed and fallback when offline (need aMule >= svn-r10852)

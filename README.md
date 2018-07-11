@@ -1,6 +1,6 @@
 mobileMule 
 ==========
-coded by muttley © 2016 - https://github.com/elbowz/mobileMule
+coded by muttley © 2018 - https://github.com/elbowz/mobileMule
 
 ![mobileMule](http://i.imgur.com/JZByzIj.jpg)
 
@@ -12,7 +12,7 @@ It use a modern graphic with a responsive design template.
 
 See [Changelog](CHANGELOG.md) for the features
 
-Download - Latest v2.8.0b (16.02.2016)
+Download - Latest v2.8.1b (11.07.2018)
 --------------------------------------
  * [Standard Version on GoogleDrive](https://drive.google.com/folderview?id=0BzaXzhTPJkC7WFFIM09uYm4zSk0&usp=sharing#list)
  * [Donation Package on GoogleDrive](https://drive.google.com/folderview?id=0BzaXzhTPJkC7SnpOVG11OF9ITlE&usp=sharing) (* do a donation for get it)
@@ -46,7 +46,6 @@ You can repeat point 1 of the above list (*install*) or you can use the internal
 
 TODOs
 -----
- * Add support for AppCache (http://docs.webplatform.org/wiki/apis/appcache/ApplicationCache) ...now, amule [support *.manifest files](http://forum.amule.org/index.php?topic=20703.msg107371)
  * Better support for android web app (https://developer.chrome.com/multidevice/android/installtohomescreen) 
  * Tap and hold for download a file (search page)
 

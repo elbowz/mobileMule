@@ -1,3 +1,5 @@
+<?php amule_load_vars("stats_graph"); ?>
+
 <div data-role="collapsible-set">
     <div data-role="collapsible" data-collapsed="false">
         <h3>Download-Speed</h3>
