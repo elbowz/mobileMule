@@ -78,9 +78,9 @@
 <ul data-role="listview" data-divider-theme="d" data-split-icon="check">
     <li data-role="list-divider">Downloads<span class="ui-li-count">{{count}}</span></li>
     {{#each list}}
-    <li data-filtertext="{{short_name}}">
+    <li data-filtertext="{{name}}">
         <a data-hash="{{hash}}" class="file-check">
-            <h3>{{short_name}}</h3>
+            <h3>{{name}}</h3>
             <p>{{#if speed}}<strong>{{speed}}/s</strong> - {{/if}}{{status}} - {{prio}}</p>
             <p>
                 {{#if src_count_connected}}{{src_count_connected}} / {{/if}}

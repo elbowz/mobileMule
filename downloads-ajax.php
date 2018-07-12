@@ -158,7 +158,7 @@ foreach ($downloads as $file) {
     if ($filter_status_result and $filter_cat_result) {
         echo '{';
 
-        echo '"short_name": "' . $file->short_name . '", "hash": "' . $file->hash . '"';
+        echo '"name": "' . $file->name . '", "short_name": "' . $file->short_name . '", "hash": "' . $file->hash . '"';
 
         if ($file->speed > 0) echo ', "speed": "' . CastToXBytes($file->speed) . '"';
 
