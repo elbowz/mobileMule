@@ -3,9 +3,14 @@ CHANGELOG
 
 ### 2.8.1b
  * Fixed graph
+ * Auto-refresh graphs
+ * Setting: auto-refresh graphs (Donation Package)
+ * Display file fullname in Download, Upload and Search page
+ * Fixed "Scroll up" button on desktop
 
 ### 2.8.0b
  * Support to Application Cache, increase application speed and fallback when offline (need aMule >= svn-r10852)
+ * Fixed Search page on Firefox
  * Update copyright year
 
 ### 2.6.0b
