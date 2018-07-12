@@ -17,9 +17,12 @@ mm.settings.page = mm.settings.page || {};
 mm.settings.page.status = mm.settings.page.status || {};
 mm.settings.page.status.refresh = _.isUndefined(mm.settings.page.status.refresh) ? 3000 : mm.settings.page.status.refresh;
 mm.settings.page.status.tickChart = _.isUndefined(mm.settings.page.status.tickChart) ? 10 : mm.settings.page.status.tickChart;
+
 mm.settings.page.downloads = mm.settings.page.downloads || {};
 mm.settings.page.downloads.refreshList = _.isUndefined(mm.settings.page.downloads.refreshList) ? 3000 : mm.settings.page.downloads.refreshList;
 
+mm.settings.page.graph = mm.settings.page.graph || {};
+mm.settings.page.graph.refresh = _.isUndefined(mm.settings.page.graph.refresh) ? 3000 : mm.settings.page.graph.refresh;
 
 /* JQUERY MOBILE EVENTS */
 
