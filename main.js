@@ -87,7 +87,7 @@ $(document).one('pagecreate', function () {
     $('#btScrollUp').on('vclick', function (event) {
         event.preventDefault();
 
-        $('body').animate({scrollTop: '0px'});
+        $('html, body').animate({scrollTop: '0px'});
     });
 
     // Support for open panel menu with swipe
