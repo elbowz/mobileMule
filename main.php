@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html manifest="mobilemule.appcache">
+<html>
 <head>
     <title>mobileMule</title>
 
@@ -99,7 +99,7 @@
                 <a href="https://github.com/elbowz/mobileMule" title="mobileMule project page">Project page</a> &bull;
                 <a href="#page-donate" class="hash-link" title="Donation Package">Donation Package</a><br/><br/>
                 <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=muttley%2ebd%40gmail%2ecom&lc=IT&item_name=mobileMule&item_number=aMule%20web%20mobile%20skin&currency_code=EUR&bn=PP%2dDonationsBF%3abtn_donate_LG%2egif%3aNonHosted"
-                   title="Donate"><img src="https://www.paypalobjects.com/en_GB/i/btn/btn_donate_LG.gif"/></a></p>
+                   title="Donate"><img src="btn_paypal_donate.gif"/></a></p>
         </div>
     </div>
     <!-- /about -->

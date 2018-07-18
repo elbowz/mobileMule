@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html manifest="mobilemule.appcache">
+<html>
 <head>
     <title>mobileMule</title>
 

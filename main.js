@@ -24,9 +24,25 @@ mm.settings.page.downloads.refreshList = _.isUndefined(mm.settings.page.download
 mm.settings.page.graph = mm.settings.page.graph || {};
 mm.settings.page.graph.refresh = _.isUndefined(mm.settings.page.graph.refresh) ? 3000 : mm.settings.page.graph.refresh;
 
+/* INIT SERVICE WORKER */
+
+if ('serviceWorker' in navigator) {
+
+    window.addEventListener('load', function() {
+
+        navigator.serviceWorker.register('/service-worker.js').then(function(reg) {
+
+            //console.log('[service worker] registered');
+        }).catch(function(error) {
+
+            console.log('[service worker] FAILED registration:', error);
+        });
+    });
+}
+
 /* JQUERY MOBILE EVENTS */
 
-$(document).one('mobileinit', function () {
+$(document).one('mobileinit', function() {
 
     // Disable send form through AJAX (default behavior)
     $.extend($.mobile, {
@@ -34,14 +50,14 @@ $(document).one('mobileinit', function () {
     });
 });
 
-$(document).one('pagebeforecreate', function () {
+$(document).one('pagebeforecreate', function() {
 
     $panel = $('#menu-panel');
 });
 
 var globalTimer = 0;
 
-$(document).on('pagebeforecreate', function () {
+$(document).on('pagebeforecreate', function() {
 
     // Stop timer (es. status page)
     if (globalTimer) {
@@ -50,10 +66,10 @@ $(document).on('pagebeforecreate', function () {
     }
 });
 
-$(document).one('pagecreate', function () {
+$(document).one('pagecreate', function() {
 
     // Force JQuery mobile to set hash in the url (ancor)
-    $(document).on('vclick', 'a.hash-link', function (event) {
+    $(document).on('vclick', 'a.hash-link', function(event) {
         event.preventDefault();
 
         location.hash = $(this).attr('href');
@@ -64,34 +80,34 @@ $(document).one('pagecreate', function () {
     });
 
     // Update page (not menu) with link.href through ajax
-    $(document).on('vclick', 'a.ajax-link', function (event) {
+    $(document).on('vclick', 'a.ajax-link', function(event) {
         event.preventDefault();
 
         var loaderText = $(this).data('text');
 
         var options = {};
         if (loaderText) {
-            options = {loaderText: loaderText, loaderTextVisible: true};
+            options = { loaderText: loaderText, loaderTextVisible: true };
         }
 
         $(this).jQMobileAjaxLink(options);
     });
 
-    $('#pnMenuLogout').on('vclick', function (event) {
+    $('#pnMenuLogout').on('vclick', function(event) {
         event.preventDefault();
 
         eraseCookie('auth');
         window.location = $(event.currentTarget).attr('href');
     });
 
-    $('#btScrollUp').on('vclick', function (event) {
+    $('#btScrollUp').on('vclick', function(event) {
         event.preventDefault();
 
-        $('html, body').animate({scrollTop: '0px'});
+        $('html, body').animate({ scrollTop: '0px' });
     });
 
     // Support for open panel menu with swipe
-    $(document).on('swipeleft swiperight', 'div[data-role="page"]', function (event) {
+    $(document).on('swipeleft swiperight', 'div[data-role="page"]', function(event) {
         // We check if there is no open panel on the page because otherwise
         // a swipe to close the left panel would also open the right panel (and v.v.).
         // We do this by checking the data that the framework stores on the page element (panel: open).
@@ -128,17 +144,17 @@ $(document).one('pagecreate', function () {
 
     // VERSION CHECK
 
-    setTimeout(function () {
+    setTimeout(function() {
 
         $.ajax({
             url: "https://rawgit.com/elbowz/mobileMule/master/latestVersion.js",
             dataType: 'script',
-            success: function () {
+            success: function() {
                 if (latestVersion != mm.version) {
                     notify.message('<a href="https://github.com/elbowz/mobileMule"> ' + latestVersion + ' release is available!</a>');
                 }
             },
-            error: function () {
+            error: function() {
                 notify.error('Something go wrong during the new version check');
             }
         });
@@ -150,7 +166,7 @@ $(document).one('pagecreate', function () {
 
 var oldHash;
 
-$(window).on('hashchange', function () {
+$(window).on('hashchange', function() {
 
     location.hash = location.hash || mm.settings.mainHash
     var hash = location.hash;
@@ -186,7 +202,7 @@ $(window).on('hashchange', function () {
         }
 
         // Set page content
-        $('#container').load(file, function () {
+        $('#container').load(file, function() {
             $('#main').trigger('pagebeforecreate').enhanceWithin().trigger('pagecreate');
             $.mobile.loading('hide');
         });
@@ -195,6 +211,6 @@ $(window).on('hashchange', function () {
     oldHash = hash;
 
     // Google Analytics
-    ga('send', 'pageview', { 'page': location.pathname + location.search  + location.hash });
+    ga('send', 'pageview', { 'page': location.pathname + location.search + location.hash });
 
 });
