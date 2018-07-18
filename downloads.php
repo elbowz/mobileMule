@@ -97,7 +97,7 @@
         <a id="{{hash}}" data-hash="{{hash}}" class="file-check {{fileCheckClass}}">Select file</a>
     </li>
     {{/each}}
-    <li><p>this info is refreshed each <strong>{{refreshList}}</strong> milliseconds (<a href="#page-mobilemule" class="hash-link">change it</a>)</p></li>
+    <li><p>this info is refreshed each <strong>{{refreshList}}</strong> seconds (<a href="#page-mobilemule" class="hash-link">change it</a>)</p></li>
 </ul>
 </div>
 
@@ -209,7 +209,8 @@
 
             $mainForm.ajaxForm(_.bind(function(data) {
 
-                var htmlListGenerated = this.listDownloadHb(_.extend(data.downloads, mm.settings.page.downloads));
+                data.downloads.refreshList = mm.settings.page.downloads.refreshList / 1000;
+                var htmlListGenerated = this.listDownloadHb(data.downloads);
                 $listDownloads.html(htmlListGenerated);
             }, this));
         };

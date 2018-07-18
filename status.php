@@ -25,7 +25,7 @@
     <li>
         <canvas id="speed-chart" height="150" width="300"></canvas>
     </li>
-    <li><p id="refresh">this info is refreshed each <strong>xxx</strong> milliseconds (<a href="#page-mobilemule" class="hash-link">change it</a>)</p></li>
+    <li><p id="refresh">this info is refreshed each <strong>xxx</strong> seconds (<a href="#page-mobilemule" class="hash-link">change it</a>)</p></li>
 </ul>
 
 <script>
@@ -35,7 +35,7 @@
         var speedChart;
         var chartMaxXtick = mm.settings.page.status.tickChart;
 
-        $('#refresh > strong').text(mm.settings.page.status.refresh);
+        $('#refresh > strong').text(mm.settings.page.status.refresh / 1000);
         speedChart = initSpeedChart('speed-chart', count);
 
         updateStatus();
