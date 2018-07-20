@@ -6,7 +6,7 @@ coded by muttley © 2018 - https://github.com/elbowz/mobileMule
 
 What it is
 ----------
-mobileMule is aMule web server template/skin for mobile and desktop. Based on jQuery mobile library.  
+mobileMule is aMule web server template/skin/theme for mobile and desktop. Based on jQuery mobile library.  
 The focus is on the speed and the lightweight for reduce the footprint and increase the speed performance.  
 It use a modern graphic with a responsive design template.
 
@@ -36,6 +36,7 @@ Install
 3. If you want this skin as default, rename 'mobileMule' dir in "default" (not good idea if you have automatic update with something like repository), else continue 
 4. Edit row 'Template=' in "$HOME/.aMule/amule.conf" (or if present "remote.conf") in 'Template=mobileMule'
 5. restart amule (or only amuleweb)
+6. *(optional)* For increase speed loading, consider to install theme under an *https*, this enable Service Worker and internal caching.
 
 Update
 ------
