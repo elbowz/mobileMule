@@ -1,8 +1,12 @@
 CHANGELOG 
 =========
 
+### 3.0.0b
+ * Added NativeDroid2 theme
+ * Fixed NativeDroid
+
 ### 2.9.0b
- * Removed appcache in favour of service worker
+ * Removed appcache in favour of service worker (https needed)
  * Changed milliseconds to seconds
  * Updated jquery, jquery-mobile and font-awesome
 
