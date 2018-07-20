@@ -1,6 +1,11 @@
 CHANGELOG 
 =========
 
+### 2.9.0b
+ * Removed appcache in favour of service worker
+ * Changed milliseconds to seconds
+ * Updated jquery, jquery-mobile and font-awesome
+
 ### 2.8.1b
  * Fixed graph
  * Auto-refresh graphs
@@ -12,6 +17,7 @@ CHANGELOG
  * Support to Application Cache, increase application speed and fallback when offline (need aMule >= svn-r10852)
  * Fixed Search page on Firefox
  * Update copyright year
+ * Fixed Search page on Firefox (Donation Package)
 
 ### 2.6.0b
  * Search result auto-refresh (Donation Package)
