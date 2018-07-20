@@ -6,15 +6,17 @@ var CACHE_NAME = latestVersion;
 // Resource to cache
 // All others (requested resources) will be cached on first request (see 'fetch'
 var urlsToCache = [
-    '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js',
-    '//ajax.googleapis.com/ajax/libs/jquerymobile/1.4.3/jquery.mobile.min.js',
-    '//ajax.googleapis.com/ajax/libs/jquerymobile/1.4.3/jquery.mobile.min.css',
-    '//ajax.googleapis.com/ajax/libs/jquerymobile/1.4.3/images/ajax-loader.gif',
-    '//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css',
-    '//netdna.bootstrapcdn.com/font-awesome/4.2.0/fonts/fontawesome-webfont.woff?v=4.2.0',
-    '/fallback.html',
-    '/fallback-icon.png'
+    '//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js',
+    '//ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js',
+    '//ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.css',
+    '//ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/images/ajax-loader.gif',
+    '//netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css',
+    '//netdna.bootstrapcdn.com/font-awesome/4.3.0/fonts/fontawesome-webfont.woff2?v=4.3.0',
+    './fallback.html',
+    './fallback-icon.png'
 ];
+
+// TODO: Cache also downloads and use form method GET (not cache with query string)
 
 var urlsToNoCahe = [
     '/collapsible-stats.php',
@@ -32,9 +34,9 @@ var urlsToNoCahe = [
     '/amule_stats_conncount.png',
     /* Donation package resources */
     '/config.php',
-    'footer.php',
-    'search-ajax.php',
-    'search.php'
+    '/footer.php',
+    '/search-ajax.php',
+    '/search.php'
 ];
 
 // Add resource to cache
@@ -52,55 +54,6 @@ self.addEventListener('install', function(event) {
     );
 });
 
-// Respond with cached and not cached resource
-
-self.addEventListener('fetch', function(event) {
-
-    event.respondWith(
-        caches.match(event.request).then(function(response) {
-
-            // Cached
-            if (response !== undefined) {
-
-                return response;
-            }
-
-            // Not cached yet
-            return fetch(event.request).then(
-                function(response) {
-
-                    // Bad response => Avoid caching
-                    if (!response || response.status !== 200 || response.type !== 'basic') {
-
-                        return response;
-                    }
-
-                    // Black listed resource => Avoid caching
-                    var resourceName = response.url.split('?')[0].substring(response.url.lastIndexOf('/'));
-                    if (urlsToNoCahe.includes(resourceName)) {
-
-                        return response;
-                    }
-
-                    // Cache it
-                    return caches.open(CACHE_NAME)
-                        .then(function(cache) {
-
-                            // ...and respond
-                            cache.put(event.request, response.clone());
-                            return response;
-                        });
-                }
-            );
-
-        }).catch(function() {
-
-            // No cache and no internet connection
-            return caches.match('/fallback.html');
-        })
-    );
-});
-
 // Delete old cache when rename CACHE_NAME
 self.addEventListener('activate', function(event) {
 
@@ -115,6 +68,55 @@ self.addEventListener('activate', function(event) {
                     return caches.delete(key);
                 }
             }));
+        })
+    );
+});
+
+// Respond with cached and not cached resource
+
+self.addEventListener('fetch', function(event) {
+
+    event.respondWith(
+        caches.match(event.request).then(function(response) {
+
+            // Cached
+            if (response !== undefined) {
+
+                return response;
+            }
+
+            // Not cached yet
+            return fetch(event.request)
+                .then(function(response) {
+
+                        // Bad response => Avoid caching
+                        if (!response || response.status !== 200 || response.type !== 'basic') {
+
+                            return response;
+                        }
+
+                        // Black listed resource => Avoid caching
+                        var resourceName = response.url.split('?')[0].substring(response.url.lastIndexOf('/'));
+                        if (urlsToNoCahe.includes(resourceName)) {
+
+                            return response;
+                        }
+
+                        // Cache it
+                        return caches.open(CACHE_NAME)
+                            .then(function(cache) {
+
+                                // ...and respond
+                                cache.put(event.request, response.clone());
+                                return response;
+                            });
+                    }
+                ).catch(function() {
+
+                    // No cache and no internet connection
+                    return caches.match('./fallback.html');
+                });
+
         })
     );
 });

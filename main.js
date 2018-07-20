@@ -30,12 +30,19 @@ if ('serviceWorker' in navigator) {
 
     window.addEventListener('load', function() {
 
-        navigator.serviceWorker.register('/service-worker.js').then(function(reg) {
+        navigator.serviceWorker.register('./service-worker.js', { scope: './' }).then(function(reg) {
 
-            //console.log('[service worker] registered');
+            if (reg.installing) {
+                console.log('[service worker] Installing...');
+            } else if (reg.waiting) {
+                console.log('[service worker] Waiting...');
+            } else if (reg.active) {
+                console.log('[service worker] Active');
+            }
+
         }).catch(function(error) {
 
-            console.log('[service worker] FAILED registration:', error);
+            console.log('[service worker] FAILED registration', error);
         });
     });
 }
