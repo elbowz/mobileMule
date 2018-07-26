@@ -9,6 +9,7 @@
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
 
+    <link rel="manifest" href="manifest.json" crossorigin="use-credentials">
     <link href="icon-192x192.png" rel="icon" sizes="192x192"/>
     <link href="apple-touch-icon.png" rel="apple-touch-icon"/>
     <link href="apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76"/>

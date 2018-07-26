@@ -44,6 +44,12 @@ if ('serviceWorker' in navigator) {
 
             console.log('[service worker] FAILED registration', error);
         });
+
+        window.addEventListener('beforeinstallprompt', event => {
+
+            event.preventDefault();
+            event.prompt();
+        });
     });
 }
 
@@ -167,7 +173,7 @@ $(document).one('pagecreate', function() {
         });
     }, 1000);
 
-    addToHomescreen({ maxDisplayCount: 4 });
+    if (location.protocol != 'https:') addToHomescreen({ maxDisplayCount: 4 });
 });
 
 

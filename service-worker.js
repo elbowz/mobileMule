@@ -73,9 +73,13 @@ self.addEventListener('activate', function(event) {
 });
 
 // Respond with cached and not cached resource
-
 self.addEventListener('fetch', function(event) {
 
+
+    // TODO: ignore query string:
+    // caches.match(event.request, {
+    //       **ignoreSearch: true**
+    //     })
     event.respondWith(
         caches.match(event.request).then(function(response) {
 
