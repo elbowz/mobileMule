@@ -1,6 +1,11 @@
 CHANGELOG 
 =========
 
+### 3.1.0b
+ * Full support to Progressive Web Apps (PWA)
+ * Added manifest.json
+ * Added add to home screen (chrome) 
+
 ### 3.0.0b
  * Added NativeDroid2 theme
  * Fixed NativeDroid

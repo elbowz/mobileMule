@@ -12,7 +12,7 @@ It use a modern graphic with a responsive design template.
 
 See [Changelog](CHANGELOG.md) for the features
 
-Download - Latest v3.0.0b (23.07.2018)
+Download - Latest v3.1.0b (01.08.2018)
 --------------------------------------
  * [Standard Version on GoogleDrive](https://drive.google.com/folderview?id=0BzaXzhTPJkC7WFFIM09uYm4zSk0&usp=sharing#list)
  * [Donation Package on GoogleDrive](https://drive.google.com/folderview?id=0BzaXzhTPJkC7SnpOVG11OF9ITlE&usp=sharing) (do a donation for get it)
@@ -36,7 +36,7 @@ Install
 3. If you want this skin as default, rename 'mobileMule' dir in "default" (not good idea if you have automatic update with something like repository), else continue 
 4. Edit row 'Template=' in "$HOME/.aMule/amule.conf" (or if present "remote.conf") in 'Template=mobileMule'
 5. restart amule (or only amuleweb)
-6. *(optional)* For increase speed loading, consider to install theme under an *https*, this enable Service Worker and internal caching.
+6. *(optional)* If you like [Progressive Web Apps](https://developers.google.com/web/progressive-web-apps/) consider to install mobileMule under an *https* (eg. [letsencrypt.org](https://letsencrypt.org/)), this enable Service Worker, internal caching and *native* add to home screen.
 
 Update
 ------

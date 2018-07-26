@@ -96,10 +96,10 @@
         </div>
         <div role="main" class="ui-content">
             <!-- IMPORTANT: Update also main.js#version check, latestVersion.js, main.php -->
-            <p><strong>mobileMule v3.0.0b</strong><br/>
+            <p><strong>mobileMule v3.1.0b</strong><br/>
 
                 coded by muttley &copy; copyright 2018<br/><br/>
-                <a href="CHANGELOG.md" title="changelog">Changelog</a> &bull;
+                <a href="https://raw.githubusercontent.com/elbowz/mobileMule/master/CHANGELOG.md" title="changelog">Changelog</a> &bull;
                 <a href="https://github.com/elbowz/mobileMule" title="mobileMule project page">Project page</a> &bull;
                 <a href="#page-donate" class="hash-link" title="Donation Package">Donation Package</a><br/><br/>
                 <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=muttley%2ebd%40gmail%2ecom&lc=IT&item_name=mobileMule&item_number=aMule%20web%20mobile%20skin&currency_code=EUR&bn=PP%2dDonationsBF%3abtn_donate_LG%2egif%3aNonHosted"
