@@ -27,6 +27,7 @@ var urlsToNoCahe = [
     '/listed-stats.php',
     '/log.php',
     '/servers.php',
+    '/status.php',
     '/status-ajax.php',
     '/uploads.php',
     '/amule_stats_download.png',
