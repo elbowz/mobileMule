@@ -12,7 +12,7 @@ It use a modern graphic with a responsive design template.
 
 See [Changelog](CHANGELOG.md) for the features
 
-Download - Latest v3.1.0b (01.08.2018)
+Download - Latest v3.2.0b (10.08.2018)
 --------------------------------------
  * [Standard Version on GoogleDrive](https://drive.google.com/folderview?id=0BzaXzhTPJkC7WFFIM09uYm4zSk0&usp=sharing#list)
  * [Donation Package on GoogleDrive](https://drive.google.com/folderview?id=0BzaXzhTPJkC7SnpOVG11OF9ITlE&usp=sharing) (do a donation for get it)

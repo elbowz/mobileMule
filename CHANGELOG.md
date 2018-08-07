@@ -1,6 +1,11 @@
 CHANGELOG 
 =========
 
+### 3.2.0b
+ * Added Finished downloads list
+ * Fixed PWA start_url
+ * Fixed saving config 
+
 ### 3.1.0b
  * Full support to Progressive Web Apps (PWA)
  * Added manifest.json

@@ -98,7 +98,7 @@
         </div>
         <div role="main" class="ui-content">
             <!-- IMPORTANT: Update also main.js#version check, latestVersion.js, main.php -->
-            <p><strong>mobileMule v3.1.0b</strong><br/>
+            <p><strong>mobileMule v3.2.0b</strong><br/>
 
                 coded by muttley &copy; copyright 2018<br/><br/>
                 <a href="https://raw.githubusercontent.com/elbowz/mobileMule/master/CHANGELOG.md" title="changelog">Changelog</a> &bull;
