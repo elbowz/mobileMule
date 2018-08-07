@@ -40,6 +40,7 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js"></script>
     <script src="handlebars.min.js"></script>
+    <script src="idb.min.js"></script>
     <script src="chart.min.js"></script>
     <script src="addtohomescreen.min.js"></script>
 
@@ -73,6 +74,7 @@
         <ul data-role="listview">
             <li data-icon="false"><a href="#page-status" class="hash-link">Status <i class="fa fa-home pull-right fa-fw"></i></a></li>
             <li data-icon="false"><a href="#page-downloads" class="hash-link">Downloads <i class="fa fa-download pull-right fa-fw"></i></a></li>
+            <li data-icon="false"><a href="#page-finished" class="hash-link">Finished <i class="fa fa-cloud-download pull-right fa-fw"></i></a></li>
             <li data-icon="false"><a href="#page-uploads" class="hash-link">Uploads <i class="fa fa-upload pull-right fa-fw"></i></a></li>
             <li data-icon="false"><a href="#page-search" class="hash-link">Search <i class="fa fa-search pull-right fa-fw"></i></a></li>
             <li data-icon="false"><a href="#page-config" class="hash-link">Settings <i class="fa fa-cogs pull-right fa-fw"></i></a></li>

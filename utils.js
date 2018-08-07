@@ -198,7 +198,7 @@ var notify = {
 
         this.open('<p><i class="fa fa-exclamation-triangle"></i>' + html + '</p>', options, {class: 'message error'});
     }
-}
+};
 
 /* Cookie lib
  src:http://www.quirksmode.org/js/cookies.htm */
@@ -210,7 +210,7 @@ var createCookie = function (name, value, days) {
     }
     else var expires = "";
     document.cookie = name + "=" + value + expires + "; path=/";
-}
+};
 
 var readCookie = function (name) {
     var nameEQ = name + "=";
@@ -221,8 +221,91 @@ var readCookie = function (name) {
         if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
     }
     return null;
-}
+};
 
 var eraseCookie = function (name) {
     createCookie(name, "", -1);
-}
+};
+
+/* IndexedDB lib
+ src: https://github.com/jakearchibald/idb
+ */
+
+(function() {
+
+    //check for support
+    if (!('indexedDB' in window)) {
+        return;
+    }
+
+    var dbPromise = idb.open('mobileMule', 1, function(upgradeDb) {
+
+        // Version currently installed
+        switch (upgradeDb.oldVersion) {
+
+            case 0: // No database installed yet
+
+                var downloads = upgradeDb.createObjectStore('downloads', { keyPath: 'hash' });
+                //downloads.createIndex('date', 'date', {unique: false});
+        }
+    });
+
+    var idbDownloads = {
+        get(key) {
+
+            return dbPromise.then(function(db) {
+                return db.transaction('downloads')
+                    .objectStore('downloads').get(key);
+            });
+        },
+        set(val) {
+
+            return dbPromise.then(function(db) {
+                const tx = db.transaction('downloads', 'readwrite');
+                tx.objectStore('downloads').put(val);
+                return tx.complete;
+            });
+        },
+        add(val) {
+
+            return this.set(val);
+        },
+        delete(key) {
+
+            return dbPromise.then(function(db) {
+                const tx = db.transaction('downloads', 'readwrite');
+                tx.objectStore('downloads').delete(key);
+                return tx.complete;
+            });
+        },
+        clear() {
+
+            return dbPromise.then(function(db) {
+                const tx = db.transaction('downloads', 'readwrite');
+                tx.objectStore('downloads').clear();
+                return tx.complete;
+            });
+        },
+        getAll() {
+
+            return dbPromise.then(function(db) {
+                var tx = db.transaction('downloads', 'readonly');
+                var store = tx.objectStore('downloads');
+                return store.getAll();
+            });
+        },
+        addCurrentDownloads() {
+
+            var self = this;
+
+            $.getJSON('downloads-ajax.php', function(data) {
+                data.downloads.list.forEach(function(download) {
+                    self.add(_.pick(download, 'hash', 'name', 'size'));
+                });
+            });
+        }
+    };
+
+    window.idbDownloads = idbDownloads;
+
+})();

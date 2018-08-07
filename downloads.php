@@ -185,6 +185,10 @@
                 if (res == false) {
                     return false;
                 }
+
+                $('input[type="hidden"][value="on"]').each(function() {
+                    idbDownloads.delete($(this).attr('name'))
+                });
             }
             if (command != "filter") {
                 <?php

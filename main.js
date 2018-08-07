@@ -66,6 +66,8 @@ $(document).one('mobileinit', function() {
 $(document).one('pagebeforecreate', function() {
 
     $panel = $('#menu-panel');
+
+    idbDownloads.addCurrentDownloads();
 });
 
 var globalTimer = 0;
