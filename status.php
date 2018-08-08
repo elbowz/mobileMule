@@ -45,7 +45,7 @@
 
             $.getJSON('status-ajax.php', function(data) {
 
-                var now = new Date().toTimeString().replace(/.*(\d{2}:\d{2}:\d{2}).*/, "$1");
+                var now = new Date().toTimeString().replace(/.*(\d{2}:\d{2}).*/, "$1");
 
                 // Add data to Graph
                 speedChart.addData([(data['speed_up'] / 1024).toFixed(2), (data['speed_down'] / 1024).toFixed(2)], now);
@@ -141,9 +141,10 @@
                 responsive: true
             });
 
+            var now = new Date().toTimeString().replace(/.*(\d{2}:\d{2}).*/, "$1");
 
             while (nInitValue) {
-                speedChart.addData([0, 0], 0);
+                speedChart.addData([0, 0], now);
                 nInitValue--;
             };
 
