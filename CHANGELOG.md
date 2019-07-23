@@ -1,6 +1,10 @@
 CHANGELOG 
 =========
 
+### 3.2.1b
+ * Fix download list
+ * Added Liberapay to Donation service
+
 ### 3.2.0b
  * Added Finished downloads list
  * Fixed PWA start_url

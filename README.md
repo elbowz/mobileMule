@@ -12,7 +12,7 @@ It use a modern graphic with a responsive design template.
 
 See [Changelog](CHANGELOG.md) for the features
 
-Download - Latest v3.2.0b (10.08.2018)
+Download - Latest v3.2.1b (25.07.2019)
 --------------------------------------
  * [Standard Version on GoogleDrive](https://drive.google.com/folderview?id=0BzaXzhTPJkC7WFFIM09uYm4zSk0&usp=sharing#list)
  * [Donation Package on GoogleDrive](https://drive.google.com/folderview?id=0BzaXzhTPJkC7SnpOVG11OF9ITlE&usp=sharing) (do a donation for get it)
@@ -49,11 +49,14 @@ You can repeat point 1 of the above list ([install](#install)) or you can use th
 
 TODOs
 -----
- * Better support for android web app (https://developers.google.com/web/fundamentals/app-install-banners/) 
+ * Any suggest? 
 
 Support me
 ----------
-If you want help me, better support, more features, get speedy fix and so on, consider offer me a coffee or a beer through a [Donation with PayPal](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=muttley%2ebd%40gmail%2ecom&lc=IT&item_name=mobileMule&item_number=aMule%20web%20mobile%20skin&currency_code=EUR&bn=PP%2dDonationsBF%3abtn_donate_LG%2egif%3aNonHosted)
+If you want help me, better support, more features, get speedy fix and so on, consider offer me a coffee or a beer through a :
+
+[![Donate PayPal](https://img.shields.io/badge/donate-paypal-green.svg?logo=paypal&style=for-the-badge)](https://www.paypal.me/EmanuelePalombo)
+[![Donate Liberapay](https://img.shields.io/badge/donate-liberapay-green.svg?logo=liberapay&style=for-the-badge)](https://liberapay.com/Emanuele/donate)
 
 With a free donation, you'll get the **Donation Package** that adds three panels:
 
