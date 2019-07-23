@@ -177,9 +177,9 @@ foreach ($downloads as $file) {
 
         $percentual_progress = ((float)$file->size_done * 100) / ((float)$file->size);
 
-        echo ', "status_complted_class": "' . StatusCompltedClass($file) . '", "percentual_progress": ' . $percentual_progress;
+        echo ', "status_complted_class": "' . StatusCompltedClass($file) . '", "percentual_progress": "' . $percentual_progress;
 
-        echo ', "size_done": "' . CastToXBytes($file->size_done) . '", "size": "' . CastToXBytes($file->size) . '"';
+        echo '", "size_done": "' . CastToXBytes($file->size_done) . '", "size": "' . CastToXBytes($file->size) . '"';
 
         if($i == $countDownloads - 1) { echo '}'; } else { echo '}, '; }
     }
