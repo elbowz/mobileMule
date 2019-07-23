@@ -16,7 +16,7 @@
     <link href="apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120"/>
     <link href="apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152"/>
 
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="//stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
     <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.css"/>
 
     <meta id="mobile-mule-theme"/>
@@ -66,7 +66,7 @@
 
     <div id="footer" data-role="footer">
         <a id="btScrollUp" href="#" data-icon="arrow-u" class="ui-btn-right">scroll up</a>
-        <p>&nbsp;<a href="#about" data-rel="popup" data-position-to="window" data-transition="pop">mobileMule</a> &copy; 2018</p>
+        <p>&nbsp;<a href="#about" data-rel="popup" data-position-to="window" data-transition="pop">mobileMule</a> <i class="fa fa-copyright fa-fw"></i> 2019</p>
     </div>
     <!-- /footer -->
 
@@ -98,14 +98,16 @@
         </div>
         <div role="main" class="ui-content">
             <!-- IMPORTANT: Update also main.js#version check, latestVersion.js, main.php -->
-            <p><strong>mobileMule v3.2.0b</strong><br/>
+            <p><strong>mobileMule v3.2.1b</strong><br/>
 
-                coded by muttley &copy; copyright 2018<br/><br/>
+                coded by muttley <i class="fa fa-copyright fa-fw"></i> 2019<br/><br/>
+                <i class="fa fa-book fa-fw"></i>
                 <a href="https://raw.githubusercontent.com/elbowz/mobileMule/master/CHANGELOG.md" title="changelog">Changelog</a> &bull;
-                <a href="https://github.com/elbowz/mobileMule" title="mobileMule project page">Project page</a> &bull;
-                <a href="#page-donate" class="hash-link" title="Donation Package">Donation Package</a><br/><br/>
-                <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=muttley%2ebd%40gmail%2ecom&lc=IT&item_name=mobileMule&item_number=aMule%20web%20mobile%20skin&currency_code=EUR&bn=PP%2dDonationsBF%3abtn_donate_LG%2egif%3aNonHosted"
-                   title="Donate"><img src="btn_paypal_donate.gif"/></a></p>
+                <i class="fa fa-github-alt fa-fw"></i>
+                <a href="https://github.com/elbowz/mobileMule" title="mobileMule project page"> Project page</a> &bull;
+                <i class="fa fa-paypal fa-fw"></i>
+                <a href="#page-donate" class="hash-link" title="Donation Package"> Donation Package</a><br/><br/>
+            </p>
         </div>
     </div>
     <!-- /about -->
