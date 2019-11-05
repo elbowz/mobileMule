@@ -8,6 +8,7 @@
 
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#545454">
 
     <link rel="manifest" href="manifest.json" crossorigin="use-credentials">
     <link href="icon-192x192.png" rel="icon" sizes="192x192"/>
@@ -16,16 +17,16 @@
     <link href="apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120"/>
     <link href="apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152"/>
 
-    <link rel="stylesheet" href="//stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
-    <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.css"/>
+    <link rel="stylesheet" href="//stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" media="screen"/>
+    <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.css" media="screen"/>
 
     <meta id="mobile-mule-theme"/>
     <!-- append the theme css here -->
 
-    <link rel="stylesheet" type="text/css" href="addtohomescreen.css">
-    <link rel="stylesheet" type="text/css" href="main.css"/>
+    <link rel="stylesheet" type="text/css" href="addtohomescreen.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="main.css" media="screen"/>
 
-    <script>
+    <script async>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
             (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
             m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -36,16 +37,16 @@
 
     </script>
 
-    <script src="underscore-min.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js"></script>
-    <script src="handlebars.min.js"></script>
-    <script src="idb.min.js"></script>
-    <script src="chart.min.js"></script>
-    <script src="addtohomescreen.min.js"></script>
+    <script src="underscore-min.js" async></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js" async></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js" async></script>
+    <script src="handlebars.min.js" async></script>
+    <script src="idb.min.js" async></script>
+    <script src="chart.min.js" async></script>
+    <script src="addtohomescreen.min.js" async></script>
 
-    <script src="utils.js"></script>
-    <script src="main.js"></script>
+    <script src="utils.js" async></script>
+    <script src="main.js" async></script>
 </head>
 
 <body>
