@@ -1,6 +1,11 @@
 CHANGELOG 
 =========
 
+### 3.2.2b
+ * Update webmanifest
+ * Icon now is maskable (https://bit.ly/2YOVAyw)
+ * Load Non-blocking JavaScript
+
 ### 3.2.1b
  * Fix download list
  * Added Liberapay to Donation service

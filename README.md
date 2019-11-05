@@ -12,7 +12,7 @@ It use a modern graphic with a responsive design template.
 
 See [Changelog](CHANGELOG.md) for the features
 
-Download - Latest v3.2.1b (25.07.2019)
+Download - Latest v3.2.2b (05.11.2019)
 --------------------------------------
  * [Standard Version on GoogleDrive](https://drive.google.com/folderview?id=0BzaXzhTPJkC7WFFIM09uYm4zSk0&usp=sharing#list)
  * [Donation Package on GoogleDrive](https://drive.google.com/folderview?id=0BzaXzhTPJkC7SnpOVG11OF9ITlE&usp=sharing) (do a donation for get it)
@@ -41,7 +41,6 @@ Install
 Update
 ------
 You can repeat point 1 of the above list ([install](#install)) or you can use the internal script ```push2server.sh```. For do that, you must have rsync on server.
-
 
 > eg. ```push2server.sh user@host:/usr/share/amule/webserver/mobileMule/```
 
