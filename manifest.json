@@ -1,16 +1,19 @@
 {
   "name": "mobileMule",
   "short_name": "mobileMule",
+  "description": "Web server template/skin/theme for mobile and desktop.",
   "icons": [
     {
       "src": "icon-192x192.png",
       "type": "image/png",
-      "sizes": "192x192"
+      "sizes": "192x192",
+      "purpose": "maskable any"
     },
     {
       "src": "icon-512x512.png",
       "type": "image/png",
-      "sizes": "512x512"
+      "sizes": "512x512",
+      "purpose": "maskable any"
     }
   ],
   "start_url": "./main.php",
