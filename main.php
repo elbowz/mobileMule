@@ -34,19 +34,18 @@
 
         ga('create', 'UA-50409066-3', { 'cookieDomain': 'none' });
         ga('set', 'anonymizeIp', true);
-
     </script>
 
-    <script src="underscore-min.js" async></script>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js" async></script>
-    <script src="//ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js" async></script>
-    <script src="handlebars.min.js" async></script>
-    <script src="idb.min.js" async></script>
-    <script src="chart.min.js" async></script>
-    <script src="addtohomescreen.min.js" async></script>
+    <script src="underscore-min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js"></script>
+    <script src="handlebars.min.js"></script>
+    <script src="idb.min.js"></script>
+    <script src="chart.min.js"></script>
+    <script src="addtohomescreen.min.js"></script>
 
-    <script src="utils.js" async></script>
-    <script src="main.js" async></script>
+    <script src="utils.js"></script>
+    <script src="main.js"></script>
 </head>
 
 <body>
@@ -67,7 +66,7 @@
 
     <div id="footer" data-role="footer">
         <a id="btScrollUp" href="#" data-icon="arrow-u" class="ui-btn-right">scroll up</a>
-        <p>&nbsp;<a href="#about" data-rel="popup" data-position-to="window" data-transition="pop">mobileMule</a> <i class="fa fa-copyright fa-fw"></i> 2019</p>
+        <p>&nbsp;<a href="#about" data-rel="popup" data-position-to="window" data-transition="pop">mobileMule</a> <i class="fa fa-copyright fa-fw"></i> 2020</p>
     </div>
     <!-- /footer -->
 
@@ -101,7 +100,7 @@
             <!-- IMPORTANT: Update also main.js#version check, latestVersion.js, main.php -->
             <p><strong>mobileMule v3.2.3b</strong><br/>
 
-                coded by muttley <i class="fa fa-copyright fa-fw"></i> 2019<br/><br/>
+                coded by muttley <i class="fa fa-copyright fa-fw"></i> 2020<br/><br/>
                 <i class="fa fa-book fa-fw"></i>
                 <a href="https://raw.githubusercontent.com/elbowz/mobileMule/master/CHANGELOG.md" title="changelog">Changelog</a> &bull;
                 <i class="fa fa-github-alt fa-fw"></i>

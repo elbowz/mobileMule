@@ -2,7 +2,7 @@ CHANGELOG
 =========
 
 ### 3.2.3b
- * Option to disable latest version check
+ * Option to disable new version check
  * Minor fixes
 
 ### 3.2.2b
