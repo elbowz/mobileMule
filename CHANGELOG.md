@@ -1,6 +1,10 @@
 CHANGELOG 
 =========
 
+### 3.2.3b
+ * Option to disable latest version check
+ * Minor fixes
+
 ### 3.2.2b
  * Update webmanifest
  * Icon now is maskable (https://bit.ly/2YOVAyw)

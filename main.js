@@ -3,12 +3,13 @@
 var mm = mm || {};
 
 // IMPORTANT: Update also main.js#version check, latestVersion.js, main.php
-mm.version = '3.2.2b';
+mm.version = '3.2.3b';
 
 mm.settings = mm.settings || {};
 
 // Default page to view
 mm.settings.mainHash = mm.settings.mainHash || '#page-status';
+mm.settings.checkLatestVersion = _.isUndefined(mm.settings.checkLatestVersion) ? true : mm.settings.checkLatestVersion;
 
 mm.settings.notifyDelay = _.isUndefined(mm.settings.notifyDelay) ? 6000 : mm.settings.notifyDelay;
 
@@ -159,7 +160,7 @@ $(document).one('pagecreate', function() {
 
     // VERSION CHECK
 
-    setTimeout(function() {
+    var checkLatestVersion = () => setTimeout(function() {
 
         $.ajax({
             url: "https://rawgit.com/elbowz/mobileMule/master/latestVersion.js",
@@ -174,6 +175,8 @@ $(document).one('pagecreate', function() {
             }
         });
     }, 1000);
+
+    if (mm.settings.checkLatestVersion) checkLatestVersion();
 
     if (location.protocol != 'https:') addToHomescreen({ maxDisplayCount: 4 });
 });
