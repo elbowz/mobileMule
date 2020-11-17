@@ -14,7 +14,7 @@ See [Changelog](CHANGELOG.md) for the features
 
 Download - Latest v3.3.0b (17.11.2020)
 --------------------------------------
- * [Standard Version on GoogleDrive](https://drive.google.com/folderview?id=0BzaXzhTPJkC7WFFIM09uYm4zSk0&usp=sharing#list)
+ * [Standard Version](https://github.com/elbowz/mobileMule/releases) or on [GoogleDrive](https://drive.google.com/folderview?id=0BzaXzhTPJkC7WFFIM09uYm4zSk0&usp=sharing#list)
  * [Donation Package on GoogleDrive](https://drive.google.com/folderview?id=0BzaXzhTPJkC7SnpOVG11OF9ITlE&usp=sharing) (do a donation for get it)
 
 Compatibility
