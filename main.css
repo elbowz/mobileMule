@@ -74,9 +74,38 @@ small {
     margin: .5em .5em !important;
 }
 
-/* Desktop mode */
+.m-0 {
+    margin: 0 !important;
+}
+
+.d-none {
+    display: none !important;
+}
+
+.d-block {
+    display: block !important;
+}
+
+.d-inline {
+    display: inline !important;
+}
+
+/* Tablet and over */
 
 @media ( min-width: 35em ) {
+
+    .d-md-none {
+        display: none !important;
+    }
+
+    .d-md-block {
+        display: block !important;
+    }
+
+    .d-md-inline {
+        display: inline !important;
+    }
+
     /* navbar bigger fonts */
     .ui-navbar span {
         font-size: 17px;
@@ -126,5 +155,21 @@ small {
 
     .ui-panel-dismiss-display-push {
         display: none;
+    }
+}
+
+/* Desktop */
+@media (min-width: 55em) {
+
+    .d-lg-none {
+        display: none !important;
+    }
+
+    .d-lg-block {
+        display: block !important;
+    }
+
+    .d-lg-inline {
+        display: inline !important;
     }
 }
