@@ -5,6 +5,8 @@ var mm = mm || {};
 // IMPORTANT: Update also main.js#version check, latestVersion.js, main.php
 mm.version = '3.3.0b';
 
+mm.localStorage = mm.localStorage || new mMLocalStorage();
+
 mm.settings = mm.settings || {};
 
 // Default page to view
