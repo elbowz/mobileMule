@@ -98,7 +98,7 @@
         </div>
         <div role="main" class="ui-content">
             <!-- IMPORTANT: Update also main.js#version check, latestVersion.js, main.php -->
-            <p><strong>mobileMule v3.2.3b</strong><br/>
+            <p><strong>mobileMule v3.3.0b</strong><br/>
 
                 coded by muttley <i class="fa fa-copyright fa-fw"></i> 2020<br/><br/>
                 <i class="fa fa-book fa-fw"></i>
