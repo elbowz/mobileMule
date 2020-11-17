@@ -1,6 +1,10 @@
 CHANGELOG 
 =========
 
+### 3.3.0b
+ * Added Turtle mode: toggle custom limit bandwidth
+ * Minor fixes
+ 
 ### 3.2.3b
  * Option to disable new version check
  * Minor fixes

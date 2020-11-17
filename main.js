@@ -10,8 +10,11 @@ mm.settings = mm.settings || {};
 // Default page to view
 mm.settings.mainHash = mm.settings.mainHash || '#page-status';
 mm.settings.checkLatestVersion = _.isUndefined(mm.settings.checkLatestVersion) ? true : mm.settings.checkLatestVersion;
-
 mm.settings.notifyDelay = _.isUndefined(mm.settings.notifyDelay) ? 6000 : mm.settings.notifyDelay;
+
+mm.settings.turtleMode = mm.settings.turtleMode || {};
+mm.settings.turtleMode.maxDownLimit = _.isUndefined(mm.settings.turtleMode.maxDownLimit) ? 10 : mm.settings.turtleMode.maxDownLimit;
+mm.settings.turtleMode.maxUpLimit = _.isUndefined(mm.settings.turtleMode.maxUpLimit) ? 4 : mm.settings.turtleMode.maxUpLimit;
 
 mm.settings.page = mm.settings.page || {};
 
@@ -49,7 +52,7 @@ if ('serviceWorker' in navigator) {
         window.addEventListener('beforeinstallprompt', event => {
 
             event.preventDefault();
-            event.prompt();
+            //event.prompt();
         });
     });
 }
