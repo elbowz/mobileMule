@@ -4,7 +4,7 @@ self.importScripts('latestVersion.js');
 var CACHE_NAME = latestVersion;
 
 // Resource to cache
-// All others (requested resources) will be cached on first request (see 'fetch'
+// All others (requested resources) will be cached on first request (self.addEventListener('fetch'))
 var urlsToCache = [
     '//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js',
     '//ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js',

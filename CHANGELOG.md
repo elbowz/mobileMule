@@ -1,6 +1,9 @@
 CHANGELOG 
 =========
 
+### 3.6.0b
+ * Key shortcuts (accesskey) for left menu (eg. Chrome ALT+<key>)
+
 ### 3.3.0b
  * Added Turtle mode: toggle custom limit bandwidth
  * Minor fixes

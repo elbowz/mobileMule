@@ -78,6 +78,22 @@ small {
     margin: 0 !important;
 }
 
+.m-1 {
+    margin: 1px !important;
+}
+
+.b-0 {
+    border: 0 !important;
+}
+
+.p-0 {
+    padding: 0 !important;
+}
+
+.p-1 {
+    padding: 1px !important;
+}
+
 .d-none {
     display: none !important;
 }

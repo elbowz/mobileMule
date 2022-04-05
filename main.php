@@ -4,10 +4,11 @@
     <title>mobileMule</title>
 
     <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="theme-color" content="#545454">
 
     <link rel="manifest" href="manifest.json" crossorigin="use-credentials">
@@ -66,25 +67,25 @@
 
     <div id="footer" data-role="footer">
         <a id="btScrollUp" href="#" data-icon="arrow-u" class="ui-btn-right">scroll up</a>
-        <p>&nbsp;<a href="#about" data-rel="popup" data-position-to="window" data-transition="pop">mobileMule</a> <i class="fa fa-copyright fa-fw"></i> 2020</p>
+        <p>&nbsp;<a href="#about" data-rel="popup" data-position-to="window" data-transition="pop">mobileMule</a> <i class="fa fa-copyright fa-fw"></i> 2022</p>
     </div>
     <!-- /footer -->
 
     <div data-role="panel" id="menu-panel" data-display="reveal" data-position-fixed="true">
         <ul data-role="listview">
-            <li data-icon="false"><a href="#page-status" class="hash-link">Status <i class="fa fa-home pull-right fa-fw"></i></a></li>
-            <li data-icon="false"><a href="#page-downloads" class="hash-link">Downloads <i class="fa fa-download pull-right fa-fw"></i></a></li>
-            <li data-icon="false"><a href="#page-finished" class="hash-link">Finished <i class="fa fa-cloud-download pull-right fa-fw"></i></a></li>
-            <li data-icon="false"><a href="#page-uploads" class="hash-link">Uploads <i class="fa fa-upload pull-right fa-fw"></i></a></li>
-            <li data-icon="false"><a href="#page-search" class="hash-link">Search <i class="fa fa-search pull-right fa-fw"></i></a></li>
-            <li data-icon="false"><a href="#page-config" class="hash-link">Settings <i class="fa fa-cogs pull-right fa-fw"></i></a></li>
-            <li data-icon="false"><a href="#page-mobilemule" class="hash-link">MobileMule <i class="fa fa-cog pull-right fa-fw"></i></a></li>
-            <li data-icon="false"><a href="#page-servers" class="hash-link">Servers <i class="fa fa-database pull-right fa-fw"></i></a></li>
-            <li data-icon="false"><a href="#page-listed-stats" class="hash-link">Statistics <i class="fa fa-tachometer pull-right fa-fw"></i></a></li>
-            <li data-icon="false"><a href="#page-graph" class="hash-link">Graphs <i class="fa fa-bar-chart-o pull-right fa-fw"></i></a></li>
-            <li data-icon="false"><a href="#page-log" class="hash-link">Log <i class="fa fa-bars pull-right fa-fw"></i></a></li>
-            <li data-icon="false"><a href="#page-footer" class="hash-link">Add ed2k <i class="fa fa-plus pull-right fa-fw"></i></a></li>
-            <li data-icon="false"><a href="login.php" id="pnMenuLogout">Logout <i class="fa fa-unlock-alt pull-right fa-fw"></i></a></li>
+            <li data-icon="false"><a href="#page-status" class="hash-link" accesskey="s"><u>S</u>tatus <i class="fa fa-home pull-right fa-fw"></i></a></li>
+            <li data-icon="false"><a href="#page-downloads" class="hash-link" accesskey="d"><u>D</u>ownloads <i class="fa fa-download pull-right fa-fw"></i></a></li>
+            <li data-icon="false"><a href="#page-finished" class="hash-link" accesskey="f"><u>F</u>inished <i class="fa fa-cloud-download pull-right fa-fw"></i></a></li>
+            <li data-icon="false"><a href="#page-uploads" class="hash-link" accesskey="p">U<u>p</u>loads <i class="fa fa-upload pull-right fa-fw"></i></a></li>
+            <li data-icon="false"><a href="#page-search" class="hash-link" accesskey="e"><u>S</u>earch <i class="fa fa-search pull-right fa-fw"></i></a></li>
+            <li data-icon="false"><a href="#page-config" class="hash-link" accesskey="t">Se<u>t</u>tings <i class="fa fa-cogs pull-right fa-fw"></i></a></li>
+            <li data-icon="false"><a href="#page-mobilemule" class="hash-link" accesskey="o">M<u>o</u>bileMule <i class="fa fa-cog pull-right fa-fw"></i></a></li>
+            <li data-icon="false"><a href="#page-servers" class="hash-link" accesskey="r">Se<u>r</u>vers <i class="fa fa-database pull-right fa-fw"></i></a></li>
+            <li data-icon="false"><a href="#page-listed-stats" class="hash-link" accesskey="a">St<u>a</u>tistics <i class="fa fa-tachometer pull-right fa-fw"></i></a></li>
+            <li data-icon="false"><a href="#page-graph" class="hash-link" accesskey="g"><u>G</u>raphs <i class="fa fa-bar-chart-o pull-right fa-fw"></i></a></li>
+            <li data-icon="false"><a href="#page-log" class="hash-link" accesskey="l"><u>L</u>og <i class="fa fa-bars pull-right fa-fw"></i></a></li>
+            <li data-icon="false"><a href="#page-footer" class="hash-link" accesskey="d">A<u>d</u>d ed2k <i class="fa fa-plus pull-right fa-fw"></i></a></li>
+            <li data-icon="false"><a href="login.php" id="pnMenuLogout" accesskey="u">Logo<u>u</u>t <i class="fa fa-unlock-alt pull-right fa-fw"></i></a></li>
         </ul>
     </div>
     <!-- /panel menu -->
@@ -100,7 +101,7 @@
             <!-- IMPORTANT: Update also main.js#version check, latestVersion.js, main.php -->
             <p><strong>mobileMule v3.3.0b</strong><br/>
 
-                coded by muttley <i class="fa fa-copyright fa-fw"></i> 2020<br/><br/>
+                coded by muttley <i class="fa fa-copyright fa-fw"></i> 2022<br/><br/>
                 <i class="fa fa-book fa-fw"></i>
                 <a href="https://raw.githubusercontent.com/elbowz/mobileMule/master/CHANGELOG.md" title="changelog">Changelog</a> &bull;
                 <i class="fa fa-github-alt fa-fw"></i>
