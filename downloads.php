@@ -108,25 +108,6 @@
 </ul>
 </div>
 
-<style>
-.file-command {
-    opacity: 0;
-    transition: opacity 0.6s ease-in-out;
-    position: absolute; right: 6px; bottom: 0;
-}
-
-.file-command > button {
-    margin: 1px 25px 1px 1px;
-    padding: 1px;
-    border: 0;
-    background-color: transparent !important;
-}
-
-a.file-check.selected .file-command, a.file-check:focus .file-command, a.file-check:hover .file-command {
-    opacity: 1;
-}
-</style>
-
 <script>
     $(document).one('pagecreate', function() {
 
@@ -137,8 +118,7 @@ a.file-check.selected .file-command, a.file-check:focus .file-command, a.file-ch
         submitFormAndUpdate();
 
         if (!!mm.settings.page.downloads.refreshList) {
-
-            globalTimer = setInterval(submitFormAndUpdate, mm.settings.page.downloads.refreshList);
+            globalTimer = setInterval(submitFormAndUpdate, 600000);
         }
 
         // EVENT HANDLING
