@@ -79,6 +79,7 @@
             <li data-icon="false"><a href="#page-downloads" class="hash-link" accesskey="d"><u>D</u>ownloads <i class="fa fa-download pull-right fa-fw"></i></a></li>
             <li data-icon="false"><a href="#page-finished" class="hash-link" accesskey="f"><u>F</u>inished <i class="fa fa-cloud-download pull-right fa-fw"></i></a></li>
             <li data-icon="false"><a href="#page-uploads" class="hash-link" accesskey="p">U<u>p</u>loads <i class="fa fa-upload pull-right fa-fw"></i></a></li>
+            <li data-icon="false"><a href="#page-shared" class="hash-link" accesskey="h">S<u>h</u>ared <i class="fa fa-share-alt pull-right fa-fw"></i></a></li>
             <li data-icon="false"><a href="#page-search" class="hash-link" accesskey="e"><u>S</u>earch <i class="fa fa-search pull-right fa-fw"></i></a></li>
             <li data-icon="false"><a href="#page-config" class="hash-link" accesskey="t">Se<u>t</u>tings <i class="fa fa-cogs pull-right fa-fw"></i></a></li>
             <li data-icon="false"><a href="#page-mobilemule" class="hash-link" accesskey="o">M<u>o</u>bileMule <i class="fa fa-cog pull-right fa-fw"></i></a></li>

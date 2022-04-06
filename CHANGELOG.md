@@ -3,10 +3,12 @@ CHANGELOG
 
 ### 3.6.0b
  * Key shortcuts (accesskey) for left menu (eg. Chrome ALT+<key>)
+ * Added shared page
  * Download: added buttons commands (eg. play, pause) for single file
- * Search: kad (instead Global) for default
- * Search: added button downloads for single file result
- * Search: added spinner (heuristic calculation of finish)
+ * Search: kad (instead Global) for default (Donation Package)
+ * Search: added button downloads for single file result (Donation Package)
+ * Search: added spinner (heuristic calculation of finish) (Donation Package)
+ * Added shared page
 
 ### 3.3.0b
  * Added Turtle mode: toggle custom limit bandwidth
