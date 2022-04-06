@@ -12,6 +12,8 @@
     </ul>
 </div>
 
+<input data-type="search" id="filter-download-input">
+
 <br/>
 
 <div id="list-downloads">
@@ -113,12 +115,14 @@
 
         var $mainForm = $('form[name="mainform"]');
         var $inputCommand = $('input[name="command"]');
-        var $listDownloads = $('#list-downloads');        // AUTO REFRESH DOWNLOADS LIST
+        var $listDownloads = $('#list-downloads');
+        var $filterName = $('#filter-download-input');
 
+        // AUTO REFRESH DOWNLOADS LIST
         submitFormAndUpdate();
 
         if (!!mm.settings.page.downloads.refreshList) {
-            globalTimer = setInterval(submitFormAndUpdate, 600000);
+            globalTimer = setInterval(submitFormAndUpdate, mm.settings.page.downloads.refreshList);
         }
 
         // EVENT HANDLING
@@ -133,6 +137,10 @@
             if (formCommandSubmit(command)) {
                 notify.message(notifyMsg);
             }
+        });
+
+        $filterName.on('input', function () {
+            submitFormAndUpdate();
         });
 
         $listDownloads.on('vclick', '.file-command button', function(event) {
@@ -184,17 +192,15 @@
         });
 
         $('select[name="status"], select[name="category"]').change(function() {
-
             $('input[name="command"]').attr('value', 'filter');
             submitFormAndUpdate();
         });
 
         $('select[name="sort"]').change(function() {
-
             submitFormAndUpdate();
         });
 
-        $('#sort_reverse').on('vclick', function() {
+        $('#sort_reverse').on('vclick', function(event) {
             event.preventDefault();
 
             var $inputSortRevrse = $('input[name="download_sort_reverse"]');
@@ -244,6 +250,10 @@
             this.listDownloadHb = this.listDownloadHb || Handlebars.compile(this.listDowndload);
 
             $mainForm.ajaxForm(_.bind(function(data) {
+                filterName = $filterName.val().toUpperCase()
+                data.downloads.list = _.filter(data.downloads.list, function(file) {
+                    return file.name.toUpperCase().includes(filterName);
+                });
 
                 data.downloads.refreshList = mm.settings.page.downloads.refreshList / 1000;
                 var htmlListGenerated = this.listDownloadHb(data.downloads);

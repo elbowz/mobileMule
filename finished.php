@@ -1,3 +1,5 @@
+<input data-type="search" id="filter-finished-input">
+<br/>
 <div id="list-finished">
     <!-- downloads placeholder -->
 </div>
@@ -5,10 +7,10 @@
 <a href="#" class="ui-btn ui-corner-all clear-all"><i class="fa fa-trash fa-fw" aria-hidden="true"></i> Clear all</a>
 
 <div id="list-finished-tpl" class="handlebars-template">
-    <ul data-role="listview">
+    <ul data-role="listview" data-divider-theme="d">
         <li data-role="list-divider">Finished downloads<span class="ui-li-count">{{count}}</span></li>
         {{#each list}}
-        <li>
+        <li data-filtertext="{{name}}">
             <h3 data-hash="{{hash}}">{{name}}</h3>
             <p>{{size}}</p>
         </li>
@@ -22,8 +24,11 @@
 
         var $listFinished = $('#list-finished');
         var listDownloadHb = Handlebars.compile($("#list-finished-tpl").html());
+        var $filterName = $('#filter-finished-input');
 
-        $('.clear-all').on('vclick', function() {
+        getList();
+
+        $('.clear-all').on('vclick', function(event) {
 
             event.preventDefault();
 
@@ -34,24 +39,35 @@
             $listFinished.html(htmlListGenerated);
         });
 
-        $.getJSON('downloads-ajax.php', function(data) {
-
-            var finished = { list: [], count: 0 };
-
-            idbDownloads.getAll().then(function(downloadsDb) {
-
-                data.downloads.list.forEach(function(download) {
-                    downloadsDb = downloadsDb.filter(function(file) {
-                        return download.hash != file.hash;
-                    });
-                });
-
-                finished.list = downloadsDb;
-                finished.count = finished.list.length;
-
-                var htmlListGenerated = listDownloadHb(finished);
-                $listFinished.html(htmlListGenerated);
-            });
+        $filterName.on('input', function () {
+            getList();
         });
+
+        function getList() {
+            $.getJSON('downloads-ajax.php', function (data) {
+
+                var finished = { list: [], count: 0 };
+
+                idbDownloads.getAll().then(function (downloadsDb) {
+
+                    data.downloads.list.forEach(function (download) {
+                        downloadsDb = downloadsDb.filter(function (file) {
+                            return download.hash != file.hash;
+                        });
+                    });
+
+                    finished.list = downloadsDb;
+                    finished.count = finished.list.length;
+
+                    filterName = $filterName.val().toUpperCase()
+                    finished.list = _.filter(finished.list, function(file) {
+                        return file.name.toUpperCase().includes(filterName);
+                    });
+
+                    var htmlListGenerated = listDownloadHb(finished);
+                    $listFinished.html(htmlListGenerated);
+                });
+            });
+        }
     });
 </script>

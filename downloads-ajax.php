@@ -156,6 +156,8 @@ foreach ($downloads as $file) {
     ($cat_idx[$_SESSION["filter_cat"]] == $file->category);
 
     if ($filter_status_result and $filter_cat_result) {
+        if ($i) { echo ','; }
+
         echo '{';
 
         echo '"name": "' . $file->name . '", "short_name": "' . $file->short_name . '", "hash": "' . $file->hash . '"';
@@ -181,10 +183,10 @@ foreach ($downloads as $file) {
 
         echo '", "size_done": "' . CastToXBytes($file->size_done) . '", "size": "' . CastToXBytes($file->size) . '"';
 
-        if($i == $countDownloads - 1) { echo '}'; } else { echo '}, '; }
-    }
+        echo '}';
 
-    $i++;
+        $i++;
+    }
 }
 echo ']';
 echo '} }';
