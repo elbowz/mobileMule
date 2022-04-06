@@ -79,7 +79,7 @@
     <li data-role="list-divider">Downloads<span class="ui-li-count">{{count}}</span></li>
     {{#each list}}
     <li data-filtertext="{{name}}">
-        <a data-hash="{{hash}}" class="file-check">
+        <a data-hash="{{hash}}" class="file-check {{fileCheckClass 'selected'}}">
             <h3>{{name}}</h3>
             <p>{{#if speed}}<strong>{{speed}}/s</strong> - {{/if}}{{status}} - {{prio}}</p>
             <p>
@@ -92,14 +92,40 @@
                 <div class="ui-li-desc completed-bar {{status_complted_class}}" style="width: {{percentual_progress}}%;">{{size_done}} / {{size}}</div>
             </div>
             </p>
+            <div class="file-command">
+                <button data-command="resume" class="ui-btn ui-btn-inline"><i class="fa fa-play"></i></button>
+                <button data-command="pause" class="ui-btn ui-btn-inline"><i class="fa fa-pause"></i></button>
+                <button data-command="prioup" class="ui-btn ui-btn-inline"><i class="fa fa-chevron-up"></i></button>
+                <button data-command="priodown" class="ui-btn ui-btn-inline"><i class="fa fa-chevron-down"></i></button>
+                <button data-command="cancel" class="ui-btn ui-btn-inline m-1"><i class="fa fa-trash"></i></button>
+            </div>
             <span class="ui-li-count">{{percentual_progress}}%</span>
         </a>
-        <a id="{{hash}}" data-hash="{{hash}}" class="file-check {{fileCheckClass}}">Select file</a>
+        <a id="{{hash}}" data-hash="{{hash}}" class="file-check {{fileCheckClass 'ui-btn-active'}}">Select file</a>
     </li>
     {{/each}}
     <li><p>this info is refreshed each <strong>{{refreshList}}</strong> seconds (<a href="#page-mobilemule" class="hash-link">change it</a>)</p></li>
 </ul>
 </div>
+
+<style>
+.file-command {
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out;
+    position: absolute; right: 6px; bottom: 0;
+}
+
+.file-command > button {
+    margin: 1px 25px 1px 1px;
+    padding: 1px;
+    border: 0;
+    background-color: transparent !important;
+}
+
+a.file-check.selected .file-command, a.file-check:focus .file-command, a.file-check:hover .file-command {
+    opacity: 1;
+}
+</style>
 
 <script>
     $(document).one('pagecreate', function() {
@@ -129,6 +155,31 @@
             }
         });
 
+        $listDownloads.on('vclick', '.file-command button', function(event) {
+
+            event.stopPropagation();
+
+            var command = $(this).data('command');
+            var hash = $(this).closest('a[data-hash]').data('hash');
+
+            if (command == 'cancel') {
+                var res = confirm("Delete selected files ?")
+                if (res == false) {
+                    return false;
+                }
+                idbDownloads.delete(hash)
+            }
+
+            $.ajax({
+                type: 'GET',
+                url: 'downloads-ajax.php',
+                data: { 'command': command, [hash]: 'on'},
+                success: function () {
+                    submitFormAndUpdate();
+                }
+            });
+        });
+
         $listDownloads.on('vclick', '.file-check', function(event) {
 
             event.stopPropagation();
@@ -148,6 +199,7 @@
                 $inputHidden.remove();
             }
 
+            $(this).toggleClass('selected');
             $('#' + checkboxHashId).toggleClass('ui-btn-active');
         });
 
@@ -219,8 +271,9 @@
             }, this));
         };
 
-        Handlebars.registerHelper('fileCheckClass', function() {
-            return $('input[name="' + this.hash + '"]', $mainForm).length ? ' ui-btn-active' : '';
+        Handlebars.registerHelper('fileCheckClass', function(cls_active) {
+            cls_active = typeof cls_active == 'object' ? 'ui-btn-active' : cls_active
+            return $('input[name="' + this.hash + '"]', $mainForm).length ? cls_active : '';
         });
     });
 </script>
