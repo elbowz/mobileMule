@@ -36,6 +36,8 @@
         ga('create', 'UA-50409066-3', { 'cookieDomain': 'none' });
         ga('set', 'anonymizeIp', true);
     </script>
+    
+    <script src="local-storage.js"></script>
 
     <script src="underscore-min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
