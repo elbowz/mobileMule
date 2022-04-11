@@ -22,6 +22,7 @@ var urlsToNoCahe = [
     '/collapsible-stats.php',
     '/downloads.php',
     '/downloads-ajax.php',
+    'finished.php',
     '/graph.php',
     '/graph-ajax.php',
     '/listed-stats.php',
@@ -38,7 +39,7 @@ var urlsToNoCahe = [
     '/config.php',
     '/footer.php',
     '/search-ajax.php',
-    '/search.php'
+    '/search.php',
 ];
 
 // Add resource to cache

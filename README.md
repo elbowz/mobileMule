@@ -60,7 +60,7 @@ If you want help me, better support, more features, get speedy fix and so on, co
 With a free donation, you'll get the **Donation Package** that adds three panels:
 
 * Search
-* Configurations
+* Settings
 * Add ed2k
 * MobileMule (allow to change themes, refresh and other stuff)
 
