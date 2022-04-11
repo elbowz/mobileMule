@@ -1,6 +1,6 @@
 <input data-type="search" id="filter-finished-input">
 <br/>
-<div id="list-finished">
+<div id="list-finished" data-type="search" type="search" autocomplete="off">
     <!-- downloads placeholder -->
 </div>
 <br/>

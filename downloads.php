@@ -12,7 +12,7 @@
     </ul>
 </div>
 
-<input data-type="search" id="filter-download-input">
+<input id="filter-download-input" data-type="search" type="search" autocomplete="off">
 
 <br/>
 

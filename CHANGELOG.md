@@ -10,6 +10,7 @@ CHANGELOG
  * Search: added button downloads for single file result (Donation Package)
  * Search: added spinner (heuristic calculation of finish) (Donation Package)
  * Finished: added filename filter
+ * Removed browser autosuggest for search input box (download, search, ...)
  * Fix filters in download page
 
 ### 3.3.0b

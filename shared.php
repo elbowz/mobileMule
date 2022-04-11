@@ -27,7 +27,7 @@ function PrioString($file)
 $shared = amule_load_vars("shared");
 
 echo '<form>';
-echo  '<input data-type="search" id="filter-shared-input">';
+echo  '<input id="filter-shared-input" data-type="search" type="search" autocomplete="off">';
 echo '</form>';
 echo '<br/>';
 echo '<ul data-role="listview" data-divider-theme="d" data-filter="true" data-input="#filter-shared-input">';
