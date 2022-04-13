@@ -12,7 +12,7 @@ It use a modern graphic with a responsive design template.
 
 See [Changelog](CHANGELOG.md) for the features
 
-Download - Latest v3.6.0b (06.04.2022)
+Download - Latest v3.6.0b (13.04.2022)
 --------------------------------------
  * [Standard Version](https://github.com/elbowz/mobileMule/releases) or on [GoogleDrive](https://drive.google.com/folderview?id=0BzaXzhTPJkC7WFFIM09uYm4zSk0&usp=sharing#list)
  * [Donation Package on GoogleDrive](https://drive.google.com/folderview?id=0BzaXzhTPJkC7SnpOVG11OF9ITlE&usp=sharing) (do a donation for get it)
@@ -34,9 +34,9 @@ Install
 1. Extract and move the entire direcotry in "/usr/share/amule/webserver/" (or /usr/local/share/amule/webserver, $HOME/.aMule/webserver/), default directory for amule web skins.
 2. Now you should be have "/usr/share/amule/webserver/mobileMule"
 3. If you want this skin as default, rename 'mobileMule' dir in "default" (not good idea if you have automatic update with something like repository), else continue 
-4. Edit row 'Template=' in "$HOME/.aMule/amule.conf" (or if present "remote.conf") in 'Template=mobileMule'
+4. Edit row 'Template=' in "$HOME/.aMule/amule.conf" in 'Template=mobileMule'
 5. restart amule (or only amuleweb)
-6. *(optional)* If you like [Progressive Web Apps](https://developers.google.com/web/progressive-web-apps/) consider to install mobileMule under an *https* (eg. [letsencrypt.org](https://letsencrypt.org/)), this enable Service Worker, internal caching and *native* add to home screen.
+6. *(optional)* If you like [Progressive Web Apps](https://developers.google.com/web/progressive-web-apps/) consider to install mobileMule under an *https* (eg. [letsencrypt.org](https://letsencrypt.org/)) domain, this enables Service Worker, internal caching and *native* add to home screen.
 
 Update
 ------
@@ -52,7 +52,7 @@ TODOs
 
 Support me
 ----------
-If you want help me, better support, more features, get speedy fix and so on, consider offer me a coffee or a beer through a :
+If you want help me, better support, more features, get speedy fix and so on, consider offer me a coffee or a beer through:
 
 [![Donate PayPal](https://img.shields.io/badge/donate-paypal-green.svg?logo=paypal&style=for-the-badge)](https://www.paypal.me/EmanuelePalombo)
 [![Donate Liberapay](https://img.shields.io/badge/donate-liberapay-green.svg?logo=liberapay&style=for-the-badge)](https://liberapay.com/Emanuele/donate)
@@ -68,4 +68,4 @@ Thanks
 ------
 
 * *Emanuele Ruzza* for support, suggestions, feedback and his time for debugging app on Apple devices :)
-* To all users that have donate something fot this project 
+* To all users that have donate something fot this project!!
