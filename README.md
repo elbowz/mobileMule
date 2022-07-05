@@ -50,14 +50,26 @@ TODOs
 -----
  * Any suggest? 
 
-Support me
+:sparkling_heart: Support the project
+-----
+
+I open-source almost everything I can. If you are using this project and are happy with it, please consider one of these ways to support the project (and me):
+
+* Giving proper credit when you use it, linking back to it :D
+* Starring :star2: and sharing the project :rocket:
+* Submit PRs, bug reports and feature requests
+
+Thanks! :heart:
+
+Get Donation Package
 ----------
-If you want help me, better support, more features, get speedy fix and so on, consider offer me a coffee or a beer through:
+
+If you want help me, better support, more features, get speedy fix and so on, consider to offer me a coffee or a beer through:
 
 [![Donate PayPal](https://img.shields.io/badge/donate-paypal-green.svg?logo=paypal&style=for-the-badge)](https://www.paypal.me/EmanuelePalombo)
 [![Donate Liberapay](https://img.shields.io/badge/donate-liberapay-green.svg?logo=liberapay&style=for-the-badge)](https://liberapay.com/Emanuele/donate)
 
-With a free donation, you'll get the **Donation Package** that adds three panels:
+With a free donation, you'll get the **Donation Package** that adds four new panels:
 
 * Search
 * Settings
