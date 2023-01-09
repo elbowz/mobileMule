@@ -3,7 +3,7 @@
 var mm = mm || {};
 
 // IMPORTANT: Update also main.js#version check, latestVersion.js, main.php
-mm.version = '3.6.0b';
+mm.version = '3.6.6b';
 
 mm.localStorage = mm.localStorage || new mMLocalStorage();
 

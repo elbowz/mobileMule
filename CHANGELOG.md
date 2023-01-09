@@ -1,6 +1,10 @@
 CHANGELOG 
 =========
 
+### 3.6.6b
+ * Remember download page settings
+ * Remember search page settings (Donation Package)
+
 ### 3.6.0b
  * Key shortcuts (accesskey) for left menu (eg. Chrome ALT+<key>)
  * Added shared page

@@ -69,7 +69,7 @@
 
     <div id="footer" data-role="footer">
         <a id="btScrollUp" href="#" data-icon="arrow-u" class="ui-btn-right">scroll up</a>
-        <p>&nbsp;<a href="#about" data-rel="popup" data-position-to="window" data-transition="pop">mobileMule</a> <i class="fa fa-copyright fa-fw"></i> 2022</p>
+        <p>&nbsp;<a href="#about" data-rel="popup" data-position-to="window" data-transition="pop">mobileMule</a> <i class="fa fa-copyright fa-fw"></i> 2023</p>
     </div>
     <!-- /footer -->
 
@@ -102,9 +102,9 @@
         </div>
         <div role="main" class="ui-content">
             <!-- IMPORTANT: Update also main.js#version check, latestVersion.js, main.php -->
-            <p><strong>mobileMule v3.6.0b</strong><br/>
+            <p><strong>mobileMule v3.6.6b</strong><br/>
 
-                coded by muttley <i class="fa fa-copyright fa-fw"></i> 2022<br/><br/>
+                coded by muttley <i class="fa fa-copyright fa-fw"></i> 2023<br/><br/>
                 <i class="fa fa-book fa-fw"></i>
                 <a href="https://raw.githubusercontent.com/elbowz/mobileMule/master/CHANGELOG.md" title="changelog">Changelog</a> &bull;
                 <i class="fa fa-github-alt fa-fw"></i>
