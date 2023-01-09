@@ -117,8 +117,17 @@
         var $inputCommand = $('input[name="command"]');
         var $listDownloads = $('#list-downloads');
         var $filterName = $('#filter-download-input');
+        var $filterStatus = $('select[name="status"]');
+        var $filterCategory = $('select[name="category"]');
+        var $sortOn = $('select[name="sort"]');
+        var $sortReverse = $('#sort_reverse');
+        var $inputSortRevrse = $('input[name="download_sort_reverse"]');
 
         // AUTO REFRESH DOWNLOADS LIST
+        $filterStatus.val(mm.settings.page.downloads.filterStatus).change();
+        $filterCategory.val(mm.settings.page.downloads.filterCategory).change();
+        $sortOn.val(mm.settings.page.downloads.sortOn).change();
+
         submitFormAndUpdate();
 
         if (!!mm.settings.page.downloads.refreshList) {
@@ -191,28 +200,45 @@
             $('#' + checkboxHashId).toggleClass('ui-btn-active');
         });
 
-        $('select[name="status"], select[name="category"]').change(function() {
-            $('input[name="command"]').attr('value', 'filter');
+        $filterStatus.change(onFilterChange);
+        $filterCategory.change(onFilterChange);
+
+        function onFilterChange() {
+            newValue = $(this).val();
+            mm.settings.page.downloads.filterStatus = newValue;
+            mm.localStorage.set('page-downloads-filterStatus', newValue);
+
+            $inputCommand.attr('value', 'filter');
+            submitFormAndUpdate();
+        }
+
+        $sortOn.change(function() {
+            newValue = $(this).val();
+            mm.settings.page.downloads.sortOn = newValue;
+            mm.localStorage.set('page-downloads-sortOn', newValue);
+
             submitFormAndUpdate();
         });
 
-        $('select[name="sort"]').change(function() {
-            submitFormAndUpdate();
-        });
-
-        $('#sort_reverse').on('vclick', function(event) {
+        $sortReverse.on('vclick', function(event) {
             event.preventDefault();
-
-            var $inputSortRevrse = $('input[name="download_sort_reverse"]');
             var value = $inputSortRevrse.val();
-            $inputSortRevrse.val(value == '1' ? '0' : '1');
+            var newValue = value == '1' ? '0' : '1'
+            $inputSortRevrse.val(newValue);
+
+            mm.settings.page.downloads.sortOrder = newValue;
+            mm.localStorage.set('page-downloads-sortOrder', newValue);
 
             submitFormAndUpdate();
 
-            $('#sort_reverse').attr({ 'data-icon': value == '1' ? 'arrow-u' : 'arrow-d' })
+            $(this).attr({ 'data-icon': value == '1' ? 'arrow-u' : 'arrow-d' })
                 .toggleClass('ui-icon-arrow-d ui-icon-arrow-u')
                 .text(value == '1' ? 'Descendent' : 'Ascendent');
         });
+
+        if ($inputSortRevrse.val() != mm.settings.page.downloads.sortOrder) {
+            $sortReverse.trigger('vclick');
+        }
 
         // UTILS FUNCTIONS
 

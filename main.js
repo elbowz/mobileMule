@@ -26,6 +26,10 @@ mm.settings.page.status.tickChart = _.isUndefined(mm.settings.page.status.tickCh
 
 mm.settings.page.downloads = mm.settings.page.downloads || {};
 mm.settings.page.downloads.refreshList = _.isUndefined(mm.settings.page.downloads.refreshList) ? 3000 : mm.settings.page.downloads.refreshList;
+mm.settings.page.downloads.filterStatus = mm.localStorage.get('page-downloads-filterStatus', 'all');
+mm.settings.page.downloads.filterCategory = mm.localStorage.get('page-downloads-filterCategory', 'all');
+mm.settings.page.downloads.sortOn = mm.localStorage.get('page-downloads-sortOn', 'name');
+mm.settings.page.downloads.sortOrder = mm.localStorage.get('page-downloads-sortOrder', '0');
 
 mm.settings.page.graph = mm.settings.page.graph || {};
 mm.settings.page.graph.refresh = _.isUndefined(mm.settings.page.graph.refresh) ? 3000 : mm.settings.page.graph.refresh;
